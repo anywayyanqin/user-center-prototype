@@ -193,7 +193,7 @@ table.data tbody tr.on td.strong{color:var(--primary)}
 .overlay.hide{opacity:0;pointer-events:none}
 .modal{
   background:#fff;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.18);
-  width:100%;max-width:560px;max-height:86vh;display:flex;flex-direction:column;
+  width:100%;max-width:640px;max-height:86vh;display:flex;flex-direction:column;
   transition:transform .25s,opacity .25s;
 }
 .overlay.hide .modal{transform:scale(.96);opacity:0}
@@ -210,6 +210,12 @@ table.data tbody tr.on td.strong{color:var(--primary)}
 .label{display:block;font-size:13px;font-weight:500;color:var(--text-2);margin-bottom:5px}
 .label .req{color:var(--danger)}
 .field-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.mgroup{font-size:11.5px;font-weight:600;color:var(--primary);letter-spacing:.06em;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.mgroup:first-child{margin-top:0}
+.input.ro{background:#F7F8FA;color:var(--muted);cursor:default}
+.select:disabled{background:#F7F8FA;color:var(--muted);cursor:default;opacity:1}
+.fhint{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.45}
 .panel{background:#F7F8FA;border-radius:10px;padding:14px;margin-bottom:14px}
 .panel:last-child{margin-bottom:0}
 .panel-title{font-size:13px;font-weight:600;color:var(--text-2);display:flex;align-items:center;gap:6px;margin-bottom:10px}
@@ -372,7 +378,7 @@ table.data tbody td{vertical-align:middle}
   <symbol id="i-signs" viewBox="0 0 24 24" data-page-node-id="JzM9bl22ByQodfYltrzJ4q"><path d="M12 3v18" data-page-node-id="4H16d6HPsSivQw9xHL1wSd"></path><path d="M5 6h11l3 3-3 3H5z" data-page-node-id="wN6zA7QGpeS8BErT0lBd6l"></path><path d="M19 15H8l-3 3 3 3h11z" data-page-node-id="CS1ESi6BNDyWw71jQtZF6v"></path></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" data-page-node-id="e9aLbcwKhBi7LEjgf1RZ0H"><circle cx="12" cy="12" r="9" data-page-node-id="4aWmVM3vQccckdLjPuWPaH"></circle><path d="M8 12.4l2.6 2.6L16 9.6" data-page-node-id="EYB0IHUmflncz02eo0UcpG"></path></symbol>
   <symbol id="i-desktop" viewBox="0 0 24 24" data-page-node-id="rzP4jwLShFxLpkFbvpNDFI"><rect x="3" y="4" width="18" height="12" rx="2" data-page-node-id="VH95lEWYebc8NBgnxhtbWy"></rect><path d="M8 20h8M12 16v4" data-page-node-id="Y1xbg2M5QQAF2gpUPHfll0"></path></symbol>
-  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" data-page-node-id="q5R3uzTEqwyfsaj7b28uJp"><path d="M6 9l6 6 6-6" data-page-node-id="16wNjU8z1uWHuHjndCXJvA"></path></symbol>
   <symbol id="i-cursor" viewBox="0 0 24 24" data-page-node-id="6Hzu7I5mjayJyXlNGeWzvW"><path d="M5 3l6.5 17 2.3-6.4L20 11.3z" data-page-node-id="Tq8pRjMbj02iB0ApPwoG5j"></path></symbol>
 </svg>
 
@@ -406,8 +412,8 @@ table.data tbody td{vertical-align:middle}
       <!-- 侧边菜单 -->
       <nav class="sidebar" data-page-node-id="8lTx797zy8UbUfWQC7tRPe">
         <div class="menu-group" data-page-node-id="ViIg2uk5Bawv1qcbFmUUWj">客户管理</div>
-        <div class="menu-item on" data-page-node-id="Qtd2AV3HU1ZslQOpTjlpYo" data-view="home"><svg class="ico" data-page-node-id="ngitKHnlt9EONWOdXQMVOq"><use href="#i-gauge" data-page-node-id="aLINULjYEXjcmDW0AquECu"></use></svg>客户总览看板</div>
-        <div class="menu-item" data-page-node-id="MyHyzFBVqVN4ShuL1HfOCw" data-view="customers" data-tab="inst"><svg class="ico" data-page-node-id="pzPWzYKb6kipRdj2NO0l7Y"><use href="#i-building" data-page-node-id="EvNSGBvB60KF5HO3tBRvxf"></use></svg>机构客户</div>
+        <div class="menu-item" data-page-node-id="Qtd2AV3HU1ZslQOpTjlpYo" data-view="home"><svg class="ico" data-page-node-id="ngitKHnlt9EONWOdXQMVOq"><use href="#i-gauge" data-page-node-id="aLINULjYEXjcmDW0AquECu"></use></svg>客户总览看板</div>
+        <div class="menu-item on" data-page-node-id="MyHyzFBVqVN4ShuL1HfOCw" data-view="customers" data-tab="inst"><svg class="ico" data-page-node-id="pzPWzYKb6kipRdj2NO0l7Y"><use href="#i-building" data-page-node-id="EvNSGBvB60KF5HO3tBRvxf"></use></svg>机构客户</div>
         <div class="menu-item" data-page-node-id="SH7hRnBZ9z7Vn0V7wDiF55" data-view="customers" data-tab="member"><svg class="ico" data-page-node-id="ia8BGJUHSNsv1HSj8SJFci"><use href="#i-users" data-page-node-id="944p9NU8hrJNYiAybXAJK6"></use></svg>成员与个人客户</div>
         <div class="menu-item" data-page-node-id="kfC8HnlF6pt54wwtHoNAtt" data-view="followups"><svg class="ico" data-page-node-id="XDRbCltawFpUDQ3TIvCFcr"><use href="#i-follow" data-page-node-id="rDTpiF3FjEGEE3auoqqbna"></use></svg>跟进管理</div>
         <div class="menu-group" data-page-node-id="c8YJqEIwG0bJtyqLGbwTmt">业务配置</div>
@@ -420,7 +426,7 @@ table.data tbody td{vertical-align:middle}
       <!-- 主内容 -->
       <main class="main" style="flex:1" data-page-node-id="bsaO2QbK7oi55j1XIP9p99">
 
-      <div class="view" data-view="home">
+      <div class="view" data-view="home" data-page-node-id="jws5ojQi6JyH3GFCnJuWSr" hidden="">
 
         <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
           <div data-page-node-id="jra7RFxBgbcWp0isyRiAYY">
@@ -499,7 +505,7 @@ table.data tbody td{vertical-align:middle}
               </div>
             </div>
             <div class="card-pad" data-page-node-id="D8cm76DnY6gODfesQpmGa0">
-              <div id="trendChart" style="width:100%" data-page-node-id="bo7o90tXHHksSNWbyEO5KH"><svg viewBox="0 0 572 200" width="100%" height="200" preserveAspectRatio="none"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#165DFF" stop-opacity="0.16"></stop><stop offset="100%" stop-color="#165DFF" stop-opacity="0"></stop></linearGradient></defs><line x1="48" y1="14" x2="558" y2="14" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="17.5" text-anchor="end" font-size="10" fill="#86909C">20</text><line x1="48" y1="54" x2="558" y2="54" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="57.5" text-anchor="end" font-size="10" fill="#86909C">15</text><line x1="48" y1="94" x2="558" y2="94" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="97.5" text-anchor="end" font-size="10" fill="#86909C">10</text><line x1="48" y1="134" x2="558" y2="134" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="137.5" text-anchor="end" font-size="10" fill="#86909C">5</text><line x1="48" y1="174" x2="558" y2="174" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="177.5" text-anchor="end" font-size="10" fill="#86909C">0</text><path d="M48.0 94.0 L87.2 54.0 L126.5 110.0 L165.7 78.0 L204.9 30.0 L244.2 102.0 L283.4 62.0 L322.6 86.0 L361.8 46.0 L401.1 70.0 L440.3 54.0 L479.5 78.0 L518.8 38.0 L558.0 54.0 L558.0 174 L48.0 174 Z" fill="url(#ag)"></path><path d="M48.0 94.0 L87.2 54.0 L126.5 110.0 L165.7 78.0 L204.9 30.0 L244.2 102.0 L283.4 62.0 L322.6 86.0 L361.8 46.0 L401.1 70.0 L440.3 54.0 L479.5 78.0 L518.8 38.0 L558.0 54.0" fill="none" stroke="#165DFF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="48.0" cy="94.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="87.2" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="126.5" cy="110.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="165.7" cy="78.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="204.9" cy="30.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="244.2" cy="102.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="283.4" cy="62.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="322.6" cy="86.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="361.8" cy="46.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="401.1" cy="70.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="440.3" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="479.5" cy="78.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="518.8" cy="38.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="558.0" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><text x="48.0" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-13</text><text x="87.2" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-12</text><text x="126.5" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-11</text><text x="165.7" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-10</text><text x="204.9" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-9</text><text x="244.2" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-8</text><text x="283.4" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-7</text><text x="322.6" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-6</text><text x="361.8" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-5</text><text x="401.1" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-4</text><text x="440.3" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-3</text><text x="479.5" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-2</text><text x="518.8" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-1</text><text x="558.0" y="192" text-anchor="middle" font-size="10" fill="#86909C">今日</text></svg></div>
+              <div id="trendChart" style="width:100%" data-page-node-id="bo7o90tXHHksSNWbyEO5KH"><svg viewBox="0 0 520 200" width="100%" height="200" preserveAspectRatio="none"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#165DFF" stop-opacity="0.16"></stop><stop offset="100%" stop-color="#165DFF" stop-opacity="0"></stop></linearGradient></defs><line x1="48" y1="14" x2="506" y2="14" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="17.5" text-anchor="end" font-size="10" fill="#86909C">20</text><line x1="48" y1="54" x2="506" y2="54" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="57.5" text-anchor="end" font-size="10" fill="#86909C">15</text><line x1="48" y1="94" x2="506" y2="94" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="97.5" text-anchor="end" font-size="10" fill="#86909C">10</text><line x1="48" y1="134" x2="506" y2="134" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="137.5" text-anchor="end" font-size="10" fill="#86909C">5</text><line x1="48" y1="174" x2="506" y2="174" stroke="#EEF1F6" stroke-width="1"></line><text x="40" y="177.5" text-anchor="end" font-size="10" fill="#86909C">0</text><path d="M48.0 94.0 L83.2 54.0 L118.5 110.0 L153.7 78.0 L188.9 30.0 L224.2 102.0 L259.4 62.0 L294.6 86.0 L329.8 46.0 L365.1 70.0 L400.3 54.0 L435.5 78.0 L470.8 38.0 L506.0 54.0 L506.0 174 L48.0 174 Z" fill="url(#ag)"></path><path d="M48.0 94.0 L83.2 54.0 L118.5 110.0 L153.7 78.0 L188.9 30.0 L224.2 102.0 L259.4 62.0 L294.6 86.0 L329.8 46.0 L365.1 70.0 L400.3 54.0 L435.5 78.0 L470.8 38.0 L506.0 54.0" fill="none" stroke="#165DFF" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="48.0" cy="94.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="83.2" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="118.5" cy="110.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="153.7" cy="78.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="188.9" cy="30.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="224.2" cy="102.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="259.4" cy="62.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="294.6" cy="86.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="329.8" cy="46.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="365.1" cy="70.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="400.3" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="435.5" cy="78.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="470.8" cy="38.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><circle cx="506.0" cy="54.0" r="3" fill="#fff" stroke="#165DFF" stroke-width="2"></circle><text x="48.0" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-13</text><text x="83.2" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-12</text><text x="118.5" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-11</text><text x="153.7" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-10</text><text x="188.9" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-9</text><text x="224.2" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-8</text><text x="259.4" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-7</text><text x="294.6" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-6</text><text x="329.8" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-5</text><text x="365.1" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-4</text><text x="400.3" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-3</text><text x="435.5" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-2</text><text x="470.8" y="192" text-anchor="middle" font-size="10" fill="#86909C">D-1</text><text x="506.0" y="192" text-anchor="middle" font-size="10" fill="#86909C">今日</text></svg></div>
               <div style="display:flex;gap:16px;font-size:11.5px;color:var(--muted);margin-top:6px;align-items:center" data-page-node-id="lb7jp53SBHwqFKcY2LfDmk">
                 <span style="display:flex;align-items:center;gap:5px" data-page-node-id="m15ryQK266qD53CtUuaK5a"><span style="width:14px;height:2px;background:#165DFF;display:inline-block" data-page-node-id="2p8HCWGfcQogWR2pB3R8vk"></span>新增数</span>
                 <span style="display:flex;align-items:center;gap:5px" data-page-node-id="b2mfoKxFpWqFksIPUqaDpo"><span style="width:14px;height:2px;background:#00B42A;display:inline-block" data-page-node-id="mF8gSYyoL7lpJShgX7BMMN"></span>累计数</span>
@@ -618,197 +624,197 @@ table.data tbody td{vertical-align:middle}
 
         </div><!-- /view-home -->
 
-        <div class="view" data-view="customers" hidden>
+        <div class="view" data-view="customers" data-page-node-id="KHRBVwKpZvh0oIbLq27Uwx">
           <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
-            <div>
-              <div class="page-title">客户管理</div>
-              <div class="page-sub">机构视图与成员与个人视图共用筛选栏；机构 10 家、成员与个人客户 7 名（示例数据）</div>
+            <div data-page-node-id="5UO58xj5j7YT0IPp4otFuf">
+              <div class="page-title" data-page-node-id="4ZVzL9R5yizzCgB1V5gZp4">客户管理</div>
+              <div class="page-sub" data-page-node-id="dVfE8sQBhMEFozFRO6Zq8R">机构视图与成员与个人视图共用筛选栏；机构 10 家、成员与个人客户 7 名（示例数据）</div>
             </div>
-            <div class="head-actions">
-              <button class="btn btn-outline"><svg class="ico"><use href="#i-upload"></use></svg>批量导入</button>
-              <button class="btn btn-primary"><svg class="ico"><use href="#i-download"></use></svg>导出 Excel</button>
+            <div class="head-actions" data-page-node-id="u90Z7FrsWM2jm7vUzEsNrC">
+              <button class="btn btn-outline" data-page-node-id="p3g5qCHEjN4AxRkkfdnhD1"><svg class="ico" data-page-node-id="sDDtjMkCSCefaVNCl3FD33"><use href="#i-upload" data-page-node-id="eoooMx3VTB2D4j9yCwb3YY"></use></svg>批量导入</button>
+              <button class="btn btn-primary" data-page-node-id="qC4aAC3qWca4cOtXBf0D0Z"><svg class="ico" data-page-node-id="5uJz1jLFT0yS6sDMF24T0D"><use href="#i-download" data-page-node-id="UetRDUAk1E8H59sWs5NFGn"></use></svg>导出 Excel</button>
             </div>
           </div>
         <!-- ★ 连线 3：客户主表 -->
         <div class="proto-element card section-gap hl" data-proto-id="3" data-page-node-id="EXmUNCw9gT0qYw4yQTrjpJ">
-          <div class="tabs">
-            <button class="tab on" id="tabInst" onclick="switchTab('inst')"><svg class="ico" style="font-size:14px"><use href="#i-building"></use></svg>机构视图</button>
-            <button class="tab" id="tabMember" onclick="switchTab('member')"><svg class="ico" style="font-size:14px"><use href="#i-users"></use></svg>成员与个人视图</button>
+          <div class="tabs" data-page-node-id="sMqDpx8y5Hwm7JD91di6A5">
+            <button class="tab on" id="tabInst" onclick="switchTab('inst')" data-page-node-id="65GuErpMWWFSCEUGxARnZi"><svg class="ico" style="font-size:14px" data-page-node-id="xA952anSgat6A6scOKe797"><use href="#i-building" data-page-node-id="9OGGxRU0pJErJfCa5RMxEC"></use></svg>机构视图</button>
+            <button class="tab" id="tabMember" onclick="switchTab('member')" data-page-node-id="oFntYzQmwJk2Ezphb7ZcXH"><svg class="ico" style="font-size:14px" data-page-node-id="wsFQhrZX3oj12vvT4UR0aF"><use href="#i-users" data-page-node-id="1JJNlLHhD14OI4FO9iA0Lg"></use></svg>成员与个人视图</button>
           </div>
 
-          <div class="filter-bar">
-            <div class="filter-grid">
-              <div class="fld span2">
-                <label class="fld-label">关键词</label>
-                <input class="input" type="text" placeholder="客户企业全称 / 用户id / 开户证件号码">
+          <div class="filter-bar" data-page-node-id="WKn9suM2GaLxfal9onuEpK">
+            <div class="filter-grid" data-page-node-id="zoqCzdRLtUD0CJ8oqj4Nqe">
+              <div class="fld span2" data-page-node-id="v7msrF7pzTBwxOpFEqZ5eE">
+                <label class="fld-label" data-page-node-id="33ZOijHJ1750OBcO6Ouwjk">关键词</label>
+                <input class="input" type="text" placeholder="客户企业全称 / 用户id / 开户证件号码" data-page-node-id="8It5ShNwNR0xwszGyLDlnd">
               </div>
-              <div class="fld">
-                <label class="fld-label">用户级别</label>
-                <select class="select"><option>全部</option><option>U0</option><option>UA1</option><option>UA2</option></select>
+              <div class="fld" data-page-node-id="uRQW3vuHhq3cNLN0bVM5J5">
+                <label class="fld-label" data-page-node-id="I4AqxqJnXwqN6hVUGIcpA5">用户级别</label>
+                <select class="select" data-page-node-id="iW9VW1GsNHzTWGkIQM2MTu"><option data-page-node-id="xZwmfRO9GhgDRSVsC4SBqs">全部</option><option data-page-node-id="4yEvIHD1mw7e6VILHnCpJc">U0</option><option data-page-node-id="BbfbxjybfROsiQ58GKGkR6">UA1</option><option data-page-node-id="vzEcAXAgDfSOH6JEiMjoS0">UA2</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">用户状态</label>
-                <select class="select"><option>全部</option><option>活跃</option><option>注销</option></select>
+              <div class="fld" data-page-node-id="4yVPm1uxxEEpr1f1NE0jfC">
+                <label class="fld-label" data-page-node-id="W49qco9upJ4EOXiHYXCr6U">用户状态</label>
+                <select class="select" data-page-node-id="oOStCLiFlWr4zara72EWio"><option data-page-node-id="iNAEPFpJ8KWCP8nvBamf15">全部</option><option data-page-node-id="yJvPfJqCGjne3C7zovFSWx">活跃</option><option data-page-node-id="ISjKg4YqWJpBT71gz311Wa">注销</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">法人属性</label>
-                <select class="select"><option>全部</option><option>一般法人</option><option>特殊法人</option></select>
+              <div class="fld" data-page-node-id="c1gHAxGotR5e0NZobUFaq8">
+                <label class="fld-label" data-page-node-id="QWHbXVq2iWdmmIcUSlGHpa">法人属性</label>
+                <select class="select" data-page-node-id="vmdkxRTLfjLkm8TX8vfq1C"><option data-page-node-id="jl3DMzbWZHoRDKGVNiGRGV">全部</option><option data-page-node-id="HpD6C9f4oKvzPnWxfc49VJ">一般法人</option><option data-page-node-id="vOsaChffcVxGSmlczQFKL0">特殊法人</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">企业模式</label>
-                <select class="select"><option>全部</option><option>管理员</option><option>操作员</option></select>
+              <div class="fld" data-page-node-id="dtTk3FpG57k9LZZzFFVsdf">
+                <label class="fld-label" data-page-node-id="hFMJOWIJ0jdWdvpFGg9kPm">企业模式</label>
+                <select class="select" data-page-node-id="C2HCuHbAbivJzabPyppiuh"><option data-page-node-id="QGiq8HlS9NELXpJQPtUzUb">全部</option><option data-page-node-id="Csnkc9DzCQKoTm94FTvxrl">管理员</option><option data-page-node-id="ZqTJ1DuIvpADvZewzf48Mo">操作员</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">业务单位</label>
-                <select class="select"><option>全部业务单位</option><option>宁波分公司</option><option>长沙分公司</option><option>南京分公司</option><option>福州分公司</option><option>北京分公司</option><option>广州分公司</option><option>深圳分公司</option><option>上海分公司</option><option>杭州分公司</option><option>武汉分公司</option></select>
+              <div class="fld" data-page-node-id="muAIkfHGXWitxEsfvmUxrM">
+                <label class="fld-label" data-page-node-id="EEdM3MXesyGPSDeAzWSOfx">业务单位</label>
+                <select class="select" data-page-node-id="GnIFlQBDYnQeeyECobNZ0a"><option data-page-node-id="eHXSopfEL3UVOMe5R10uLV">全部业务单位</option><option data-page-node-id="by9osOwDMdLE6JGePitUbV">宁波分公司</option><option data-page-node-id="MbaEAMAs6zQokHIFtZPgB7">长沙分公司</option><option data-page-node-id="NZtVo1v4sDTSHoseaQtnrC">南京分公司</option><option data-page-node-id="8rhgqw4YKTaH3sLOTRYhvW">福州分公司</option><option data-page-node-id="EzC61DHuGCPVk0pzUdrgtA">北京分公司</option><option data-page-node-id="eDoG3UPLcCYysn1iEss9oB">广州分公司</option><option data-page-node-id="WuPFaYfN06y3orQ5EtH0O7">深圳分公司</option><option data-page-node-id="aGJI7uTseXoDNny1OzD7ob">上海分公司</option><option data-page-node-id="wVaqd09oDUlvrHlCUVOnOH">杭州分公司</option><option data-page-node-id="dOFJVQ25dDE7fCjzSDn5FD">武汉分公司</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">客户经理</label>
-                <select class="select"><option>全部客户经理</option><option>孙倩</option><option>周涛</option><option>赵磊</option><option>郑凯</option><option>王芳</option><option>刘强</option><option>吴敏</option><option>黄丽</option><option>李娜</option></select>
+              <div class="fld" data-page-node-id="hPpKW5Puv0olDxrutcsyoa">
+                <label class="fld-label" data-page-node-id="RqGyrfTwT53aHI2q1vmZcq">客户经理</label>
+                <select class="select" data-page-node-id="CLJ1tmmcgS2NMUCSDOhnGO"><option data-page-node-id="fiZgvT9ut8G4XuRNEFmpb2">全部客户经理</option><option data-page-node-id="7l8uFxF71OWqC5rwrqHLAl">孙倩</option><option data-page-node-id="qiHSBNtivJ49MSZCNJQiBd">周涛</option><option data-page-node-id="AMr0uFd3CGQbxpwGdltK8E">赵磊</option><option data-page-node-id="IIs0fcnsr3FesrR2O1Mj61">郑凯</option><option data-page-node-id="PydmJd6hcQMzAyLQ5SR8Zh">王芳</option><option data-page-node-id="FAORYK40nGoy3v0YL8Rj0s">刘强</option><option data-page-node-id="cXbFyafTgeqNojXAjEsN89">吴敏</option><option data-page-node-id="olzGcZUnuhSJIieHXS4qAp">黄丽</option><option data-page-node-id="pfKTkv7U8BsNP5WOSo28NG">李娜</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">客户战略等级</label>
-                <select class="select"><option>全部</option><option>核心</option><option>重要</option><option>普通</option><option>潜力</option></select>
+              <div class="fld" data-page-node-id="WqaNZBLFJKXxMjR93FfNii">
+                <label class="fld-label" data-page-node-id="K8YhWhDLQxFx1WBKi7jz90">客户战略等级</label>
+                <select class="select" data-page-node-id="FH0VYSHMpUoEQR67o3cMuO"><option data-page-node-id="T9V0H6VJNvBE1S89X20wrz">全部</option><option data-page-node-id="qQoma7kRmMaSSifJx9CFUW">核心</option><option data-page-node-id="RcGthp5iNQYB0sJJP7mYip">重要</option><option data-page-node-id="srm9JIlIyGS4SEIZDePnOF">普通</option><option data-page-node-id="CrjXaiS3kOdGbG7U7i5PkO">潜力</option></select>
               </div>
-              <div class="fld">
-                <label class="fld-label">适当性等级</label>
-                <select class="select"><option>全部</option><option>C1</option><option>C2</option><option>C3</option><option>C4</option><option>C5</option></select>
-              </div>
-            </div>
-
-            <div class="filter-more" id="filterMore">
-              <div class="filter-grid">
-                <div class="fld">
-                  <label class="fld-label">开户证件号码</label>
-                  <input class="input" type="text" placeholder="统信码 / 身份证号">
-                </div>
-                <div class="fld">
-                  <label class="fld-label">证件类型</label>
-                  <select class="select"><option>全部</option><option>统信码</option><option>身份证</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">是否专业投资者</label>
-                  <select class="select"><option>全部</option><option>是</option><option>否</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">是否经纪业务客户</label>
-                  <select class="select"><option>全部</option><option>是</option><option>否</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">是否交易咨询客户</label>
-                  <select class="select"><option>全部</option><option>是</option><option>否</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">交易咨询已支付费用（万元）</label>
-                  <div class="range"><input class="input" type="text" placeholder="最小"><span class="sep">-</span><input class="input" type="text" placeholder="最大"></div>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">是否资管客户</label>
-                  <select class="select"><option>全部</option><option>是</option><option>否</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">权益规模（万元）</label>
-                  <div class="range"><input class="input" type="text" placeholder="最小"><span class="sep">-</span><input class="input" type="text" placeholder="最大"></div>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">登录方式</label>
-                  <select class="select"><option>全部</option><option>手机号/邮箱登录</option><option>用户名登录</option><option>微信登录</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">是否修改初始服务密码</label>
-                  <select class="select"><option>全部</option><option>是</option><option>否</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">电子密码器</label>
-                  <select class="select"><option>全部</option><option>已分配</option><option>未分配</option></select>
-                </div>
-                <div class="fld">
-                  <label class="fld-label">推荐人</label>
-                  <input class="input" type="text" placeholder="推荐人姓名">
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">电子密码器分配时间</label>
-                  <div class="range"><input class="input" type="date"><span class="sep">-</span><input class="input" type="date"></div>
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">服务密码发送时间</label>
-                  <div class="range"><input class="input" type="date"><span class="sep">-</span><input class="input" type="date"></div>
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">创建时间</label>
-                  <div class="range"><input class="input" type="date"><span class="sep">-</span><input class="input" type="date"></div>
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">更新时间</label>
-                  <div class="range"><input class="input" type="date"><span class="sep">-</span><input class="input" type="date"></div>
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">登录时间</label>
-                  <div class="range"><input class="input" type="date"><span class="sep">-</span><input class="input" type="date"></div>
-                </div>
-                <div class="fld span2">
-                  <label class="fld-label">网络地址</label>
-                  <input class="input" type="text" placeholder="如 115.204.88.31">
-                </div>
+              <div class="fld" data-page-node-id="cjZkbsCk43FYb3LibusHg9">
+                <label class="fld-label" data-page-node-id="v4fwkfaL0BT4NBzcF8wEEC">适当性等级</label>
+                <select class="select" data-page-node-id="v79W2XKwbRdGXfFvC1UzFH"><option data-page-node-id="R2jLwawSgTNSv7VC5YLftN">全部</option><option data-page-node-id="QmMPzBQivHHdLVvqm9HbOI">C1</option><option data-page-node-id="eWnh9DwWJ80AHUS0o8wwBs">C2</option><option data-page-node-id="spcHhfF3H93MhsjE5GsoEG">C3</option><option data-page-node-id="hbZHVa6e7cuqmdSni7CQLT">C4</option><option data-page-node-id="XolImx33mTKnQ4IJFtyjVQ">C5</option></select>
               </div>
             </div>
 
-            <div class="filter-actions">
-              <button class="btn btn-outline btn-sm" id="moreBtn" onclick="toggleMore()"><svg class="ico"><use href="#i-chevron"></use></svg><span>更多筛选</span></button>
-              <span class="hint" style="margin-left:2px">共 29 个字段可查</span>
-              <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap">
-                <button class="btn btn-primary btn-sm"><svg class="ico"><use href="#i-search"></use></svg>查询</button>
-                <button class="btn btn-text muted btn-sm"><svg class="ico"><use href="#i-redo"></use></svg>重置</button>
-                <button class="btn btn-outline btn-sm"><svg class="ico"><use href="#i-import"></use></svg>批量导入</button>
-                <button class="btn btn-outline btn-sm"><svg class="ico"><use href="#i-excel"></use></svg>导出Excel</button>
+            <div class="filter-more" id="filterMore" data-page-node-id="tw0oT5UxlZenfcMGfnkb24">
+              <div class="filter-grid" data-page-node-id="oPtVNqNi0zXLUT65eBnVeB">
+                <div class="fld" data-page-node-id="hTxj8KkWtesyd88tVUPPe1">
+                  <label class="fld-label" data-page-node-id="jYh8PhrOIne8DjLbDeJ4HE">开户证件号码</label>
+                  <input class="input" type="text" placeholder="统信码 / 身份证号" data-page-node-id="hxGAgXFji7FqhFs8UCWZSX">
+                </div>
+                <div class="fld" data-page-node-id="QKG1FKB6LjVs7ezx12fxx6">
+                  <label class="fld-label" data-page-node-id="nkDCF0gnCx55iQKeOrpBwQ">证件类型</label>
+                  <select class="select" data-page-node-id="52m6Ht0ApiVKZCSBSejdcG"><option data-page-node-id="qksv0uA6aQaXNw4VF7Dnfi">全部</option><option data-page-node-id="qydstS21bJwn56BRz6FEXS">统信码</option><option data-page-node-id="lEl95KVxb4O2orYj6nTeKo">身份证</option></select>
+                </div>
+                <div class="fld" data-page-node-id="HRSU095inUD8zsdT7Pcc0E">
+                  <label class="fld-label" data-page-node-id="UWmNKz2SfKU3JnABHThUpx">是否专业投资者</label>
+                  <select class="select" data-page-node-id="Pu5Lp1ogtrA04g29T1Z7Ay"><option data-page-node-id="vUtKelXTvV58vLqUHg10Oe">全部</option><option data-page-node-id="7Sjx8mPBMpvtkVGMOfXEqS">是</option><option data-page-node-id="nhebrcJFIfHGIGF24TK81W">否</option></select>
+                </div>
+                <div class="fld" data-page-node-id="hvYRHLnv2IaXVKFrH5hqa5">
+                  <label class="fld-label" data-page-node-id="Wh5xGlongeGkIRKMtmRPQR">是否经纪业务客户</label>
+                  <select class="select" data-page-node-id="8o8PNnOhe9u45CBpKeg8P2"><option data-page-node-id="xUD2H1gDH03v3RjNcggs39">全部</option><option data-page-node-id="iQC7kCAAvxkE50peuIC3bH">是</option><option data-page-node-id="ZKHBUIVXNF1695FPWDvuJt">否</option></select>
+                </div>
+                <div class="fld" data-page-node-id="AH6BJKCYxUrriIhB1yTbYR">
+                  <label class="fld-label" data-page-node-id="yi1Z9DbZ8AFRMMKvtQlHSR">是否交易咨询客户</label>
+                  <select class="select" data-page-node-id="YnBDD5RECu02tifxmg6WFP"><option data-page-node-id="Bm2JVdtzGN659193XbCmmM">全部</option><option data-page-node-id="AgsX028J1E2CGn9rUhn6TZ">是</option><option data-page-node-id="2DOrVhbxvT0oX3C5cu0a5g">否</option></select>
+                </div>
+                <div class="fld" data-page-node-id="rzanJIF3BzviWRKELnlVwm">
+                  <label class="fld-label" data-page-node-id="nTPQqWkqPU8q85T1OFLw4v">交易咨询已支付费用（万元）</label>
+                  <div class="range" data-page-node-id="YXV6BNRhA5gqbd1FpjEWi4"><input class="input" type="text" placeholder="最小" data-page-node-id="JrkqtC59R7M31T1yxJ1Fad"><span class="sep" data-page-node-id="9vTNDBJGD5R6wvpeST6ibl">-</span><input class="input" type="text" placeholder="最大" data-page-node-id="BhV1zVo2UkHKmEXrntlgPH"></div>
+                </div>
+                <div class="fld" data-page-node-id="k170ZxxpFC72OMSLphNnJr">
+                  <label class="fld-label" data-page-node-id="OgFCNqONHIUujGHbW787vO">是否资管客户</label>
+                  <select class="select" data-page-node-id="fTJo68fA7PIcsuDaRdDm4b"><option data-page-node-id="yL0e6eQXUN8UjDlv2XHtbI">全部</option><option data-page-node-id="s0UIcKG3xHTiryVb2hLOOu">是</option><option data-page-node-id="yE6cxtMUWwbxtr3WGzKIkU">否</option></select>
+                </div>
+                <div class="fld" data-page-node-id="CKdE9tWFSStkj1mWFX0ANI">
+                  <label class="fld-label" data-page-node-id="k3pWcUDbNtSnp8EXC8S0l9">权益规模（万元）</label>
+                  <div class="range" data-page-node-id="LErcDBBIgvAH5JDwKTorNq"><input class="input" type="text" placeholder="最小" data-page-node-id="da1IgDfuJk5BUNp3jfHgYx"><span class="sep" data-page-node-id="noYfH0kOPhpXxc37VP9CwI">-</span><input class="input" type="text" placeholder="最大" data-page-node-id="BsWcxrwOpTRm4xsNkoj3q1"></div>
+                </div>
+                <div class="fld" data-page-node-id="qPfVX33HVCSZCjwPO69lal">
+                  <label class="fld-label" data-page-node-id="iA5MoGogMpmSwF74rRdNFL">登录方式</label>
+                  <select class="select" data-page-node-id="ZiA7yfEiRcN6LEvaj1WR3w"><option data-page-node-id="qqlx0pLFgzXeWYooDpSmLR">全部</option><option data-page-node-id="CwUHTTvyrBerQnmk6ICaWK">手机号/邮箱登录</option><option data-page-node-id="EY7taR6xcojBUmAgYrAmbp">用户名登录</option><option data-page-node-id="fHFHhZOGSJldp0henaMPXB">微信登录</option></select>
+                </div>
+                <div class="fld" data-page-node-id="nA8A99BeRAmXGRGQTwaBtT">
+                  <label class="fld-label" data-page-node-id="iTDDgeLkjA2HvuwK6JvuqF">是否修改初始服务密码</label>
+                  <select class="select" data-page-node-id="bACojmxJGBazV0ufovVcSE"><option data-page-node-id="hoha7bXFNfONuCELT4UGa3">全部</option><option data-page-node-id="PPR77wlwCG3vqKjykUIKMM">是</option><option data-page-node-id="kMcCh7nLwHHxCtG3MFlOeO">否</option></select>
+                </div>
+                <div class="fld" data-page-node-id="bTMvzjvvdpcD0da3zlFlqN">
+                  <label class="fld-label" data-page-node-id="MR9mYfJdFkWUaMVU2DliJC">电子密码器</label>
+                  <select class="select" data-page-node-id="G6ojb3r5qgjdpyJ1J0F63F"><option data-page-node-id="vunsOiwhGEQqV7C3LKYOXX">全部</option><option data-page-node-id="oBoOgMLpYbeZ1dTj0cJAit">已分配</option><option data-page-node-id="ULPDPWEoRbgLuixPiT1PHJ">未分配</option></select>
+                </div>
+                <div class="fld" data-page-node-id="V4Eug9MaIZ5yDR8Zr2wWMg">
+                  <label class="fld-label" data-page-node-id="mcafVEaDzjqlDZg8EEYpJY">推荐人</label>
+                  <input class="input" type="text" placeholder="推荐人姓名" data-page-node-id="OJ3wFdqABs9gv91QGxPUaB">
+                </div>
+                <div class="fld span2" data-page-node-id="lRs34fdYuHuYq9EZBo72Ay">
+                  <label class="fld-label" data-page-node-id="V1OD9fE4eiOdoHC6tIp3pO">电子密码器分配时间</label>
+                  <div class="range" data-page-node-id="nPIOlbeYUtVr2OH0YQWsP3"><input class="input" type="date" data-page-node-id="ZQtAogT6hEzD3CeznCm9JQ"><span class="sep" data-page-node-id="aywQYhjD8jtSc4D3kqNGoZ">-</span><input class="input" type="date" data-page-node-id="ArC8IhHEirgCodjOd1uUIv"></div>
+                </div>
+                <div class="fld span2" data-page-node-id="yMpatuPI9SZczHjoLy5uPC">
+                  <label class="fld-label" data-page-node-id="QZmtfX2U5YbdxNi7qzmy44">服务密码发送时间</label>
+                  <div class="range" data-page-node-id="gDCFiL3o3G52VZhVU0nbX0"><input class="input" type="date" data-page-node-id="eJiLTGF6FOfJIvAzuU5Kvl"><span class="sep" data-page-node-id="4nZy3yXYVpmuPD0xi3xmyE">-</span><input class="input" type="date" data-page-node-id="M6aNqaY1xXyJ8GLEdBMJfB"></div>
+                </div>
+                <div class="fld span2" data-page-node-id="Hjm49yPiV6sWNQcWElEAqB">
+                  <label class="fld-label" data-page-node-id="KC0ViQoBGnHtOG6NxH4A1i">创建时间</label>
+                  <div class="range" data-page-node-id="PrsxOR2oMm6OE4Ai7eKD9H"><input class="input" type="date" data-page-node-id="oGQuoCUtXZYAgycMm1vnmq"><span class="sep" data-page-node-id="MnNDR6bweW0zZaYrwAfuBx">-</span><input class="input" type="date" data-page-node-id="pU9AFoTEW6dVxUUfXRjuBO"></div>
+                </div>
+                <div class="fld span2" data-page-node-id="EjMMCmCsP1cYP2zrLAtKxH">
+                  <label class="fld-label" data-page-node-id="ic5PHgDoY7D0jU8guUMHuq">更新时间</label>
+                  <div class="range" data-page-node-id="oDnGVuXZWE9qBORREasVrM"><input class="input" type="date" data-page-node-id="B5PR6G9H0CmkPa1UMsPJbz"><span class="sep" data-page-node-id="DaskhdocIOCsumEVLL502u">-</span><input class="input" type="date" data-page-node-id="FZp9VsEVr1lETzgkW51uUR"></div>
+                </div>
+                <div class="fld span2" data-page-node-id="oWy6jNBAqYZxOJqH5Ln7Ui">
+                  <label class="fld-label" data-page-node-id="rAZvyQrNMb5G3FtCzXgAGF">登录时间</label>
+                  <div class="range" data-page-node-id="NCSxBZLMSvHrpoZGDnoDNr"><input class="input" type="date" data-page-node-id="c9YaOKvYCBJJkkrvLSGh4b"><span class="sep" data-page-node-id="oWThrhIJ68XDVqE4ZAp1LF">-</span><input class="input" type="date" data-page-node-id="e6NVxWIkbgpG2CA7FB0a7U"></div>
+                </div>
+                <div class="fld span2" data-page-node-id="hwmIE5IpozrCRhzKZYEGW5">
+                  <label class="fld-label" data-page-node-id="QtLU9jOARVeqHiS9QEeyam">网络地址</label>
+                  <input class="input" type="text" placeholder="如 115.204.88.31" data-page-node-id="xwQdFZzQzEtIXmFNDJgCzU">
+                </div>
+              </div>
+            </div>
+
+            <div class="filter-actions" data-page-node-id="ElE3BAvSUUKWH8y9bR40ir">
+              <button class="btn btn-outline btn-sm" id="moreBtn" onclick="toggleMore()" data-page-node-id="TJw33kdCpIsBsEnTmKXwwD"><svg class="ico" data-page-node-id="c7gCCGuhToHJNgBCWqeT8z"><use href="#i-chevron" data-page-node-id="06PZl2zFcynRPcjLH9pfDW"></use></svg><span data-page-node-id="J16s6eaTOJTjkh13GDE5Qb">更多筛选</span></button>
+              <span class="hint" style="margin-left:2px" data-page-node-id="0KbPeoY9bUKxeJfVXygHB4">共 29 个字段可查</span>
+              <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap" data-page-node-id="amakHMRzU1Alkhq52W9Cmh">
+                <button class="btn btn-primary btn-sm" data-page-node-id="aBLxWpzls7oMxjZHrISDs4"><svg class="ico" data-page-node-id="jvLH52JHWCkghPpoa1GME1"><use href="#i-search" data-page-node-id="4dWFwecufAbqsarVYqmVPk"></use></svg>查询</button>
+                <button class="btn btn-text muted btn-sm" data-page-node-id="rm9Uddp8FtV5TKjJF15Y8R"><svg class="ico" data-page-node-id="pnZOpSZPUYKxt2BHg88wyr"><use href="#i-redo" data-page-node-id="Ox8KFtJ1U5EGwh9sjhBUkQ"></use></svg>重置</button>
+                <button class="btn btn-outline btn-sm" data-page-node-id="qACQtgcuf5QF0NvWl0dBPE"><svg class="ico" data-page-node-id="7aT6rXKJznpBB4Of5twjsK"><use href="#i-import" data-page-node-id="ogIXPp8ERJzfrrf6cVsZ16"></use></svg>批量导入</button>
+                <button class="btn btn-outline btn-sm" data-page-node-id="trDPXUujS8MwpATR240UEw"><svg class="ico" data-page-node-id="R2cLKQ95Xf4MGemjQXjxV4"><use href="#i-excel" data-page-node-id="EtDMbjq0zCyWM3qNTDli1p"></use></svg>导出Excel</button>
               </div>
             </div>
           </div>
 
-          <div class="table-hint"><svg class="ico" style="font-size:13px"><use href="#i-info"></use></svg>机构视图共 29 个字段，表格可横向滚动查看；业务单位与客户经理按业务线分别展示</div>
+          <div class="table-hint" data-page-node-id="icWdocsu1ijNMMFdEFFyMj"><svg class="ico" style="font-size:13px" data-page-node-id="69YqrFNzpTOQJGbd1FHPTl"><use href="#i-info" data-page-node-id="ZQc2p69Mk6GemQBTS7cTM7"></use></svg>机构视图共 29 个字段，表格可横向滚动查看；业务单位与客户经理按业务线分别展示</div>
 
-          <div id="tableInst" class="table-wrap">
-            <table class="data">
-              <thead>
-                <tr class="grp">
-                  <th colspan="7" class="gstart">基本信息</th>
-                  <th colspan="4" class="gstart">合规与适当性</th>
-                  <th colspan="6" class="gstart">业务线与归属</th>
-                  <th colspan="5" class="gstart">账号与安全</th>
-                  <th colspan="7" class="gstart">审计信息</th>
-                  <th rowspan="2" class="gstart act">操作</th>
+          <div id="tableInst" class="table-wrap" data-page-node-id="VQf25Tb8Km17lMqgSPFmk1" style="">
+            <table class="data" data-page-node-id="lnCjORhzmSgpZbzoWvHEhZ">
+              <thead data-page-node-id="Fp77Fi4qPyi0zOIov2MC9F">
+                <tr class="grp" data-page-node-id="FA8wI0HvBLGq3WlALuHeB6">
+                  <th colspan="7" class="gstart" data-page-node-id="3flPP8vescjVQGXxvUSGd0">基本信息</th>
+                  <th colspan="4" class="gstart" data-page-node-id="YxUHW3Ep2E1HHb2kvuZvMc">合规与适当性</th>
+                  <th colspan="6" class="gstart" data-page-node-id="Y3YT5d0AJ7FmNghJ1fqBbF">业务线与归属</th>
+                  <th colspan="5" class="gstart" data-page-node-id="lgW1REx5zeqlKCpaFcwkt6">账号与安全</th>
+                  <th colspan="7" class="gstart" data-page-node-id="gqbvh2qE4mKQpQCN1KETJl">审计信息</th>
+                  <th rowspan="2" class="gstart act" data-page-node-id="eMr3vW92oAc7DP4iZPamxK">操作</th>
                 </tr>
-                <tr>
-                  <th>用户id</th><th class="tc">用户级别</th><th class="tc">用户状态</th><th>客户企业全称</th>
-                  <th>开户证件号码</th><th>法人属性</th><th class="tc">企业模式</th>
-                  <th class="tc">适当性等级</th><th class="tc">是否专业投资者</th><th class="tc">客户战略等级</th><th class="tr">权益规模</th>
-                  <th class="tc">是否经纪业务客户</th><th class="tc">是否交易咨询客户</th><th class="tr">交易咨询已支付费用</th><th class="tc">是否资管客户</th><th>业务单位</th><th>客户经理</th>
-                  <th>电子密码器分配时间</th><th>服务密码发送时间</th><th class="tc">电子密码器</th><th>登录方式</th><th class="tc">是否修改初始服务密码</th>
-                  <th>创建时间</th><th>创建人</th><th>更新时间</th><th>更新人</th><th>推荐人</th><th>登录时间</th><th>网络地址</th>
+                <tr data-page-node-id="d6mwa8Gv8HpLfuag5Fb2fi">
+                  <th data-page-node-id="JzdUXZqXBfsc5qNGjRbLF3">用户id</th><th class="tc" data-page-node-id="BzHZzA0F4t6tNISgNgmMOu">用户级别</th><th class="tc" data-page-node-id="KLBuAkgFqNygdACOEd8n6c">用户状态</th><th data-page-node-id="PS4VUnFhL8THrtj9QVTpVD">客户企业全称</th>
+                  <th data-page-node-id="vBGwr0durJfd4v05JsLoQ9">开户证件号码</th><th data-page-node-id="9Xf8s6yPFXUUunJeR3G0WD">法人属性</th><th class="tc" data-page-node-id="hVAeI0AtKA4ZFBGyuZESxb">企业模式</th>
+                  <th class="tc" data-page-node-id="A225xqt5WZeeVD0ZKTmn7E">适当性等级</th><th class="tc" data-page-node-id="aUXKO3aogVhNlGMPYRYsjW">是否专业投资者</th><th class="tc" data-page-node-id="iAXFu7H5DB5Bwyy8Kx4z57">客户战略等级</th><th class="tr" data-page-node-id="YvydU1s1uNZQHr0baS7XIw">权益规模</th>
+                  <th class="tc" data-page-node-id="N0xTGVu1rXrnKctQaTonN7">是否经纪业务客户</th><th class="tc" data-page-node-id="wz5lxuCVDTU3Ad62li0SXe">是否交易咨询客户</th><th class="tr" data-page-node-id="e8sDF75rYDrkEujhqzeBH7">交易咨询已支付费用</th><th class="tc" data-page-node-id="4kqzV0ZuHBQFizXDklklFG">是否资管客户</th><th data-page-node-id="XTBHjXsnq6RiTVaTWljRAH" style="">业务</th><th data-page-node-id="htIFDIFO1CGQBvYa2jEc6A">客户经理</th>
+                  <th data-page-node-id="Fa7PAjQHEFjoZZY8O2FIeh">电子密码器分配时间</th><th data-page-node-id="IuzpdmAugDMZQSTL3M1FND">服务密码发送时间</th><th class="tc" data-page-node-id="emdo0W99M4OhLVAbLyMwc1">电子密码器</th><th data-page-node-id="9QAFf1pWCjRtFaPXBP0hpD">登录方式</th><th class="tc" data-page-node-id="5QqT122g4lYEO35Hypvqbp">是否修改初始服务密码</th>
+                  <th data-page-node-id="PXTBixn0jTEVMjknqGAhnR">创建时间</th><th data-page-node-id="eylF7rVe84LfrLBVisjG1x">创建人</th><th data-page-node-id="84VsQbjUMCt70nxJqfuoHO">更新时间</th><th data-page-node-id="BnZ2YXTY58tTFKtWYZnDom">更新人</th><th data-page-node-id="W7jXYXJEVvVjMe0rSksiRL">推荐人</th><th data-page-node-id="akY7MQCMKqUHjIYVuEJut1">登录时间</th><th data-page-node-id="SWHAB3i21SKWFI2GMNVCNQ">网络地址</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr onclick="selectRow(this)"><td class="id">I2000</td><td class="tc"><span class="tag tag-blue">UA1</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">天合控股有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91850988609509399800</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C4</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-gray">普通</span></td><td class="tr strong">8,088万</td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="yn y">是</span></td><td class="tr">12.00万</td><td class="tc"><span class="yn y">是</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>宁波分公司</span><span><span class="bl bl-adv">咨询</span>宁波分公司</span><span><span class="bl bl-am">资管</span>上海分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>孙倩</span><span><span class="bl bl-am">资管</span>王芳</span></div></td><td>2024-09-24 10:12</td><td>2024-09-23 16:40</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>手机号/邮箱登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-09-23 15:02</td><td>孙倩</td><td>2024-11-05 09:31</td><td>赵磊</td><td>陈静</td><td>2026-09-22 09:14</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">115.204.88.31</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2001</td><td class="tc"><span class="tag tag-gray">UA0</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">远大医疗有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91324717822948298400</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C3</span></td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="tag tag-orange">潜力</span></td><td class="tr strong">24,375万</td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="yn n">否</span></td><td class="tr"><span class="dash">—</span></td><td class="tc"><span class="yn n">否</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>长沙分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>周涛</span></div></td><td>2024-02-13 09:20</td><td>2024-02-12 18:05</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>用户名登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-02-12 17:40</td><td>周涛</td><td>2025-03-18 11:02</td><td>周涛</td><td>马超</td><td>2026-09-19 14:52</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">61.140.27.88</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2002</td><td class="tc"><span class="tag tag-orange">UA2</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">盛源供应链有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91968266690942694800</span></span></div></td><td><span class="tag tag-blue">特殊法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C4</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-red">核心</span></td><td class="tr strong">15,489万</td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="yn n">否</span></td><td class="tr"><span class="dash">—</span></td><td class="tc"><span class="yn y">是</span></td><td><div class="biz-cell"><span><span class="bl bl-am">资管</span>上海分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-am">资管</span>赵磊</span></div></td><td>2024-07-03 14:11</td><td>2024-07-02 20:33</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>手机号/邮箱登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-07-02 19:58</td><td>赵磊</td><td>2025-06-30 16:20</td><td>王芳</td><td>孙倩</td><td>2026-09-23 08:05</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">202.96.134.7</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2003</td><td class="tc"><span class="tag tag-blue">UA1</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">博远实业有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91144816372143893440</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C5</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-blue">重要</span></td><td class="tr strong">25,938万</td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="yn y">是</span></td><td class="tr">28.50万</td><td class="tc"><span class="yn n">否</span></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>北京分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>郑凯</span></div></td><td>2024-05-15 10:40</td><td>2024-05-14 17:22</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>微信登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-05-14 16:50</td><td>郑凯</td><td>2025-09-12 10:15</td><td>郑凯</td><td>吴敏</td><td>2026-09-21 16:40</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">123.116.55.19</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2004</td><td class="tc"><span class="tag tag-gray">U0</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">盛源科技有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91792114895648907400</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-gray">操作员</span></td><td class="tc"><span class="tag tag-blue">C2</span></td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="tag tag-gray">普通</span></td><td class="tr strong">5,914万</td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="yn y">是</span></td><td class="tr">6.00万</td><td class="tc"><span class="yn n">否</span></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>深圳分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>郑凯</span></div></td><td><span class="dash">—</span></td><td>2024-03-06 09:12</td><td class="tc"><span class="tag tag-gray">未分配</span></td><td>用户名登录</td><td class="tc"><span class="yn n">否</span></td><td>2024-03-05 20:31</td><td>郑凯</td><td>2025-01-20 14:07</td><td>刘强</td><td>黄丽</td><td>2026-08-30 11:23</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">183.14.30.66</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2005</td><td class="tc"><span class="tag tag-blue">UA1</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">中盛新材料有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91111280110713858340</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C4</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-gray">普通</span></td><td class="tr strong">31,343万</td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="yn n">否</span></td><td class="tr"><span class="dash">—</span></td><td class="tc"><span class="yn y">是</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>南京分公司</span><span><span class="bl bl-am">资管</span>上海分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>王芳</span><span><span class="bl bl-am">资管</span>孙倩</span></div></td><td>2024-02-18 15:33</td><td>2024-02-17 19:44</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>手机号/邮箱登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-02-17 18:12</td><td>王芳</td><td>2025-08-08 09:50</td><td>赵磊</td><td>陈静</td><td>2026-09-22 17:31</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">58.246.90.12</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2006</td><td class="tc"><span class="tag tag-gray">UA0</span></td><td class="tc"><span class="tag tag-gray">注销</span></td><td class="strong">瑞祥科技有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91528335142181277200</span></span></div></td><td><span class="tag tag-blue">特殊法人</span></td><td class="tc"><span class="tag tag-gray">操作员</span></td><td class="tc"><span class="tag tag-blue">C3</span></td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="tag tag-orange">潜力</span></td><td class="tr strong">24,650万</td><td class="tc"><span class="yn n">否</span></td><td class="tc"><span class="yn y">是</span></td><td class="tr">9.80万</td><td class="tc"><span class="yn n">否</span></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>杭州分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-adv">咨询</span>王芳</span></div></td><td>2024-05-26 11:05</td><td>2024-05-25 16:18</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>微信登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-05-25 15:40</td><td>王芳</td><td>2025-11-02 10:28</td><td>李娜</td><td>马超</td><td>2025-10-14 09:02</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">115.199.24.77</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2007</td><td class="tc"><span class="tag tag-blue">UA1</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">华信科技有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91166419987513530530</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C4</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-gray">普通</span></td><td class="tr strong">20,266万</td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="yn n">否</span></td><td class="tr"><span class="dash">—</span></td><td class="tc"><span class="yn n">否</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>广州分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>周涛</span></div></td><td>2024-09-22 09:47</td><td>2024-09-21 18:33</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>手机号/邮箱登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-09-21 17:55</td><td>周涛</td><td>2025-07-19 13:12</td><td>周涛</td><td>刘强</td><td>2026-09-20 10:47</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">113.108.77.5</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2008</td><td class="tc"><span class="tag tag-orange">UA2</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">泰丰医疗有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91450012309876543210</span></span></div></td><td><span class="tag tag-blue">一般法人</span></td><td class="tc"><span class="tag tag-blue">管理员</span></td><td class="tc"><span class="tag tag-blue">C4</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-red">核心</span></td><td class="tr strong">45,190万</td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="yn y">是</span></td><td class="tr">35.00万</td><td class="tc"><span class="yn y">是</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>福州分公司</span><span><span class="bl bl-adv">咨询</span>福州分公司</span><span><span class="bl bl-am">资管</span>上海分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>周涛</span><span><span class="bl bl-adv">咨询</span>赵磊</span><span><span class="bl bl-am">资管</span>孙倩</span></div></td><td>2024-09-12 10:20</td><td>2024-09-11 19:05</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>手机号/邮箱登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-09-11 18:30</td><td>周涛</td><td>2026-02-14 15:44</td><td>赵磊</td><td>陈静</td><td>2026-09-23 09:38</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">117.28.140.62</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
-                <tr onclick="selectRow(this)"><td class="id">I2009</td><td class="tc"><span class="tag tag-blue">UA1</span></td><td class="tc"><span class="tag tag-green">活跃</span></td><td class="strong">瑞祥新材料有限公司</td><td><div class="biz-cell"><span><span class="bl bl-api">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)">91330199887766554400</span></span></div></td><td><span class="tag tag-blue">特殊法人</span></td><td class="tc"><span class="tag tag-gray">操作员</span></td><td class="tc"><span class="tag tag-blue">C5</span></td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="tag tag-blue">重要</span></td><td class="tr strong">49,243万</td><td class="tc"><span class="yn y">是</span></td><td class="tc"><span class="yn n">否</span></td><td class="tr"><span class="dash">—</span></td><td class="tc"><span class="yn y">是</span></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>南京分公司</span><span><span class="bl bl-am">资管</span>上海分公司</span></div></td><td><div class="biz-cell"><span><span class="bl bl-brk">经纪</span>周涛</span><span><span class="bl bl-am">资管</span>赵磊</span></div></td><td>2024-06-22 14:09</td><td>2024-06-21 17:50</td><td class="tc"><span class="tag tag-green">已分配</span></td><td>用户名登录</td><td class="tc"><span class="yn y">是</span></td><td>2024-06-21 17:10</td><td>周涛</td><td>2025-12-30 11:36</td><td>孙倩</td><td>吴敏</td><td>2026-09-18 15:26</td><td><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)">122.224.31.40</span></td><td class="tc act"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')">重置密码</button></td></tr>
+              <tbody data-page-node-id="WvjngjeocpLmUDcBGYX04e">
+                <tr onclick="selectRow(this)" data-page-node-id="CQP7J4vQBlvNYnEr3HN326"><td class="id" data-page-node-id="ZxSC0KteD8WfN2H294rMeu">I2000</td><td class="tc" data-page-node-id="q9BFIWTboRS90pJiLcF04U"><span class="tag tag-blue" data-page-node-id="mJMsA0nly5VfN7cBW56h0q">UA1</span></td><td class="tc" data-page-node-id="zWiSsdHXevhSgd95sCkyEC"><span class="tag tag-green" data-page-node-id="KjAAMwzzQkEc26RIoESHXo">活跃</span></td><td class="strong" data-page-node-id="VzKJCiQY5T3WItwEEQD4xF">天合控股有限公司</td><td data-page-node-id="Uw2o5DwQExeuBakOoSpQHX"><div class="biz-cell" data-page-node-id="XGQZ4auit9Fz82pyIh5bI2"><span data-page-node-id="0UsDl13Rp4X8PiNzaMoXOb"><span class="bl bl-api" data-page-node-id="RC9uk8KrH9caFRiXH2BTXE">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="pemTe7XCVaJn96tShSCkDs">91850988609509399800</span></span></div></td><td data-page-node-id="ZNFbs04rLiwvdLWVtWZSZW"><span class="tag tag-blue" data-page-node-id="2131GW36UaYHz5tePTmcTK">一般法人</span></td><td class="tc" data-page-node-id="qJd06R765OjtIw2XMi6jJc"><span class="tag tag-blue" data-page-node-id="eB14DQrYRkRILGceqQAn6C">管理员</span></td><td class="tc" data-page-node-id="v3eGsNYHgZAwnABEyaA2M4"><span class="tag tag-blue" data-page-node-id="G9G4guUZOHtrseKuGbhixM">C4</span></td><td class="tc" data-page-node-id="8U4u9FwCf37n0uPtqLsvs5"><span class="yn y" data-page-node-id="9RsPvAZUEwlRRNWsIiiXte">是</span></td><td class="tc" data-page-node-id="SRqMr8UYpoMhrD3SR4lZIN"><span class="tag tag-gray" data-page-node-id="9fASdwORlkjpUcMowKOehH">普通</span></td><td class="tr strong" data-page-node-id="ZYi7FBrh9SpXNR3PlqIiFe">8,088万</td><td class="tc" data-page-node-id="GG9ra0sUvuO2mEXTGSETJp"><span class="yn n" data-page-node-id="8RSBSEzkMEACJicX5UlUd6">否</span></td><td class="tc" data-page-node-id="RpCzOWiTizuAqGjecYWncv"><span class="yn y" data-page-node-id="wGokrGCoFezHdaKC8QhG7s">是</span></td><td class="tr" data-page-node-id="R5BxvGfUs2HoSHvjfGqMie">12.00万</td><td class="tc" data-page-node-id="aihGbf2MzhfMiqjFRAbVtU"><span class="yn y" data-page-node-id="SVcAs51mOZ9DIZfHIRs3ho">是</span></td><td data-page-node-id="eycy01Oh7VLOizB4Lk0acW"><div class="biz-cell" data-page-node-id="UCVwKItqL54h9CvDErYGeQ"><span data-page-node-id="9ImgLvorLewDcHYNZYXrVs"><span class="bl bl-brk" data-page-node-id="EHqvo55gsn87EHifEf3Cnj">经纪</span>宁波分公司</span><span data-page-node-id="dvtwDG05K7B4w1Qkdg7YN3"><span class="bl bl-adv" data-page-node-id="3GV45xVG1vDuM0tOEKEjKj">咨询</span>宁波分公司</span><span data-page-node-id="BxDdf6WOsJikTEWMXSrN7t"><span class="bl bl-am" data-page-node-id="l0QelFxUcK6nA5DKXmMVAG">资管</span>上海分公司</span></div></td><td data-page-node-id="5ripfBVtHIEonfA6LvTbZG"><div class="biz-cell" data-page-node-id="FVlnxIG4FjzdbIPWl5YgAR"><span data-page-node-id="GiRCJK9NdeEplq8QYPUJ6w"><span class="bl bl-adv" data-page-node-id="iQquV4iMVpIjC52SL1qkJE">咨询</span>孙倩</span><span data-page-node-id="YRqeBiOHAfBgzQgACtF4Ea"><span class="bl bl-am" data-page-node-id="ywWmGkaQT2KPAOVcEyj7Sc">资管</span>王芳</span></div></td><td data-page-node-id="M51FD2G1iwr9Aqutdv3il3">2024-09-24 10:12</td><td data-page-node-id="opkDtVbofhyOCJw3tlFFd5">2024-09-23 16:40</td><td class="tc" data-page-node-id="CqNbTa1YvZQLXovuTGAnMW"><span class="tag tag-green" data-page-node-id="6jWqCBFVoLAIJxT9JLhdIC">已分配</span></td><td data-page-node-id="see4QITVSvbQEIy0ehh7RH">手机号/邮箱登录</td><td class="tc" data-page-node-id="GA2fhheiGv8AEJeBb2hjnq"><span class="yn y" data-page-node-id="EJ0X4SJYUfu3CL3lnEFtKC">是</span></td><td data-page-node-id="TTkDBbWbMJgeTXMUcfCAfU">2024-09-23 15:02</td><td data-page-node-id="6aSxmjNAIxgb5YHKoESeVC">孙倩</td><td data-page-node-id="ctamClb81DvL6eNoVj17DD">2024-11-05 09:31</td><td data-page-node-id="bmJvpcbAFMBE5LpAEzr19t">赵磊</td><td data-page-node-id="xBo4e6TrCvhdDVxCqCTz7L">陈静</td><td data-page-node-id="fw0wdKvVcbLGB4wNoHtT3x">2026-09-22 09:14</td><td data-page-node-id="ssqBdkA4bUFmH1KTXCWlNY"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="AF1ACXrQ3iMdpN3JgJDAWc">115.204.88.31</span></td><td class="tc act" data-page-node-id="i2s6UNT8Ub7EV5cqyouehi"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="E2tBfU63blB50UzxlBw3Ux">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="K5Mj678qO4FOgvIwLrngpN">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="sLIVGe0kaU6ihVCeG2DlbM">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="cK77ohaTCyRA8qh1tFIDmg"><td class="id" data-page-node-id="IrEAJboKvfxAL6CtuLKBQ6">I2001</td><td class="tc" data-page-node-id="8ER24ZYHRi5KlZsxmjAM7G"><span class="tag tag-gray" data-page-node-id="rYggrCK5DZSMXC6aXXEW6e">UA0</span></td><td class="tc" data-page-node-id="Q3TwMxfYmOUTTkRMrSnk92"><span class="tag tag-green" data-page-node-id="u7Mw3r1T4BR6rdvDTp5lTv">活跃</span></td><td class="strong" data-page-node-id="rqYn7UNUvPVk8NcKUlNYaq">远大医疗有限公司</td><td data-page-node-id="geZGFrGy5TCjMGONrMoVCf"><div class="biz-cell" data-page-node-id="FrG8g5aBTJzGjg797wqOJU"><span data-page-node-id="Jxff4ZAFOR99GxWe6CPJeG"><span class="bl bl-api" data-page-node-id="V81GH5wTZiiWAUHBAf5R7z">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="7BEBd0BCmoKCKBMofUB4t7">91324717822948298400</span></span></div></td><td data-page-node-id="1QcDDC9GY08oC6YvlGfPze"><span class="tag tag-blue" data-page-node-id="cpU01A5TDwcQ7zreGQB73t">一般法人</span></td><td class="tc" data-page-node-id="1d9gHuHdokCwTPvqdOv6QG"><span class="tag tag-blue" data-page-node-id="nqR4sON8zz9IcpcwspYlKw">管理员</span></td><td class="tc" data-page-node-id="9joJXhAmiBZt8Ox8BHAqWr"><span class="tag tag-blue" data-page-node-id="yS1wUHHHDd2GEJ9oZhtQsU">C3</span></td><td class="tc" data-page-node-id="BJdTqBj8KWTezMtuFFKS4h"><span class="yn n" data-page-node-id="0aMVQvBHYOs6SaPxEtorqb">否</span></td><td class="tc" data-page-node-id="89RAb0Ds0hVPsptz866BW1"><span class="tag tag-orange" data-page-node-id="pVhgwgAQdRHzbv8rTswAbO">潜力</span></td><td class="tr strong" data-page-node-id="lobGyK2Sc3Owj59yRPQL7x">24,375万</td><td class="tc" data-page-node-id="R0CxZtc9GQBr2hxOEeiIPv"><span class="yn y" data-page-node-id="ZAEqc8rdrPspYWZboBbWCl">是</span></td><td class="tc" data-page-node-id="9fu25OdF631KgVPxx9ejlE"><span class="yn n" data-page-node-id="RDu282EA7ofdfrc3pDWkDy">否</span></td><td class="tr" data-page-node-id="EBpKhZtqrJqeIM0XC16mlC"><span class="dash" data-page-node-id="aJS12YkiZAp1Vk4lxnsbXp">—</span></td><td class="tc" data-page-node-id="NXYdUR2ga1hMD6H3pu94in"><span class="yn n" data-page-node-id="tv7iXuauudOqDL18Mvsq1x">否</span></td><td data-page-node-id="NhCJNeufPnFCOuUIkEbo7g"><div class="biz-cell" data-page-node-id="CPaBOrKdpR7jCZkextHwvY"><span data-page-node-id="11bgz12zQqLOm7ILM8rJpL"><span class="bl bl-brk" data-page-node-id="6QNtFBh3sFhJQOAupyO8CW">经纪</span>长沙分公司</span></div></td><td data-page-node-id="2SWmnLkdFkyo58dSpqn7A3"><div class="biz-cell" data-page-node-id="37IoRP4YGOJ5qaqm7bgwxd"><span data-page-node-id="kxwZKKDrw8WlGOgfhNI5IG"><span class="bl bl-brk" data-page-node-id="WWqytN4JGaZGhpSdvWs9pu">经纪</span>周涛</span></div></td><td data-page-node-id="omRhCg5hxdcnN3fjF9egKd">2024-02-13 09:20</td><td data-page-node-id="auNG3Sv6jmHXgAjjXw5ACE">2024-02-12 18:05</td><td class="tc" data-page-node-id="MhUVFfs8EUbrmApzZj7dT1"><span class="tag tag-green" data-page-node-id="ZSoS4zsEOhCGCdKZF0D8PC">已分配</span></td><td data-page-node-id="ap0eomHMp5ik4F16Kw1PsL">用户名登录</td><td class="tc" data-page-node-id="AqL9jRTF5RAMGCCb8c9Xhv"><span class="yn y" data-page-node-id="bwNaCu7fXmECEWk0AfGl7e">是</span></td><td data-page-node-id="6xd9ojhuD3m3zmbRYp4HrQ">2024-02-12 17:40</td><td data-page-node-id="feS451wgwZC2UJPkpkbVv0">周涛</td><td data-page-node-id="fE45gCy6aHBh7mW4c2lyIZ">2025-03-18 11:02</td><td data-page-node-id="HwDz53mw0KgAh7DElNdFqe">周涛</td><td data-page-node-id="aGDVFuEsEwyRSAnALUZ19P">马超</td><td data-page-node-id="rkUzfQvvy3soVRvunVH3DR">2026-09-19 14:52</td><td data-page-node-id="RrsjkO1wYjCOApPqTXwqgu"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="blsYaclPgSS2d95yIDsEMG">61.140.27.88</span></td><td class="tc act" data-page-node-id="KU14UH6Dv4x2rHA4d7FmH1"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="bDcmVfLhbDMTGGYotPhIU7">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="0JiujWlDi3kipwzWbT9lpO">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="YGkYadIbAmZpKFriKQJvNP">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="1ChmuNTschJvbJxgdTbXey"><td class="id" data-page-node-id="5DO06qaBuQkMFNJ8xGqLMu">I2002</td><td class="tc" data-page-node-id="Jn1kCr8l0emI9SNpqDNdHj"><span class="tag tag-orange" data-page-node-id="gDk6PzLFebGUSUNUGUvmQW">UA2</span></td><td class="tc" data-page-node-id="rQygWytysZQ1uEjMRzim99"><span class="tag tag-green" data-page-node-id="QMUe7w2OUDn8rICyxNGNQo">活跃</span></td><td class="strong" data-page-node-id="n0Z4kFBdrhgaBatxwIfUty">盛源供应链有限公司</td><td data-page-node-id="tGWjZwTSfiBrTd37bmZaP7"><div class="biz-cell" data-page-node-id="fKXkYpjqHbBBoqrUofD75P"><span data-page-node-id="VoqEjHDx9pyre09OpFDNDi"><span class="bl bl-api" data-page-node-id="G7hFpplzqvcAuTkGlRfNVT">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="UV5j40XyGkC1sYfRjNZf7q">91968266690942694800</span></span></div></td><td data-page-node-id="mTesib4qBBGpZxV31ucYnK"><span class="tag tag-blue" data-page-node-id="TCjienVa9lySJqDb6YLdfB">特殊法人</span></td><td class="tc" data-page-node-id="gXZJgBF6koeWBltQWnjNoR"><span class="tag tag-blue" data-page-node-id="bhZ9rYGv3SVW5UlMjGzI3n">管理员</span></td><td class="tc" data-page-node-id="AOq7StPsmyxEyISJ6f6eXz"><span class="tag tag-blue" data-page-node-id="iQz12gE9ToWXrQCUzGHFYC">C4</span></td><td class="tc" data-page-node-id="pp53k1ErKycJshtLS3kM5V"><span class="yn y" data-page-node-id="skSc8rcXEq53PGH8LNR9CH">是</span></td><td class="tc" data-page-node-id="ua3JicOhuHBqDQuIcj7fRh"><span class="tag tag-red" data-page-node-id="gL93hZCqmlFggOM9JJtAQz">核心</span></td><td class="tr strong" data-page-node-id="hlWTPSBhynf5HTlHqah0Zc">15,489万</td><td class="tc" data-page-node-id="6SM4l9qasMWZkCsrSGHDX3"><span class="yn n" data-page-node-id="bxmFjE3W5YCMY8dhXIT7dh">否</span></td><td class="tc" data-page-node-id="2nsJNjKqkC7p2u7O1q7ewn"><span class="yn n" data-page-node-id="eLxnC5DW6SuOeNHZtha2ZW">否</span></td><td class="tr" data-page-node-id="ASXWF82xbtot20uqObB3o4"><span class="dash" data-page-node-id="DbFzKRIvTQbpM8Z2gWlffh">—</span></td><td class="tc" data-page-node-id="PPEbz5D1vb3029H08SGS5T"><span class="yn y" data-page-node-id="MQqASyaWkYF7OjTshq8rzr">是</span></td><td data-page-node-id="Iy3LvGOCBGtHkwTivOE5eT"><div class="biz-cell" data-page-node-id="qIS10TWRRNsb5WZAXC8TNZ"><span data-page-node-id="IF2HoGoEiOdkcCfWZpUfBI"><span class="bl bl-am" data-page-node-id="iz08It96vZ0SKRX1BdFk4w">资管</span>上海分公司</span></div></td><td data-page-node-id="g2IWTloLXxHdd1Z9EBJdhk"><div class="biz-cell" data-page-node-id="tymjYooz3J9Z8k0u8FPE1H"><span data-page-node-id="mSjBFXuXXKtaZSaE7ejRst"><span class="bl bl-am" data-page-node-id="GnygfUsxAWcHOXLAnd2awN">资管</span>赵磊</span></div></td><td data-page-node-id="cnhcG7HufiMOPfIZsqPEOJ">2024-07-03 14:11</td><td data-page-node-id="bXuzb3BBZbTzbHBVcnAOWu">2024-07-02 20:33</td><td class="tc" data-page-node-id="FlyqFAk5ib1x8lEopvUUwc"><span class="tag tag-green" data-page-node-id="e6qj3munSBzw3HOVIE4DnU">已分配</span></td><td data-page-node-id="cr31ogCWwqRmhTCUz2a67Z">手机号/邮箱登录</td><td class="tc" data-page-node-id="CstuKvdbI55JUEBljo17Pf"><span class="yn y" data-page-node-id="sh4HTGoGpKqYaIN2KCF6D6">是</span></td><td data-page-node-id="GkKIPPea2hyBoe4rPfBHv3">2024-07-02 19:58</td><td data-page-node-id="UgtCwvHU34xec5vK93GEDA">赵磊</td><td data-page-node-id="Le1KyGZaFWPE9XPBK7nfVc">2025-06-30 16:20</td><td data-page-node-id="mfdBX3bT2hosYMPgc3HMPA">王芳</td><td data-page-node-id="gyANv8vdNRPuj2HGU7TwRn">孙倩</td><td data-page-node-id="lMFiYlN0niE9A3CkxBv144">2026-09-23 08:05</td><td data-page-node-id="B2GsaPTCHKUBmNZsOFuR7h"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="VZAf7YsiNiLBN7oHNTIZBC">202.96.134.7</span></td><td class="tc act" data-page-node-id="3FF8T2mSYh6gnHhdKG2MsU"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="wMSdunlnya9MFKvxtRcu5H">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="m4Qir3W8jkxc3oCJU3oJyu">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="1TsyMewapS7Gyabh0VTeI2">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="LSfKYHd5GHwH2gsHIyPA9V"><td class="id" data-page-node-id="mDeqUExeMjTy8q4ykdwbUV">I2003</td><td class="tc" data-page-node-id="L9dE2uH7xbKxKqM2JnGVyA"><span class="tag tag-blue" data-page-node-id="YWfV7CwOFBa4HZuAzovhjA">UA1</span></td><td class="tc" data-page-node-id="W31tYUeVtsmGPZJG556LrB"><span class="tag tag-green" data-page-node-id="rvTIMyI5hOismAu8YtNu9F">活跃</span></td><td class="strong" data-page-node-id="Uxr6DrI3vqDgVYvNbgRN5a">博远实业有限公司</td><td data-page-node-id="EZFCBEumwtsvwvrG9fDZ2u"><div class="biz-cell" data-page-node-id="tKB1FE2bxUErlEK9SFzhGz"><span data-page-node-id="iCajRAwLCi0vYWT2KSx9yp"><span class="bl bl-api" data-page-node-id="Gdmn2OCSpvMi6yHWr6HUNy">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="6IYYUaDCsvfjDssYTu6pEa">91144816372143893440</span></span></div></td><td data-page-node-id="EiLQJLRbm1YSD7VhkS2NLW"><span class="tag tag-blue" data-page-node-id="3RRTi8TqGHqqoTlmpyF5Px">一般法人</span></td><td class="tc" data-page-node-id="FOeRnU0vybWbLp2SDrEzQE"><span class="tag tag-blue" data-page-node-id="d8hb0P0NeCA5No1B6x3ilV">管理员</span></td><td class="tc" data-page-node-id="1jEBongSWgEk0vCC36932s"><span class="tag tag-blue" data-page-node-id="IcOz7zad4aWZtWAZ5La4Dg">C5</span></td><td class="tc" data-page-node-id="9ZQj8fDdXYonhNzhoSCSPI"><span class="yn y" data-page-node-id="Ufxiz0XuvQEPToBJJPu0O2">是</span></td><td class="tc" data-page-node-id="UDexXJYF3nvTfmtmMZAehA"><span class="tag tag-blue" data-page-node-id="4sqO57YHaCWL8FLuzUmWBd">重要</span></td><td class="tr strong" data-page-node-id="8jREFbiknIwMIRDJF8BXpE">25,938万</td><td class="tc" data-page-node-id="rIn8Z013rhs6gtFp9R08Gz"><span class="yn n" data-page-node-id="9bWH190gRntV0QYRgKxL6B">否</span></td><td class="tc" data-page-node-id="kueDT5Y1mXUIJRynpdVfeQ"><span class="yn y" data-page-node-id="RLsy5YbfOCt4PYAUpcwhG2">是</span></td><td class="tr" data-page-node-id="LbY2rYh6alM3zEdydLjdHq">28.50万</td><td class="tc" data-page-node-id="Ds9BEs33vRAAbtz2RxceSs"><span class="yn n" data-page-node-id="5EmHeK6gORMCzLpLpIZxRm">否</span></td><td data-page-node-id="OgKPQf7GJMTzdIhBIAUDmq"><div class="biz-cell" data-page-node-id="Z4yEX6gUe9BofOvnedM7Eb"><span data-page-node-id="oV9Q8PyXSJmhUo6J9c1wGr"><span class="bl bl-adv" data-page-node-id="kyB24W8Y9nZdRy45dTmE4U">咨询</span>北京分公司</span></div></td><td data-page-node-id="UeNLZgEJD4C0ozjsBcI07q"><div class="biz-cell" data-page-node-id="h9x6DdiqIgPa4TIQqnGZdD"><span data-page-node-id="oTIpeYPVOfaVHaKrlmUcXM"><span class="bl bl-adv" data-page-node-id="U02pFJXwMv641woxEyvmEj">咨询</span>郑凯</span></div></td><td data-page-node-id="YdOyC31YtCf09mdOqDMtgr">2024-05-15 10:40</td><td data-page-node-id="uCXTakKP38Rn9RaX67HmAC">2024-05-14 17:22</td><td class="tc" data-page-node-id="jVCNqyS1xmAVxVlwKhEB8Q"><span class="tag tag-green" data-page-node-id="W2owyUdBdI3RjfmfbUuuqs">已分配</span></td><td data-page-node-id="V3bqPfk94LeFceT8Xhifyc">微信登录</td><td class="tc" data-page-node-id="M0JpdJzmxexGDwWL7R0pPg"><span class="yn y" data-page-node-id="cz4Mr44VDnGtYqDKCRjKN3">是</span></td><td data-page-node-id="j737c7QclDm7Or0ui32eav">2024-05-14 16:50</td><td data-page-node-id="Ld4xhoyIBArJN5KRkwLqNy">郑凯</td><td data-page-node-id="XX4dgauH4KQBGCHn2vmmKt">2025-09-12 10:15</td><td data-page-node-id="aPzTmKiN04CYoqrRfEQ4NU">郑凯</td><td data-page-node-id="bjIafTCbuyyOCprHUCT1EF">吴敏</td><td data-page-node-id="i3z1rENsz8myskm3K1iQMl">2026-09-21 16:40</td><td data-page-node-id="5MgKM1ONPuxTQbL6Rrn39J"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="vAzCL9Zk6TzEg2Qt4OvZ0C">123.116.55.19</span></td><td class="tc act" data-page-node-id="R9HErOiEbDD9FO4zi7qlj7"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="RqebAzFlM8efQBBpUVfoqr">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="fVbhlIMbFRSfAuUTCWWJEC">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="tWEdZpcErgqdrs0vH2qGIx">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="unRPX9M0EEuY35Nsf8k6wF"><td class="id" data-page-node-id="UsJZwSNSbp5RdBMZ0BFGPy">I2004</td><td class="tc" data-page-node-id="TP4AczwjNjE5EVvIV1yDMq"><span class="tag tag-gray" data-page-node-id="pUedEqqBLG4qV6luDS7RSd">U0</span></td><td class="tc" data-page-node-id="AhUDNVnYxgw8sarkzNj8Pb"><span class="tag tag-green" data-page-node-id="fQS7JfIaUjjK7jtrgS4VBB">活跃</span></td><td class="strong" data-page-node-id="IaCQLm5xeZklRwmXmphp9H">盛源科技有限公司</td><td data-page-node-id="yODDPhjhScw6DK7d4GkoDP"><div class="biz-cell" data-page-node-id="sEzDTebt9me1tMQWMERcfm"><span data-page-node-id="8QT12ddE9l7hKwe0oIKp6y"><span class="bl bl-api" data-page-node-id="4kcn3fyyPeVjoEU08wNUJB">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="5inGmvEzQAQMDuwXOk02BS">91792114895648907400</span></span></div></td><td data-page-node-id="Y6RzFqbPGVKxeLkxNIMH7X"><span class="tag tag-blue" data-page-node-id="eJJF91hjavIlsfYjicXKLx">一般法人</span></td><td class="tc" data-page-node-id="RZDev7Q1bQRSAHRnF7ZMzm"><span class="tag tag-gray" data-page-node-id="ePhto72O1rDgzhweZZWVGb">操作员</span></td><td class="tc" data-page-node-id="nkub7dbGJjuTIBPhJGMkMT"><span class="tag tag-blue" data-page-node-id="kCdG2rHeWVyGFoLQcsWflQ">C2</span></td><td class="tc" data-page-node-id="EsD6g6omBn2xoJky8FK4T6"><span class="yn n" data-page-node-id="oTciNMk21td3TGc3RjkDhq">否</span></td><td class="tc" data-page-node-id="Euvlb3r2j8RQbOr2wkVzyB"><span class="tag tag-gray" data-page-node-id="7AGOiTQjk66eCjmKRU2Yw9">普通</span></td><td class="tr strong" data-page-node-id="FxgKhjMnF9VUggZKOu3jNf">5,914万</td><td class="tc" data-page-node-id="gNDqF94cho8Os9SykVsLRi"><span class="yn n" data-page-node-id="MPvNVFZA7U11GIjthBxURz">否</span></td><td class="tc" data-page-node-id="qTG2jGjHsxZZ61DxNWwAta"><span class="yn y" data-page-node-id="0mM4feWGwBUoKam5D2I1Cg">是</span></td><td class="tr" data-page-node-id="UeCyTGWioFEg1iWcO0QFBr">6.00万</td><td class="tc" data-page-node-id="aT5TqIs499t27XYnsRe6SI"><span class="yn n" data-page-node-id="8TEYIcsDXqYhg4yDkSEemI">否</span></td><td data-page-node-id="DH8mAjwedkGeunjHGTwxLq"><div class="biz-cell" data-page-node-id="q2qENTCtcIyYdv9QEAsIEr"><span data-page-node-id="MTNm0Qm2Cii3cC2JCmGGSO"><span class="bl bl-adv" data-page-node-id="2ZksXqYdIremLK9xPIsO1U">咨询</span>深圳分公司</span></div></td><td data-page-node-id="8HYfuooIGIEhalyRIyyYKL"><div class="biz-cell" data-page-node-id="uDXep9MyG5KafMaxl6Y1N0"><span data-page-node-id="3QaDAWRByxnH0ZM7a73Qbt"><span class="bl bl-adv" data-page-node-id="8txzE9spkIner1i16Da5dJ">咨询</span>郑凯</span></div></td><td data-page-node-id="PQEtEXg4gTCoalrNujU8Xx"><span class="dash" data-page-node-id="rarl3vGOzLBnJaerktvNkG">—</span></td><td data-page-node-id="K7PkDWVD3uh9pUclyHGd4t">2024-03-06 09:12</td><td class="tc" data-page-node-id="Yqtc4qp5QkcIeg70a2z1bq"><span class="tag tag-gray" data-page-node-id="2ZI87fBLUCI72FjmxjqZco">未分配</span></td><td data-page-node-id="rsCZlGoXQPIcdfc2vUjeVn">用户名登录</td><td class="tc" data-page-node-id="A089SndEKnXwBNxueeImPd"><span class="yn n" data-page-node-id="As5iIzZMBvhtr1nwLeMk7Q">否</span></td><td data-page-node-id="eaZlCIonty4iPGZSSU9ccH">2024-03-05 20:31</td><td data-page-node-id="nKQQw9ZDrdpqw1mCE3Ibzv">郑凯</td><td data-page-node-id="0F6bUfAM7dHbDDM3uhn9Id">2025-01-20 14:07</td><td data-page-node-id="PruYZXDRk6lbDEJZEc27VF">刘强</td><td data-page-node-id="q2Ft1xngQQ5QT8b32xoEc3">黄丽</td><td data-page-node-id="peqczYER9D0J0TopyRTHLD">2026-08-30 11:23</td><td data-page-node-id="1zuBW7CEzORVtRN5ZR9Rzy"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="2YtKZ0H6RpbavEj9acFfBU">183.14.30.66</span></td><td class="tc act" data-page-node-id="Wj3DEs3BTeMvZy5sJJBUZX"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="g50P8zWPEo2Jyo2WADk1zf">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="eREQo15jY9Y3aL77MiH6z5">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="UqNOz2QzhWexP6fAt45Skj">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="xJNVTq26Q1cXdHWKC0W5au"><td class="id" data-page-node-id="0j4Ia08wBWWDUXBHfFTlWQ">I2005</td><td class="tc" data-page-node-id="RrWwp1CiuDcSQ90dG88B7W"><span class="tag tag-blue" data-page-node-id="GOAix5ov7224YSLhaOpOnB">UA1</span></td><td class="tc" data-page-node-id="RTn6lphfwZB2H4SbhlqiXv"><span class="tag tag-green" data-page-node-id="GGkhtO0WLDoMlu8lhGxOGe">活跃</span></td><td class="strong" data-page-node-id="hETNUqE4KgelRBTGtF0WKk">中盛新材料有限公司</td><td data-page-node-id="VigqyLvrCnLdTy3r9gsXnk"><div class="biz-cell" data-page-node-id="fXPYqF5Mcc566RlYpGbomO"><span data-page-node-id="8sqGma1W1JCpTdVwgBzzMd"><span class="bl bl-api" data-page-node-id="d0IkmrHWQl8xCMEtb7H1P5">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="A0doXCXDkvPdVfj1EhpxAP">91111280110713858340</span></span></div></td><td data-page-node-id="lIL61SUHuaQcONO6xla6kT"><span class="tag tag-blue" data-page-node-id="q9q8h9olzC9TtSLaa3N1gf">一般法人</span></td><td class="tc" data-page-node-id="aaPb71UBAFwvAPsqAiNAlS"><span class="tag tag-blue" data-page-node-id="AVrdH1G8jqkFGGcXZpNMIA">管理员</span></td><td class="tc" data-page-node-id="0ug3uUPEGl3G35P4WGIbWy"><span class="tag tag-blue" data-page-node-id="HMbCiDEcMb0JCgkBrn67AG">C4</span></td><td class="tc" data-page-node-id="TLXhx7yUllAFyFfGMnclfd"><span class="yn y" data-page-node-id="zlUfYHxoqUjyCQgesrprB2">是</span></td><td class="tc" data-page-node-id="9mWHXb7WwtzkGBAjzxWU0a"><span class="tag tag-gray" data-page-node-id="laHYjOCVpbiNCHDRu5nGOf">普通</span></td><td class="tr strong" data-page-node-id="5lnyeXdJFOgvHps80vROJ5">31,343万</td><td class="tc" data-page-node-id="GFhBJQqvaY5SljcAlGIRft"><span class="yn y" data-page-node-id="8wJ1M5537buE6Aa6VGMoAB">是</span></td><td class="tc" data-page-node-id="wHqK6JyZmBcxp1ES20aRBI"><span class="yn n" data-page-node-id="ESid5WxWJ8OeeH6Z82lrje">否</span></td><td class="tr" data-page-node-id="lCrGoXqRaOR2jdGbzAMEpw"><span class="dash" data-page-node-id="Ez0l5aSJJGiTb6chS7sWzF">—</span></td><td class="tc" data-page-node-id="mGPaR36d79EkUZ2xnHOItP"><span class="yn y" data-page-node-id="dKz8lgxHUO9PBrETFt8W1P">是</span></td><td data-page-node-id="pKlrZ83BO4BLnRyETy5y0A"><div class="biz-cell" data-page-node-id="wDLDrFEL6smmJAFAw5YuOL"><span data-page-node-id="GDRvE1usNbiZAks13zGEWj"><span class="bl bl-brk" data-page-node-id="mvRraOBwab2LeyAFX8kT1a">经纪</span>南京分公司</span><span data-page-node-id="k3isRhh9vnTInSleMMEjQV"><span class="bl bl-am" data-page-node-id="ivzPdNXcguZPFoew5q66hG">资管</span>上海分公司</span></div></td><td data-page-node-id="vB0Yp2CEatcLM0pmjsc8g6"><div class="biz-cell" data-page-node-id="onQGmsowzdXErkWBDctXhx"><span data-page-node-id="F38bAtRM2XUHeCc0jP4AOo"><span class="bl bl-brk" data-page-node-id="ONW8GH6lERr8GbktArjPtf">经纪</span>王芳</span><span data-page-node-id="b6wKo3ZS5IVjpS9WnynwBC"><span class="bl bl-am" data-page-node-id="hDEtJ12OnClGdAyoQ3M5D3">资管</span>孙倩</span></div></td><td data-page-node-id="cg0jilbPtAR8RMJcFlAnDj">2024-02-18 15:33</td><td data-page-node-id="4Tf7AduFEjjuUdH9q8WO4l">2024-02-17 19:44</td><td class="tc" data-page-node-id="tQzgZqghJBcgU3pyJKjxL5"><span class="tag tag-green" data-page-node-id="HZajMrL5EhmNOtnjWCKLMp">已分配</span></td><td data-page-node-id="6y1H64XHzUUkHtTkCrRBNs">手机号/邮箱登录</td><td class="tc" data-page-node-id="XrKckGsAtIdQ4w7Y9EK3Ec"><span class="yn y" data-page-node-id="gWpilC7Hx7SCtBnSegAQKK">是</span></td><td data-page-node-id="Y53pNLERRsZIhnBQLRouGe">2024-02-17 18:12</td><td data-page-node-id="4EiSYjmpxgg7ujdjzhxOtT">王芳</td><td data-page-node-id="v8sUxsdXprvGEEMEDdLDAL">2025-08-08 09:50</td><td data-page-node-id="aSX2VL2OVCb4a40B8jPhqL">赵磊</td><td data-page-node-id="tanptEceDJhhqgtepGGZXG">陈静</td><td data-page-node-id="nVpJduwCMPJfYvdJLPaDpL">2026-09-22 17:31</td><td data-page-node-id="EwkzyCHP6pHAY2KJJ6tI8I"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="SmoMlHY7X5zTHtl0smQIAE">58.246.90.12</span></td><td class="tc act" data-page-node-id="cLGyULBG92KW62aFt32F2d"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="D7t24T876GQBW0c89FzTNB">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="7hyAaxEGi6z8GdzFFojX0p">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="UQKaXrNvhEynll6xD6YRqH">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="T6ngoW3l2wCFlDf4KFgTFD"><td class="id" data-page-node-id="CawjbDVf86KAvhe7bjqPYj">I2006</td><td class="tc" data-page-node-id="sCDTMsUTM9awFAlb20eXUd"><span class="tag tag-gray" data-page-node-id="WdsnUrs550lGyHTYAPAfqG">UA0</span></td><td class="tc" data-page-node-id="Z6VsZE2hJP3kDW8W2ZyCnS"><span class="tag tag-gray" data-page-node-id="NdBqDvPEKgWg7uF5cz0lI6">注销</span></td><td class="strong" data-page-node-id="C6xZCAzm4FZozBrvzAEqjE">瑞祥科技有限公司</td><td data-page-node-id="yVbtGbi5gmbLkZXOJKbmOa"><div class="biz-cell" data-page-node-id="2ZvVMvDjqlJ8QVktpXws5G"><span data-page-node-id="sVobbHke8IyJXlKty4bUWt"><span class="bl bl-api" data-page-node-id="x8lz98Km4R5dF4eIOhhNyD">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="Z1J7v7TLYLzZPLK2781AyT">91528335142181277200</span></span></div></td><td data-page-node-id="XaCrvvAHEXAp9ihfioRi2D"><span class="tag tag-blue" data-page-node-id="R8HDidAT1SwaYePKc4SDqM">特殊法人</span></td><td class="tc" data-page-node-id="h90GHGWxEjODMRQHwYWUvy"><span class="tag tag-gray" data-page-node-id="mByhfb6LSoaZRK1xF6oAg9">操作员</span></td><td class="tc" data-page-node-id="NHovV0qGHuMrkxXqoeLZkg"><span class="tag tag-blue" data-page-node-id="5qEZKHwEt1BXNBDFhiEOaH">C3</span></td><td class="tc" data-page-node-id="qgROBzId0wvEUlXCOjzia3"><span class="yn n" data-page-node-id="rWz7X1mmu6FCgvlLbtFFUI">否</span></td><td class="tc" data-page-node-id="udgXLSAQ5EFw8CZHB8UtDD"><span class="tag tag-orange" data-page-node-id="FtwiYCiTCV9dAu2ffGiGtQ">潜力</span></td><td class="tr strong" data-page-node-id="iEx7iyRZ2JsRbTpoB96fxM">24,650万</td><td class="tc" data-page-node-id="606OKGwoEGJ1b3Wx8y8GCH"><span class="yn n" data-page-node-id="Ix70qjAC9vZkBW6ya1eqh5">否</span></td><td class="tc" data-page-node-id="SjDKl4kIC3ChYsPZZKQ1HY"><span class="yn y" data-page-node-id="NjtVfztMHeQh2N8in4qPBz">是</span></td><td class="tr" data-page-node-id="6E8VF425XEA47DjsdF9nb1">9.80万</td><td class="tc" data-page-node-id="aGujEM79LlG34PMJNOuotF"><span class="yn n" data-page-node-id="clsk2j33nl4xGpIqwjlfrl">否</span></td><td data-page-node-id="PDbUU407lAEiFt7Oj4odyK"><div class="biz-cell" data-page-node-id="hpy23GYSi7QlFVJjyfhV9B"><span data-page-node-id="deB0nDNGCgEe8UGt3mDWCw"><span class="bl bl-adv" data-page-node-id="YBB80ZxQS5jIOms4B9HjcJ">咨询</span>杭州分公司</span></div></td><td data-page-node-id="5WOmLvrWPUhKK4ifMNapGp"><div class="biz-cell" data-page-node-id="RE6GKLFEdE297CUGtCG1my"><span data-page-node-id="m6rcFbxEMHHs3HBpNrCXGZ"><span class="bl bl-adv" data-page-node-id="WUDJ5NpKbuvdAiHgQLsxn9">咨询</span>王芳</span></div></td><td data-page-node-id="ZEdALcfUKd0XPtz9S5vuv2">2024-05-26 11:05</td><td data-page-node-id="yIJP5TmHOxGNeVBFQ7vvFk">2024-05-25 16:18</td><td class="tc" data-page-node-id="EOnFBqvimFp9OxrqCLwftV"><span class="tag tag-green" data-page-node-id="kFH5xicEoJjDhyru3Oj2tp">已分配</span></td><td data-page-node-id="LB4Q1RMHE37VPFO6mltdFO">微信登录</td><td class="tc" data-page-node-id="nAGilIMN1CY7YuPDWgVsDC"><span class="yn y" data-page-node-id="q3Kef0HSrWdtB9UfwJLcRE">是</span></td><td data-page-node-id="0DuLFDbrRAEtQ8FEVdpDzg">2024-05-25 15:40</td><td data-page-node-id="dddfiUGyw6LqLYtd2NntYx">王芳</td><td data-page-node-id="ANtO0FMSAhBMUCRFJY4bfz">2025-11-02 10:28</td><td data-page-node-id="ieUqNirWDCfMnkp9xubr83">李娜</td><td data-page-node-id="IexzBxOJXVGJwmxNOmFfAs">马超</td><td data-page-node-id="pGzKGAP5wGcK3PxFdwroQ3">2025-10-14 09:02</td><td data-page-node-id="HIPgfgyuIotaPR2UMqPnjG"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="Tkv1MbRP0qeqboCF1UDCFz">115.199.24.77</span></td><td class="tc act" data-page-node-id="yZPb6CYFDIoaUsLvXbz6Dr"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="64SiOcHDQaF7UZSsB5Py1H">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="XUHdl0nb7hQQEMJV8QzfOK">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="AGSxx8pQXkrNVx5eCjNf39">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="BqaojBIYnWxdRVoRAZ66ZP"><td class="id" data-page-node-id="hiddsPwNNot7HqtN3pI5v7">I2007</td><td class="tc" data-page-node-id="IEHhEZBdptgqdlWVC31H6r"><span class="tag tag-blue" data-page-node-id="wchZKEEo2dwebFPZlXmZ16">UA1</span></td><td class="tc" data-page-node-id="cMwme845xgKsyXli8MKQWX"><span class="tag tag-green" data-page-node-id="O5cB5KZSzwBTlB10qke2sq">活跃</span></td><td class="strong" data-page-node-id="DuggiDFZu59j9tUNZ0lQF5">华信科技有限公司</td><td data-page-node-id="acEcz35Gne6phIpPtijwXY"><div class="biz-cell" data-page-node-id="AR1Po2rpg02zjDMs5Y8XNE"><span data-page-node-id="a5PWAblN2xTa1uDK9XlG5A"><span class="bl bl-api" data-page-node-id="Ru0G2z7nU1sLfyKrSClgFZ">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="QJxGGNBCnPXmFGYkva5mxE">91166419987513530530</span></span></div></td><td data-page-node-id="9wb8smH92HDTNq8S6NYs7S"><span class="tag tag-blue" data-page-node-id="T7KvdQQ7YYfUfInYxkxJ2L">一般法人</span></td><td class="tc" data-page-node-id="wJR2lG8Au7yXR429cdDwEr"><span class="tag tag-blue" data-page-node-id="gGN5eqFeANmimaKEbE19AH">管理员</span></td><td class="tc" data-page-node-id="t5EnmVNZlvftfe5EFduTPJ"><span class="tag tag-blue" data-page-node-id="WRSinSF3C8qmamPR6efASF">C4</span></td><td class="tc" data-page-node-id="NyhlawaAlBeXGDBcjLHKjK"><span class="yn y" data-page-node-id="UyMdCwo8tAEV95NUpPfMuU">是</span></td><td class="tc" data-page-node-id="lysL5DmJ3fymVgdM7CPeNG"><span class="tag tag-gray" data-page-node-id="CwsXJiqiWBzVJ6VavpVmpx">普通</span></td><td class="tr strong" data-page-node-id="cA1vYtXugnid8cKViVHYwJ">20,266万</td><td class="tc" data-page-node-id="CDggyZffedxf2UlMhfFeVp"><span class="yn y" data-page-node-id="BQK43BuXEGwSjitvC43FK0">是</span></td><td class="tc" data-page-node-id="olCAw9yzeEGqq3FRmxQtiF"><span class="yn n" data-page-node-id="zeVYiKkplGw95P5VCsWMaL">否</span></td><td class="tr" data-page-node-id="bGDri3BkBupFmYBYaJari8"><span class="dash" data-page-node-id="77gQGxO3IDDnYRpPuU2B0J">—</span></td><td class="tc" data-page-node-id="sG6dkXRz0qI58bOFk3SYDR"><span class="yn n" data-page-node-id="g2sjZotEqZHMc9N9YAk28D">否</span></td><td data-page-node-id="QEIbSitcFGOjyXmkRK9hfa"><div class="biz-cell" data-page-node-id="2XC6EmMXDmoZGKen0mlJHz"><span data-page-node-id="tRXRKPN5y3g9qrl9k8PiSc"><span class="bl bl-brk" data-page-node-id="9T1kDZcPlYdnCMTmREFklo">经纪</span>广州分公司</span></div></td><td data-page-node-id="WOo3HFfYDXD1jWoUncZj35"><div class="biz-cell" data-page-node-id="i8B4Dm6dUuHafHPVOdK3xQ"><span data-page-node-id="7qKpq1noAe0BNyClteHT7c"><span class="bl bl-brk" data-page-node-id="6LJX8KJ8BBW1f5yS4HiNkC">经纪</span>周涛</span></div></td><td data-page-node-id="c6xzqZ9NcEtCAxwPNWsqGs">2024-09-22 09:47</td><td data-page-node-id="Eddb2z3Y5aFfIEC81c3534">2024-09-21 18:33</td><td class="tc" data-page-node-id="5sACmEXgvFwWtINDDZyCRL"><span class="tag tag-green" data-page-node-id="T3tympntw8RiL2SHSyVxAx">已分配</span></td><td data-page-node-id="nrJ0VDXlBCSzvPS3izzHXs">手机号/邮箱登录</td><td class="tc" data-page-node-id="cUu23RzAvUEq6kVdhvG7gj"><span class="yn y" data-page-node-id="v17zxUPeU0ojLgJ7pBytAS">是</span></td><td data-page-node-id="matzXWaf9gZq6Uswx4CzIS">2024-09-21 17:55</td><td data-page-node-id="YaB0ruapdoEuhXRqYkODmh">周涛</td><td data-page-node-id="2BYhkJbAnUalrxSzKvDPiX">2025-07-19 13:12</td><td data-page-node-id="UugygEmPfDc7kanyBbVhy7">周涛</td><td data-page-node-id="Di6skq45y8aR6K1WBI6Jcs">刘强</td><td data-page-node-id="E0I7BSoPESIXMANEVXnb4A">2026-09-20 10:47</td><td data-page-node-id="bJ3HPq75gIkEXsboVdEMA7"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="l68ZncsN9SwOg0sAMgFx8v">113.108.77.5</span></td><td class="tc act" data-page-node-id="fpYR7azUZjalHJ97DK9SKP"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="FL4EehxlpCn8MQQwvkrxJW">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="mNsf2r0a5PNAscOiCJP0Nq">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="4WAh5rgXwmAAEFX7UQvdR9">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="eSDGLN0Nb6f5NYknVerqkc"><td class="id" data-page-node-id="OgOxPfa2O7csF0nLZPkqCz">I2008</td><td class="tc" data-page-node-id="slSghNLiAxz4SBetqaOAeM"><span class="tag tag-orange" data-page-node-id="Ni7GkysuIRpETCuCaJRE3c">UA2</span></td><td class="tc" data-page-node-id="ipwNMvkt5Dihmq6flEOgKD"><span class="tag tag-green" data-page-node-id="1kKoPNZijHrXUcRCPYSq8r">活跃</span></td><td class="strong" data-page-node-id="bp3s6ACbqZ0duXO0gxACnB">泰丰医疗有限公司</td><td data-page-node-id="IwKr2okqxEvmSIm5LrP7yq"><div class="biz-cell" data-page-node-id="7suBJGJPzJgGpVisd44nJX"><span data-page-node-id="O6BrX2MVDcoq7LIHGbMGa6"><span class="bl bl-api" data-page-node-id="V8XXms68VCod4cgeX72ZyZ">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="uj6YL7lfjcrC8EJiwGIMOJ">91450012309876543210</span></span></div></td><td data-page-node-id="mFFdQvP0zl7jHofrsFheuk"><span class="tag tag-blue" data-page-node-id="7zeRETDRRZF9zr13Js4gDj">一般法人</span></td><td class="tc" data-page-node-id="98PrCYjwxjA02ne96eL6rw"><span class="tag tag-blue" data-page-node-id="sMnvQminj4HnEd1m7HB3kn">管理员</span></td><td class="tc" data-page-node-id="Ua0I5lYOiTAdYHCQHmF6Nt"><span class="tag tag-blue" data-page-node-id="LN1v1rmLa2fsRPhxef34ul">C4</span></td><td class="tc" data-page-node-id="aTkF54H8mac3mpwPrqoc03"><span class="yn y" data-page-node-id="0AtIlCGmZTxv0NgrupJLe9">是</span></td><td class="tc" data-page-node-id="FfypabFC5nvaVhXP1G1foM"><span class="tag tag-red" data-page-node-id="6GbUf8Ry0JKeD1PehMaUb4">核心</span></td><td class="tr strong" data-page-node-id="b8LwTKqh1DIhKlB7NYstJJ">45,190万</td><td class="tc" data-page-node-id="NF3JmsoQ3aTf6FSYVOson8"><span class="yn y" data-page-node-id="MzIxiQi0ffArBZAsGLBa0U">是</span></td><td class="tc" data-page-node-id="WZX8hq0QqRq9xZ4EFUkZN1"><span class="yn y" data-page-node-id="0zqoglxBn1Vdu0uoasOBQ9">是</span></td><td class="tr" data-page-node-id="HU1FxOnOqc1HguGYWK7MPe">35.00万</td><td class="tc" data-page-node-id="IUNPqE8truVREgFXqxk16p"><span class="yn y" data-page-node-id="5nYf4esEeB0ryUkQyw6rKC">是</span></td><td data-page-node-id="FPQ33nw2C320qYD9fbzE1q"><div class="biz-cell" data-page-node-id="XZiELibpkv8Ka4oks1ZG33"><span data-page-node-id="gZhVcCaqXXTCIRyv8I3NaV"><span class="bl bl-brk" data-page-node-id="GC5tTvf1QUmqe4Ik8AIbmH">经纪</span>福州分公司</span><span data-page-node-id="8Yy7xWsKGYXMxpAJuqQfEK"><span class="bl bl-adv" data-page-node-id="AstUFvEUV62WhWp40PFror">咨询</span>福州分公司</span><span data-page-node-id="Mz5moEJLsTBOYuQszYAdp2"><span class="bl bl-am" data-page-node-id="CZ4UEqxqO8EGFTnvQmWP4g">资管</span>上海分公司</span></div></td><td data-page-node-id="6jRKleOqqRIgxvgwlMAKAS"><div class="biz-cell" data-page-node-id="ZlHxtuHFcix8V3H0LCkEyx"><span data-page-node-id="4l1LiCxh1FjJSyDQFlokjs"><span class="bl bl-brk" data-page-node-id="q7xQWNzWEq5mrZFARpZlDv">经纪</span>周涛</span><span data-page-node-id="CJGLoTW0AdFyYE7rf3XC57"><span class="bl bl-adv" data-page-node-id="57sUkwx1B5wCYtJA2iu2se">咨询</span>赵磊</span><span data-page-node-id="EIsGSXfw733uljkBTY60Av"><span class="bl bl-am" data-page-node-id="9ByUgnWetF7LkbTSuU69t4">资管</span>孙倩</span></div></td><td data-page-node-id="qeCzEuhZtwPszAJOqMy22G">2024-09-12 10:20</td><td data-page-node-id="MXNW1SASh5oUpH0eb8XAn4">2024-09-11 19:05</td><td class="tc" data-page-node-id="NwZhopuJ2wXb4OApMSDse1"><span class="tag tag-green" data-page-node-id="ims6ChfxkwEnaJJzPNOQjS">已分配</span></td><td data-page-node-id="wvE2aP6WffyT7ybJNK6hTR">手机号/邮箱登录</td><td class="tc" data-page-node-id="OdL7NdHdf9CZ1EpvZPkSWi"><span class="yn y" data-page-node-id="Yx5LY1l3ndZ5Ajom1aWriL">是</span></td><td data-page-node-id="OZAKgSo1OfIVRfcALIbz8m">2024-09-11 18:30</td><td data-page-node-id="vsnSkpKVVXgOW0r4qhI5KN">周涛</td><td data-page-node-id="dg1jhH091OWokTBAyQvDRH">2026-02-14 15:44</td><td data-page-node-id="tk6Jh036Po7TnNy49td2RG">赵磊</td><td data-page-node-id="8fzmqMf584tsBNNuEZWntk">陈静</td><td data-page-node-id="9WqxJKTlmBU2bcMkbTTo4q">2026-09-23 09:38</td><td data-page-node-id="avqv5GOQPHMOJOZPEGW8Oj"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="XtnbAJOj06aZuljEFgHZ2j">117.28.140.62</span></td><td class="tc act" data-page-node-id="fkg7wESGJwb3ykf3kGWD54"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="o8FoEc5BjwY5oeN46XGZiQ">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="YURVab8DepZ8KoHytDbXGX">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="S9YP5VYq3gDgj8o9imtyqU">重置密码</button></td></tr>
+                <tr onclick="selectRow(this)" data-page-node-id="TTFJtXJdlT5qxNBXFTM2rG"><td class="id" data-page-node-id="SaBvH5B8OmykUBIuUBNtEB">I2009</td><td class="tc" data-page-node-id="4G3xToRZsLgnzX5UflBQVK"><span class="tag tag-blue" data-page-node-id="qXNEn9vIGmNhnajJQ2EaT2">UA1</span></td><td class="tc" data-page-node-id="B0gM6ctNR4PT6D2RnCmg3X"><span class="tag tag-green" data-page-node-id="m7IZrT7RQxuX0K3tT0TZUk">活跃</span></td><td class="strong" data-page-node-id="FNqbDNtkBk0YtmJRAuLIMD">瑞祥新材料有限公司</td><td data-page-node-id="FBadG6ZiHeTjB61cxdUkPt"><div class="biz-cell" data-page-node-id="10M1ULlZTotXjwImbn2cVv"><span data-page-node-id="xXeJNi6lqBpVLwToFHhnFD"><span class="bl bl-api" data-page-node-id="hMicXRh1eTZr0SJFD98KHl">统信码</span><span style="font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--muted)" data-page-node-id="RkxKyAdr75usrQxbd6XmWZ">91330199887766554400</span></span></div></td><td data-page-node-id="dFai6pF4fahCqURWfzgwXJ"><span class="tag tag-blue" data-page-node-id="OYOPC9oVRlK6WGo7CXOtYF">特殊法人</span></td><td class="tc" data-page-node-id="k2RUeicTdRrjciZs15dEG6"><span class="tag tag-gray" data-page-node-id="cM73CneaNx7MsGiFVKQjmf">操作员</span></td><td class="tc" data-page-node-id="FRsEb3b04lSNHqS802srfX"><span class="tag tag-blue" data-page-node-id="10o4vikI1C4BL042W6aciC">C5</span></td><td class="tc" data-page-node-id="NHoGaXJZtme7ZvHqklcAZ9"><span class="yn y" data-page-node-id="FEh3D78aFiaY9G2A8yDLV4">是</span></td><td class="tc" data-page-node-id="33eueFgLHrDsHgDRqsZGWh"><span class="tag tag-blue" data-page-node-id="lpn6r2s4uWcejwTQupAZlg">重要</span></td><td class="tr strong" data-page-node-id="Q4gwOtk43rp5CFwPT1Cdjh">49,243万</td><td class="tc" data-page-node-id="bZVWCJZJSEqgXxVsh2AKpA"><span class="yn y" data-page-node-id="eTWwSO0d8t5RmqAlbuFN2J">是</span></td><td class="tc" data-page-node-id="atE9j5oWFPbUQq25TfVbGL"><span class="yn n" data-page-node-id="cC1mp1KVV11SxUHe6zqZNt">否</span></td><td class="tr" data-page-node-id="4vtBCNrkkLNxDWYmbHLNtn"><span class="dash" data-page-node-id="EqWuWQu0vqiGyj7YHqICcd">—</span></td><td class="tc" data-page-node-id="4mL9OuqyMmOMUx6BGYz6fU"><span class="yn y" data-page-node-id="3kJtIX0oHCbKRwm1uSHqe5">是</span></td><td data-page-node-id="AIVlal3amwmSuCHKVoHaK0"><div class="biz-cell" data-page-node-id="h17jDWAv8FTbH2O9CCosHi"><span data-page-node-id="arDeFRFWBYKkYi5GoHpPUX"><span class="bl bl-brk" data-page-node-id="yLP3zltgWjQ81sYsfEZ73A">经纪</span>南京分公司</span><span data-page-node-id="kr1J4u89zYswzoy6lhOxFD"><span class="bl bl-am" data-page-node-id="W4tpWgiozAzGKucBbOHkdN">资管</span>上海分公司</span></div></td><td data-page-node-id="6RA6vJnuoocgdh3X53P5Kh"><div class="biz-cell" data-page-node-id="61bZmMajqJHazSUJxAOWo4"><span data-page-node-id="mI7Dhs4f3S1rTAwGBLGmY6"><span class="bl bl-brk" data-page-node-id="NtDAbMib5Ui2vAa8MByRSJ">经纪</span>周涛</span><span data-page-node-id="75rWQXmODaDJCcTPBbJhQX"><span class="bl bl-am" data-page-node-id="OG9c36SHXUqY3Ak91MlG7O">资管</span>赵磊</span></div></td><td data-page-node-id="wS7bd7ZgDMLW6zfS2P1hGV">2024-06-22 14:09</td><td data-page-node-id="UDO1kA2rb5YElV50HhK8m9">2024-06-21 17:50</td><td class="tc" data-page-node-id="co5nl6ygMluCKLKV7ku15L"><span class="tag tag-green" data-page-node-id="rKrfzHsALZTRU5Fom1KURM">已分配</span></td><td data-page-node-id="2ADn3ixeOz7JVOkkwfRgij">用户名登录</td><td class="tc" data-page-node-id="po4qnP6gc8xp3sQAtWCEJf"><span class="yn y" data-page-node-id="RC8ixn5zrPyLFma7aEFAhi">是</span></td><td data-page-node-id="GoroAPd9n6raX1PFtEZBDR">2024-06-21 17:10</td><td data-page-node-id="VcVNpsLQpSeHUSP81Kluk4">周涛</td><td data-page-node-id="BiPd0CmZCUYBpd9GhDSVJt">2025-12-30 11:36</td><td data-page-node-id="EZyAKElm39jFpXUpapDdJH">孙倩</td><td data-page-node-id="vpChAEF12pnYATnqKoEtfs">吴敏</td><td data-page-node-id="IWn9EmGmDxfCyYWYDGfRoh">2026-09-18 15:26</td><td data-page-node-id="qWBuLoezMBcEYAPzeGAHeE"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)" data-page-node-id="C2Eo8IykTEiHEdEOcVEjrY">122.224.31.40</span></td><td class="tc act" data-page-node-id="kq6XVq2YFDWFPqVkXzjdKi"><button class="btn-text btn-sm" onclick="event.stopPropagation();openModal('editModal')" data-page-node-id="ptOfsMsAqIZBbrD2XoJw4u">修改</button><button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal('cancelModal')" data-page-node-id="jo5tcyUKSraCmdiOovDV7V">注销</button><button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast('重置密码短信已发送至管理员手机')" data-page-node-id="f8fI3TYZOB8EWsCKe5ExDI">重置密码</button></td></tr>
               </tbody>
             </table>
-            <div class="pager">
-              <span>共 32 家机构客户（示例数据，此处展示前 10 条）</span>
-              <div class="pager-btns">
-                <button class="pg">上一页</button><button class="pg on">1</button><button class="pg">2</button><button class="pg">3</button><button class="pg">下一页</button>
+            <div class="pager" data-page-node-id="EQNVharxdmajdnN4gK4lXr">
+              <span data-page-node-id="ZFkHMJ0VQBEBX7utnBOPVN">共 32 家机构客户（示例数据，此处展示前 10 条）</span>
+              <div class="pager-btns" data-page-node-id="Cli5Lxl9AWBIdUriUDslR8">
+                <button class="pg" data-page-node-id="2bfqHCu9sY1jxtFYTaWDCS">上一页</button><button class="pg on" data-page-node-id="wMftuVh7NZIa0WWMQw253r">1</button><button class="pg" data-page-node-id="p53iiNSSqjcxdhze9J0dDN">2</button><button class="pg" data-page-node-id="3r2qjF1ET460RWltqyuJMC">3</button><button class="pg" data-page-node-id="q0F2rQxcKRGDo7StMHwsxB">下一页</button>
               </div>
             </div>
           </div>
 
-          <div id="tableMember" class="table-wrap" style="display:none">
+          <div id="tableMember" class="table-wrap" style="display: none;" data-page-node-id="lCSn3EGJYnfE7w8i4GMAnk">
             <table class="data" data-page-node-id="RMF0TUu1msmyNQ89jEDgox">
               <thead data-page-node-id="5tMdDIE9qfVaDsP1ClUHGe"><tr data-page-node-id="1Fc0ImHQnfZIQfFphNFKfL">
                 <th class="tc" data-page-node-id="TI0x5GsB7Tu40mjWUWanz4">客户类型</th><th data-page-node-id="gOHnUjXnmIj2bi1lcgSRda">用户姓名</th><th data-page-node-id="cHTPVK2G4GFFj43gLZRfzG">用户id</th>
@@ -843,15 +849,15 @@ table.data tbody td{vertical-align:middle}
 
         </div><!-- /view-customers -->
 
-        <div class="view" data-view="followups" hidden>
+        <div class="view" data-view="followups" hidden="" data-page-node-id="GJ4rKQ6oVovTYAoYolZ2Nl">
           <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
-            <div>
-              <div class="page-title">跟进管理</div>
-              <div class="page-sub">按企业维度的跟进台账，状态流转 待跟进 → 跟进中 → 已落地 / 暂停</div>
+            <div data-page-node-id="du0RBD5vXPNWgk5mmItvDv">
+              <div class="page-title" data-page-node-id="Vs42Mb3bxUNf6CbC2VpFCI">跟进管理</div>
+              <div class="page-sub" data-page-node-id="bcnNXNCKO3d8e7sKsPovUx">按企业维度的跟进台账，状态流转 待跟进 → 跟进中 → 已落地 / 暂停</div>
             </div>
-            <div class="head-actions">
-              <button class="btn btn-outline"><svg class="ico"><use href="#i-download"></use></svg>导出报表</button>
-              <button class="btn btn-primary" onclick="openModal('followModal')"><svg class="ico"><use href="#i-plus"></use></svg>新增跟进</button>
+            <div class="head-actions" data-page-node-id="mlcqrtnzMS8whDx1UGmQoj">
+              <button class="btn btn-outline" data-page-node-id="jvs9BEMwURU0O6b1NkPmJ7"><svg class="ico" data-page-node-id="vMzVvt55nfiSNodWWt8L1Q"><use href="#i-download" data-page-node-id="0KPVmlb8Rqaqw73O4OjNGs"></use></svg>导出报表</button>
+              <button class="btn btn-primary" onclick="openModal('followModal')" data-page-node-id="O9nID345WqPuf0An0AdJHl"><svg class="ico" data-page-node-id="HpUzZwY13sQojkzpXuTltR"><use href="#i-plus" data-page-node-id="JHJjWNeIR5GcnkHZ8Y4mx7"></use></svg>新增跟进</button>
             </div>
           </div>
         <!-- ★ 连线 4：跟进台账 -->
@@ -918,7 +924,7 @@ table.data tbody td{vertical-align:middle}
       <div class="rp-head" data-page-node-id="wWy77VCP7fZprEGv05yYjL"><svg class="ico" style="font-size:15px" data-page-node-id="64HvC6UqTQWODuWFPC7NXE"><use href="#i-signs" data-page-node-id="hsCoLxQQq0F9DlKduany27"></use></svg>功能说明</div>
 
       <div class="rp-list" data-page-node-id="lbGC36Cn2h1GSczxvyVDCo">
-        <div class="rp-section" data-view="home">
+        <div class="rp-section" data-view="home" data-page-node-id="yVckRtpGU7Dga4Dd3vmDQM" hidden="">
                 <div class="proto-desc" data-proto-id="1" data-page-node-id="YMt7aLqD3O8ZrVyaJKkY3U">
           <div class="desc-head" data-page-node-id="LKSLOPV1DuDh4AoYLwy1r6">
             <span class="desc-num" data-page-node-id="CYvh5VMjFftnIJAB1MI6mE">1</span>
@@ -941,20 +947,20 @@ table.data tbody td{vertical-align:middle}
 
         </div><!-- /rp-section home -->
 
-                <div class="rp-section" data-view="customers">
-        <div class="proto-desc" data-proto-id="3">
-          <div class="desc-head">
-            <span class="desc-num">1</span>
-            <div>
-              <div class="desc-title">机构视图与筛选</div>
-              <div class="desc-body">
+                <div class="rp-section" data-view="customers" data-page-node-id="GqYOSwl0jiq8VrpaiMuH4U">
+        <div class="proto-desc hl" data-proto-id="3" data-page-node-id="eQv6m5cVPC02TKivFhcbAj">
+          <div class="desc-head" data-page-node-id="5xPD0uwdQlm4cONhqWytsD">
+            <span class="desc-num" data-page-node-id="z7NB8cgBAKYSmjot6J8te0">1</span>
+            <div data-page-node-id="TN8nlUOYoOcy9BDixuhGFr">
+              <div class="desc-title" data-page-node-id="JhMFM5txmRQHqYmmg58pRp">机构视图与筛选</div>
+              <div class="desc-body" data-page-node-id="b6HN7sPS3NrxjXtb5aAZT8">
                 机构视图展示 29 个字段：用户id、用户级别、用户状态、客户企业全称、开户证件号码、法人属性、企业模式、适当性等级、是否专业投资者、客户战略等级、权益规模、是否经纪业务客户、是否交易咨询客户、交易咨询已支付费用、是否资管客户、业务单位、客户经理、电子密码器分配时间、服务密码发送时间、电子密码器、登录方式、是否修改初始服务密码、创建时间、创建人、更新时间、更新人、推荐人、登录时间、网络地址。
-                <ul>
-                  <li><b>法人属性为单选</b>：一般法人 / 特殊法人 二者其一，筛选栏用下拉框选择</li>
-                  <li><b>业务单位与客户经理按业务线展示</b>：经纪 / 交易咨询 / 资管三条线各自的归属单位与负责人分别列出，同一客户的多笔交易咨询、资管订单的客户经理同步展示</li>
-                  <li>筛选支持 用户级别（U0 / UA1 / UA2）、用户状态（活跃 / 注销）、企业模式（管理员 / 操作员）等 29 个字段，时间类字段按区间查询</li>
-                  <li><b>登录方式仅三种</b>：手机号/邮箱登录、用户名登录、微信登录</li>
-                  <li>行操作：修改 / 注销 / 重置密码；支持批量导入与导出 Excel</li>
+                <ul data-page-node-id="e32PblyzCv9CIecptTQbCO">
+                  <li data-page-node-id="24nAeEMaA5nvEAhIzMnnxY"><b data-page-node-id="DHKgCmvgOz3yFMkoiwXkVc">法人属性为单选</b>：一般法人 / 特殊法人 二者其一，筛选栏用下拉框选择</li>
+                  <li data-page-node-id="uFxWuHuYlPq3mXGIjyNQco"><b data-page-node-id="y9TAzo6v1hs4yWcFJXLM3F">业务单位与客户经理按业务线展示</b>：经纪 / 交易咨询 / 资管三条线各自的归属单位与负责人分别列出，同一客户的多笔交易咨询、资管订单的客户经理同步展示</li>
+                  <li data-page-node-id="PgAYOpH5tuL2nnRj3Sctg7" style="">筛选支持 用户级别（U0 / UA1 / UA2）、用户状态（活跃 / 注销）、企业模式（管理员 / 操作员）等 29 个字段，时间类字段按区间查询</li>
+                  <li data-page-node-id="TskPCr3aFP1VHahw9gZJD6"><b data-page-node-id="YBfuI2rPoz2mU6OSXn92TZ">登录方式仅三种</b>：手机号/邮箱登录、用户名登录、微信登录</li>
+                  <li data-page-node-id="7C6Yczqs4aNGjpnTnS4Bsp">行操作：修改 / 注销 / 重置密码；支持批量导入与导出 Excel</li>
                 </ul>
               </div>
             </div>
@@ -963,7 +969,7 @@ table.data tbody td{vertical-align:middle}
 
         </div><!-- /rp-section customers -->
 
-        <div class="rp-section" data-view="followups">
+        <div class="rp-section" data-view="followups" data-page-node-id="QNjBwWlHI2LoSARIQsLIgS" hidden="">
                 <div class="proto-desc" data-proto-id="4" data-page-node-id="24QEULZaflhsEzZwyJYVyF">
           <div class="desc-head" data-page-node-id="VeJ2pOrFyj8nUZUvjYa6l5">
             <span class="desc-num" data-page-node-id="0ZOGIQyKJLQdJxyv7aCPL0">4</span>
@@ -993,7 +999,7 @@ table.data tbody td{vertical-align:middle}
 </div>
 
 <!-- SVG 连线层 -->
-<svg id="connections" data-page-node-id="4AKhNZBrTXz5kiXKExb0tV"><path d="M 1137.546875 475.546875 C 1162.546875 475.546875, 1162.546875 614.15625, 1187.546875 614.15625" class="cline-halo"></path><path d="M 1137.546875 475.546875 C 1162.546875 475.546875, 1162.546875 614.15625, 1187.546875 614.15625" class="cline on"></path><circle cx="1137.546875" cy="475.546875" r="3.5" class="cdot"></circle><circle cx="1187.546875" cy="614.15625" r="3.5" class="cdot"></circle><circle cx="1162.546875" cy="544.8515625" r="11" class="clabel-bg"></circle><text x="1162.546875" y="544.8515625" dy="0.05em" class="clabel">3</text><path d="M 1137.546875 1071.796875 C 1162.546875 1071.796875, 1162.546875 785.78125, 1187.546875 785.78125" class="cline-halo"></path><path d="M 1137.546875 1071.796875 C 1162.546875 1071.796875, 1162.546875 785.78125, 1187.546875 785.78125" class="cline"></path><circle cx="1137.546875" cy="1071.796875" r="3.5" class="cdot"></circle><circle cx="1187.546875" cy="785.78125" r="3.5" class="cdot"></circle><circle cx="1162.546875" cy="928.7890625" r="11" class="clabel-bg"></circle><text x="1162.546875" y="928.7890625" dy="0.05em" class="clabel">4</text></svg>
+<svg id="connections" data-page-node-id="4AKhNZBrTXz5kiXKExb0tV"><path d="M 1294.3125 641.53125 C 1315.8125 641.53125, 1315.8125 390.65625, 1337.3125 390.65625" class="cline-halo"></path><path d="M 1294.3125 641.53125 C 1315.8125 641.53125, 1315.8125 390.65625, 1337.3125 390.65625" class="cline on"></path><circle cx="1294.3125" cy="641.53125" r="3.5" class="cdot"></circle><circle cx="1337.3125" cy="390.65625" r="3.5" class="cdot"></circle><circle cx="1315.8125" cy="516.09375" r="11" class="clabel-bg"></circle><text x="1315.8125" y="516.09375" dy="0.05em" class="clabel">3</text></svg>
 
 <!-- Toast -->
 <div class="toast" id="toast" data-page-node-id="wVfTbDYZKpcCdb3ejkRQ2x">
@@ -1060,85 +1066,188 @@ table.data tbody td{vertical-align:middle}
       <div class="modal-title" data-page-node-id="VAGLF0G2ni4ttghAFIZDgq">修改客户</div>
       <button class="icon-btn" onclick="closeModal('editModal')" data-page-node-id="G5qv1Vcy9KTGdsEPsFAG0o"><svg class="ico" data-page-node-id="ByD979Il4d6MNLkG1OBFjx"><use href="#i-times" data-page-node-id="TkPE1Xi31zQka90cJEVFun"></use></svg></button>
     </div>
-        <div class="modal-body" data-page-node-id="FVefZrGlgmkQTOPpVmxCrg">
-      <div class="field field-2" data-page-node-id="qMNOCAGASXTWLDS4HK4aUx">
-        <div data-page-node-id="HmAWQ2CGfRax3vZgIKUuAI">
-          <label class="label" data-page-node-id="QtXHxIj9Ost773eXPHL2ub">客户类型</label>
-          <select class="select" style="width:100%" data-page-node-id="PiygFQbQRni3TwT487VVWO"><option data-page-node-id="FgdMLF1HBG75wSuIFWlQzA" selected="">机构成员</option><option data-page-node-id="FXpK5n4Pv5RRgxi7jcQZCX">个人</option></select>
+            <div class="modal-body" data-page-node-id="FVefZrGlgmkQTOPpVmxCrg">
+      <div class="mgroup" data-page-node-id="WbVCyMj0V9gFiPlJBPVTIN">基本信息</div>
+      <div class="field field-2" data-page-node-id="tCto3zVXe59UTaCC8ZdYBc">
+        <div data-page-node-id="Yh2SOc0YBBLRZVP0OA02f1">
+          <label class="label" data-page-node-id="TAMN73q6oJPY62h2HoIvCW">用户id</label>
+          <input class="input ro" style="width:100%" type="text" value="10002000" readonly data-page-node-id="B9fJ01xbzqbzBHJSuy111R">
+          <div class="fhint" data-page-node-id="uqpZdONAsRShkzVcpeSfIO">数据库主键，不可编辑</div>
         </div>
-        <div data-page-node-id="M6Um4DMpQn3KbO4YkeYhGU">
-          <label class="label" data-page-node-id="qUHaaQ1imSKEABRu1pDniS">用户姓名</label>
-          <input class="input" style="width:100%" type="text" value="吴芳" data-page-node-id="hYbd7BhfhiSNx8qZlvsWl8">
-        </div>
-      </div>
-      <div class="field field-2" data-page-node-id="Tz5shb8pwMdbNSsMm1FVIF">
-        <div data-page-node-id="xsy3ElM9SeUv58X09qWItW">
-          <label class="label" data-page-node-id="CsZFOA0ktIYRbOW5xyiBLh">用户id</label>
-          <input class="input" style="width:100%" type="text" value="U1001" data-page-node-id="M9eT8HhiJAARXbPnMW10Xq">
-        </div>
-        <div data-page-node-id="R7qJmWoUhaf3Yw947Wsg4U">
-          <label class="label" data-page-node-id="CZS8U3sLYu2VluTIjs5YqL">用户级别</label>
-          <select class="select" style="width:100%" data-page-node-id="e2eD8CFPiWMx5rv53hZomA"><option data-page-node-id="7im2lsTFRfa2v07Vuj66bs">U0</option><option data-page-node-id="4FX1q7Z7kQZxesWYcMP25P" selected="">UA1</option><option data-page-node-id="njet5m90r2GtTUIARVZ7bc">UA2</option></select>
+        <div data-page-node-id="7hKAgoQHsggxugdLtYQFRE">
+          <label class="label" data-page-node-id="aHdoAzQyCEAH4d80MXO5GV">用户姓名</label>
+          <input class="input" style="width:100%" type="text" value="吴芳" data-page-node-id="4vTi3D9cRnNEuObRdT3Aw1">
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="BsmAEJszZUNq5Nw9rEsLDQ">
-        <div data-page-node-id="RXgtPGMGCxhqj0lB9Q6PHY">
-          <label class="label" data-page-node-id="cut8LKCOyxs45wTf0V793E">用户状态</label>
-          <select class="select" style="width:100%" data-page-node-id="hlYcmhjKN4MPReIj88NX6v"><option data-page-node-id="j7kJ20L658ZGZwl5XVMjMU" selected="">活跃</option><option data-page-node-id="KBDPfZ3mxPm8bCcDLLGSnH">注销</option></select>
+      <div class="field field-2" data-page-node-id="VYSFqGe9We8y5ROF9FD6BU">
+        <div data-page-node-id="NioxNfV6CvNpmmWNYPelyF">
+          <label class="label" data-page-node-id="LQrLpUICSIxCD37Uxkkjex">用户级别</label>
+          <select class="select" style="width:100%" data-page-node-id="0au00goXPANibgPFxlHCK6"><option data-page-node-id="1yCXweFf4u8GpSae2MPero">U0</option><option data-page-node-id="cC9Ca9xXv0LbeLF7ucdQfA" selected="">UA1</option><option data-page-node-id="FPGmuNvx0O9wkT1JKyFG4J">UA2</option></select>
         </div>
-        <div data-page-node-id="86vaFIF0n3c031gM1deA4i">
-          <label class="label" data-page-node-id="0bSOvj0vH4PxVlVaNymza1">潜在企业</label>
-          <select class="select" style="width:100%" data-page-node-id="zt34SKDRooSX4dZoyQBtbb"><option data-page-node-id="F5pUplYiOUbj6O3MEyetgA" selected="">是</option><option data-page-node-id="Osbyr3Lh53v65RXaPEsMhc">否</option></select>
-        </div>
-      </div>
-      <div class="field field-2" data-page-node-id="TTBbUjjMWuY6C2gMq5MEjK">
-        <div data-page-node-id="XQT3uLPn6196r5h00v4vfz">
-          <label class="label" data-page-node-id="2Xum81tBQ2aKszD6VMPqJ5">客户企业全称 <span class="req" data-page-node-id="JKuAlMkrna9fKVua5rfdQ7">*</span></label>
-          <input class="input" style="width:100%" type="text" value="天合控股有限公司" data-page-node-id="UNp0KrbjkvvYNWQoNmbg0G">
-        </div>
-        <div data-page-node-id="CcRarRIiGmqczXwT0TPnbs">
-          <label class="label" data-page-node-id="QcwrjzqdglxxupSJd7fpWH">企业模式</label>
-          <select class="select" style="width:100%" data-page-node-id="x367MCVrP9ycRpaUuUVCaj"><option data-page-node-id="cYZZL1cfvqNOIkU70Ta6WY" selected="">管理员模式</option><option data-page-node-id="f3OaLkX55qdnMenRTXA1dE">非管理员模式</option></select>
+        <div data-page-node-id="rfyCjcMhI3Pwy4h9nsiJrS">
+          <label class="label" data-page-node-id="m7OvEp16W2xj4NeJVfsOZR">用户状态</label>
+          <input class="input ro" style="width:100%" type="text" value="活跃" readonly data-page-node-id="pEJuyuLNRcr6xh8alqTToD">
+          <div class="fhint" data-page-node-id="sE61SNjCMnYZdj1lolnaMD">只读字段</div>
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="KIweBNViP6ylIl8EGzBLgj">
-        <div data-page-node-id="loawLXi9yMdVjk0OX1p789">
-          <label class="label" data-page-node-id="oEgQ2AyyOIQwJS0qvBVxN1">适当性</label>
-          <select class="select" style="width:100%" data-page-node-id="eNFvFUTATjmqcvkgUMtkgi"><option data-page-node-id="rsAuqNX4kscslM1mNnqTdR">C1</option><option data-page-node-id="Jy2yjtwhItQVJ2AlRaB8l9">C2</option><option data-page-node-id="1bFydpBASb4NhdJQF5ORLy">C3</option><option data-page-node-id="ZreRvDhel9bBByX9zlc8No" selected="">C4</option><option data-page-node-id="HAf5eyWGxcYB2Zl1nZ1vkB">C5</option></select>
+      <div class="field field-2" data-page-node-id="56Ncc5MBCFBvGXQkleza98">
+        <div data-page-node-id="ar4orRmh5AnakUoXOi4L0I">
+          <label class="label" data-page-node-id="QmhM9cxHX1wbiJjkREB6rR">客户企业全称 <span class="req" data-page-node-id="RinXOLcA8iv1dgcEygpgyx">*</span></label>
+          <input class="input" style="width:100%" type="text" value="天合控股有限公司" data-page-node-id="Io6dqhWvZZtWLMQfD6FBB8">
         </div>
-        <div data-page-node-id="6RTEQz9ySwMAllXgw9rFlg">
-          <label class="label" data-page-node-id="ybjo5VXWXMZXebDDc0Tlb4">战略等级</label>
-          <select class="select" style="width:100%" data-page-node-id="wpBGnoPdNw38DLrBywkLRS"><option data-page-node-id="ygCU990EoxsEVtd2zuuTxM">核心</option><option data-page-node-id="2X5SCKmUJOBrUgBBqV6oRU">重要</option><option data-page-node-id="2T30G1e7Ipf7EpnquVWEFS" selected="">普通</option><option data-page-node-id="N0OdxVxATPs1BpEa2UQbrq">潜力</option></select>
-        </div>
-      </div>
-      <div class="field field-2" data-page-node-id="pRdIErlAV0mmMwbXDximwx">
-        <div data-page-node-id="PKhmDqSwIVE4HzRGRYLX9D">
-          <label class="label" data-page-node-id="t8toIUE1xqDZucakbNDm97">权益规模</label>
-          <input class="input" style="width:100%" type="text" value="1,286万" data-page-node-id="MjEXxmR7l9462rJUwgT4oc">
-        </div>
-        <div data-page-node-id="w6BJJ5JTuJT3ZPPAhpMW9n">
-          <label class="label" data-page-node-id="KbyjjkTUTyCg3RJoO17NjX">登录/联系手机号</label>
-          <input class="input" style="width:100%" type="text" value="15316125848" data-page-node-id="1d93WUB4hb4hZS1dV5YuMY">
+        <div data-page-node-id="vPbfom84bHBenLVPSjHnTe">
+          <label class="label" data-page-node-id="5ASAaUdJcbDqRspNMAG39n">开户证件号码</label>
+          <input class="input" style="width:100%" type="text" value="91850988609509399800" data-page-node-id="mYACuLjkKRkrb9dUnuSHCi">
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="Jbgcf6MfPzUxbk1Y21Qov4">
-        <div data-page-node-id="DikVrffDULstreF80F4DJ6">
-          <label class="label" data-page-node-id="BrY4kuwjHLZgMY9HQqigt2">客户角色</label>
-          <select class="select" style="width:100%" data-page-node-id="CefcQEV64NIjrTRNk6pKqd"><option data-page-node-id="Isv5tl4gG86N7YDTAosMaV" selected="">管理员</option><option data-page-node-id="lq6qrlv0UWx7UHsFQlXfSp">操作员</option></select>
-        </div>
-        <div data-page-node-id="TIQop5LkTXW1Bc2HuuGwSS">
-          <label class="label" data-page-node-id="v8TJErZzoyCw0ID83g3F0S">登录方式</label>
-          <select class="select" style="width:100%" data-page-node-id="I85FgxVwiwYjT5fTBJAaBB"><option data-page-node-id="1IFl4uZyxADl1ksGOln9mn" selected="">手机号/邮箱登录</option><option data-page-node-id="N1vJAZjp5g9rCAinuoYejm">用户名登录</option><option data-page-node-id="51mlGfM4hUdU5XcrZFEEWZ">微信登录</option></select>
+      <div class="field" data-page-node-id="pBCojwOfa43fDWAb4EcDOg">
+        <div data-page-node-id="U1EKhv69qhHXHZYxNxNSQq">
+          <label class="label" data-page-node-id="lGV5Rfhek8MlDq6mX2IFbs">潜在企业</label>
+          <input class="input" style="width:100%" type="text" list="peList" value="天合控股有限公司" placeholder="输入企业名称搜索" data-page-node-id="QVkJo2aDZer8Rof3qgpz6E">
+          <datalist id="peList" data-page-node-id="TenRQetfUxW7w7746MP59L"><option data-page-node-id="gmXWEcTKdMPYCDBTJhHOqL" value="天合控股有限公司"></option><option data-page-node-id="TE6c8gdsI5wvrrAUz37lM4" value="远大医疗有限公司"></option><option data-page-node-id="wDr1nRWr22jeuE6WDxT0rn" value="盛源供应链有限公司"></option><option data-page-node-id="Pvu5NPLhIUJNkLD6kMSHTk" value="博远实业有限公司"></option><option data-page-node-id="Gq72M74cZL136ApFNBebk1" value="盛源科技有限公司"></option><option data-page-node-id="Txb6d52R2Npw9MNIZN1Syb" value="中盛新材料有限公司"></option><option data-page-node-id="25vcYWj0K4XhBt9rDBCz9t" value="瑞祥科技有限公司"></option><option data-page-node-id="Oj4LLkqjwIuD8jh8UmTYGe" value="华信科技有限公司"></option><option data-page-node-id="ZzAbo4EW6p4WamQVwuklmR" value="泰丰医疗有限公司"></option><option data-page-node-id="SAHbvSCLIRuaLCk4xBDAGJ" value="瑞祥新材料有限公司"></option></datalist>
+          <div class="fhint" data-page-node-id="RD0rw0KAQA9KFVJsspe28U">输入关键词模糊搜索企业名称</div>
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="LZRNv560iMDzcrVxwqQqEG">
-        <div data-page-node-id="w6h856aQbC1EEUnMyFfGya">
-          <label class="label" data-page-node-id="Y7h2TU0wmcbXTLMIrmG5R3">客户经理</label>
-          <select class="select" style="width:100%" data-page-node-id="tyuk18FWq2foWviwcF1pR1"><option data-page-node-id="yBBmjvByOJyupaQgIPi22u" selected="">孙倩</option><option data-page-node-id="Q6gGlLeMld5hKZ281pJclH">周涛</option><option data-page-node-id="s13gYyzAa9RipMPBMvkL7r">赵磊</option><option data-page-node-id="OMXMy2fDNRpPcAJ8B1iHKn">郑凯</option><option data-page-node-id="eUTVdUH8q1pnfk6O54gcVx">王芳</option></select>
+      <div class="mgroup" data-page-node-id="HdYPC1gfXEdxSGQzhI26JU">合规与适当性</div>
+      <div class="field field-2" data-page-node-id="2oTM2RGdy4rc8yluSK4EeC">
+        <div data-page-node-id="2UShcBZp6Qlx8Xu1HQ4MkD">
+          <label class="label" data-page-node-id="fQCbBwJUBElZ5Azm1eVw0L">法人属性</label>
+          <select class="select" style="width:100%" data-page-node-id="HDK45KsX7QMaOhwC2ocl26"><option data-page-node-id="a0VsBbSs3TXy593N2UJoUc" selected="">一般法人</option><option data-page-node-id="axFtzXOgpcwRYpqWXhtkDn">特殊法人</option></select>
         </div>
-        <div data-page-node-id="UDybfXD2JftUSdQsmEr8Se">
-          <label class="label" data-page-node-id="JRe9Q9Qw9tpFMWUX67jdTp">业务单位</label>
-          <select class="select" style="width:100%" data-page-node-id="H1kNMgSovw2jYcgw2hFmPB"><option data-page-node-id="pZEdfsxJaeKB8Ow69UIbjn" selected="">宁波分公司</option><option data-page-node-id="rlgQQW9UvFe2Hcaa0scee4">长沙分公司</option><option data-page-node-id="bO7uoVUQ5vn3qEo0D7mvEV">南京分公司</option></select>
+        <div data-page-node-id="fJh6A6zg59YzYJD0tl946r">
+          <label class="label" data-page-node-id="LVMOWFH3ArVWYBYLxyDFUU">企业模式</label>
+          <select class="select" style="width:100%" data-page-node-id="ZWmB9hEDu7PCoy8vahvGnk"><option data-page-node-id="Z0Pocu6zI1bmecaEifWwog" selected="">管理员模式</option><option data-page-node-id="UaEzQrEyIkrfk2rnSeY41R">非管理员模式</option></select>
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="BgS2DQ9pdrtBiK9Fxbd8No">
+        <div data-page-node-id="aXrrttWLmINgAqdFqyL0W3">
+          <label class="label" data-page-node-id="hxh0EPB1tHNwQcIoYvWf8T">适当性等级</label>
+          <select class="select" style="width:100%" data-page-node-id="tnsz0UVvXh4aMWOI8oHtYn"><option data-page-node-id="tGvTwaZSxVcJ4CmwePC806">C1</option><option data-page-node-id="wpdrntABl2FNc3R3ExZjFX">C2</option><option data-page-node-id="7Y98G9fAp20BLJDlhuIKKz">C3</option><option data-page-node-id="e10byV82bbftfenTVJ64Rg" selected="">C4</option><option data-page-node-id="pDP4iPnDQGZbhdz9Km0MIS">C5</option></select>
+        </div>
+        <div data-page-node-id="kZmnQaRUYOdXKmE1yaS8qm">
+          <label class="label" data-page-node-id="TRH8qMO3ZpVSULuILdOR8B">是否专业投资者</label>
+          <select class="select" style="width:100%" data-page-node-id="YR5H05fjgQtyivUICIFoCW"><option data-page-node-id="oBY3MXsrW3maRuwdO1gH61" selected="">是</option><option data-page-node-id="5mBJoXMKmHJ83L299HVrIs">否</option></select>
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="ZNRsKYncnDLgeY3g4cJ05f">
+        <div data-page-node-id="uqaXtNlDaU7E1J3TDEucwA">
+          <label class="label" data-page-node-id="YnoXP9IWNLe0vobjgekszs">客户战略等级</label><select disabled class="select" style="width:100%" data-page-node-id="DKaZo9yPsF6gdf1P2N0Ao6"><option data-page-node-id="lsMIhDoWOQO9Ck1ZRU1MNC">v1</option><option data-page-node-id="rJSQ46CiivDFIdMSGUk5eP">v2</option><option data-page-node-id="UcJyUBHzd4WmJ1s0UPateq">v3</option><option data-page-node-id="aFHgoLyRqgHXFd4jTCGC29" selected="">v1-1</option><option data-page-node-id="SoNOIZoV6PPPptTarW5Ofk">v1-2</option><option data-page-node-id="qEDHhHv6neQtFW3vqn2db5">v1-11</option></select>
+          <div class="fhint" data-page-node-id="XbkMlvxldgnFWOl2cSV1lK">只读字段</div>
+        </div>
+        <div data-page-node-id="U5VopHKt6PoW3SuFDj3q6A">
+          <label class="label" data-page-node-id="Iwk95ym0WkM5lCYMipBly7">权益规模</label>
+          <input class="input ro" style="width:100%" type="text" value="8,088万" readonly data-page-node-id="y8QuCG0zNBD5FuhH7YqFQI">
+          <div class="fhint" data-page-node-id="NTjJKELq7jdus8hLosyCNb">只读字段</div>
+        </div>
+      </div>
+      <div class="mgroup" data-page-node-id="XGlcKoU8Zh9lByVKzXeKpu">业务线与归属</div>
+      <div class="field field-2" data-page-node-id="4NaugACIpOHM4x9GyEt7em">
+        <div data-page-node-id="G9vRMYm6pGWOmBJUQVozdW">
+          <label class="label" data-page-node-id="NmhBeCB8kAZtUc86hrcbl1">是否经纪业务客户</label>
+          <select class="select" style="width:100%" data-page-node-id="vhGNogx0H7Sb3EeqigwIlK"><option data-page-node-id="Jq48oKFpggE7yZChvKB6jM">是</option><option data-page-node-id="8Q7vc2z45deI1tD8xFfm2A" selected="">否</option></select>
+        </div>
+        <div data-page-node-id="PJAskapkXo49wnRbDaKO3Q">
+          <label class="label" data-page-node-id="ODMAqVv21KZ4iGWtVNtDH1">是否交易咨询客户</label>
+          <select class="select" style="width:100%" data-page-node-id="fyofP2d3ZsQ2ITjGIygT6t"><option data-page-node-id="or7mun7PuG6jHA7ooJklS9" selected="">是</option><option data-page-node-id="KN6Ez1DYfeaLX0CChkDaSq">否</option></select>
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="Z9U04gLQRVExlvY6EifMSv">
+        <div data-page-node-id="7yE395n86vUSKg3R15oacf">
+          <label class="label" data-page-node-id="zvOhpNVcw3CBHcMGcCA0zd">交易咨询已支付费用</label>
+          <input class="input" style="width:100%" type="text" value="12.00万" data-page-node-id="DWMD8R3zeexJVU7uvBilgX">
+        </div>
+        <div data-page-node-id="ILqGXXudKLOIKClz54taQU">
+          <label class="label" data-page-node-id="FhG31P0z633ADZ0Sym9UeT">是否资管客户</label>
+          <select class="select" style="width:100%" data-page-node-id="29zDGX9SxAAJw8YcJ1uqkQ"><option data-page-node-id="3ZiQSmjr5s4ces5hFv9r1F" selected="">是</option><option data-page-node-id="rvtJtgrUfzCtIh3byfPvxQ">否</option></select>
+        </div>
+      </div>
+      <div class="field" data-page-node-id="qADasqE8c2g7XaStMTZIp1">
+        <div data-page-node-id="ChMZi2VNzHmyx9gqFHyVsF">
+          <label class="label" data-page-node-id="2crJwmCnfAh9oSgVdDc2Py">业务线索</label>
+          <select class="select" style="width:100%" data-page-node-id="MUmszuDtr3Z98pBGxAcnQU"><option data-page-node-id="jnAfUTDFCW6CucbMbj7NSp" selected="">经纪业务-宁波营业部-孙倩</option><option data-page-node-id="Ms3iLM7paAusLQglQdGdsJ">经纪业务-长沙营业部-周涛</option><option data-page-node-id="KyAPQ4nDdbv7XsMVSNo9Gp">资管业务-上海营业部-赵磊</option><option data-page-node-id="nOAdWDRHT3c4YEoQnP1cCO">咨询业务-北京营业部-郑凯</option><option data-page-node-id="kCw418abP7fVxPfOAxlaVn">经纪业务-深圳营业部-王芳</option></select>
+          <div class="fhint" data-page-node-id="HdnVpEV0JoKMCOh4fG7wD5">格式：业务线-营业部-客户经理</div>
+        </div>
+      </div>
+      <div class="field" data-page-node-id="rWaMHWQXI91dEZtpMHm07n">
+        <div data-page-node-id="HdOzLD2h0ZuvcDANqi21Qz">
+          <label class="label" data-page-node-id="8OGElfSBwy7WJA4iKsqjkI">客户经理</label>
+          <input class="input" style="width:100%" type="text" value="孙倩,周涛,赵磊" data-page-node-id="rcz1BBZ0arWdarO1pH9tFe">
+          <div class="fhint" data-page-node-id="hy4R8ZxY2VimVEdTVmZUmY">支持多个值，以英文逗号分隔</div>
+        </div>
+      </div>
+      <div class="mgroup" data-page-node-id="cBj3zTYCQIqObgJ3yKi1Vk">账号与安全</div>
+      <div class="field field-2" data-page-node-id="8BKCiRZbxUBvxzSI0ez4qe">
+        <div data-page-node-id="Bg0vXiNTeis23qUZ5Gz61n">
+          <label class="label" data-page-node-id="TIHyraYRG3qukd453gxQv0">电子密码器分配时间</label>
+          <input class="input ro" style="width:100%" type="text" value="2024-09-24 10:12" readonly data-page-node-id="p6xybKplsmhUzh2o4733xg">
+        </div>
+        <div data-page-node-id="kr5I9QfodzkRPbr4wrvkIN">
+          <label class="label" data-page-node-id="3nSpA3IPttPnYvTJiH2aEk">服务密码发送时间</label>
+          <input class="input ro" style="width:100%" type="text" value="2024-09-23 16:40" readonly data-page-node-id="zeXahsDlaZe7TKHzKvA9E4">
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="FSBwmIH0ATv1f7FkbVKd16">
+        <div data-page-node-id="J1Bvx1SMU3gs3Ur5ektKUl">
+          <label class="label" data-page-node-id="KvexWgc2eXWLk9z3mAWdBb">电子密码器</label>
+          <select class="select" style="width:100%" data-page-node-id="q8pXxmTv9rfVZ8KPZc7lvb"><option data-page-node-id="FInXHuWiTpjpCS5YRA0eTS" selected="">已分配</option><option data-page-node-id="koQz1kPY0IyeERXxfp9H4t">未分配</option></select>
+        </div>
+        <div data-page-node-id="ZqlfgE8dAoUQ4vVpuyTmpK">
+          <label class="label" data-page-node-id="T9AypZBDMRhwbwawGozvAg">登录方式</label>
+          <input class="input ro" style="width:100%" type="text" value="手机号/邮箱登录" readonly data-page-node-id="A0JOg8W8pYbV8h2Kwl5Tn6">
+          <div class="fhint" data-page-node-id="gnCEkEmGA4OfKMkIUG7eqx">根据实际登录方式回显</div>
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="ovmm3Sbm5ywvh0QV9dryY9">
+        <div data-page-node-id="i6jbW4V9QxDdo8zQMUXDHP">
+          <label class="label" data-page-node-id="pztLEkdllqokDh6BJ15pIT">是否修改初始服务密码</label>
+          <select class="select" style="width:100%" data-page-node-id="Fd1P9p155efSAMz6tP6C5W"><option data-page-node-id="pnNLUnB0XtHLoi5TqcMFig" selected="">是</option><option data-page-node-id="mruyJ6LjARzOW9AnUH9v5b">否</option></select>
+        </div>
+        <div data-page-node-id="xRRCH0hMZWidtjPKkjmrIy">
+          <label class="label" data-page-node-id="6E1SQY9ys4BB5Lj5OeW4FL">登录/联系手机号</label>
+          <input class="input" style="width:100%" type="text" value="15316125848" data-page-node-id="faymZC7xSj8xyKYoRhGW92">
+        </div>
+      </div>
+      <div class="field" data-page-node-id="IUlZOpzmhAmyCaIXd7l8o0">
+        <div data-page-node-id="IcVEwzx15EHGNtF2EPor8o">
+          <label class="label" data-page-node-id="Qsw4sjIs4vq6uEgm9gCkrm">客户角色</label>
+          <select class="select" style="width:100%" data-page-node-id="0CGUcEo6iVOqduRIxDFYyc"><option data-page-node-id="2VhPbasP63HRooFwxKUk9B" selected="">管理员</option><option data-page-node-id="jgxNKncQ8lnkF0x03Ke7S4">操作员</option></select>
+        </div>
+      </div>
+      <div class="mgroup" data-page-node-id="F0FbH9lkP9qwAhUOBxaMBb">审计信息</div>
+      <div class="field field-2" data-page-node-id="2CQEIo97NycsVKrveMl7FR">
+        <div data-page-node-id="Ve14IPq49rneBWc7wwdCvq">
+          <label class="label" data-page-node-id="OFhBm07avmdwLo9SFSQNzo">创建时间</label>
+          <input class="input ro" style="width:100%" type="text" value="2024-09-23 15:02" readonly data-page-node-id="zuhxrtqMEDj6qDCTugoXGI">
+        </div>
+        <div data-page-node-id="R6kMemSSVvl7K3E78N3W7q">
+          <label class="label" data-page-node-id="97QgrBpuF9MeNGq6XWZQOP">创建人</label>
+          <input class="input ro" style="width:100%" type="text" value="孙倩" readonly data-page-node-id="L7GtcszwGtFh6y94sn6BjB">
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="AwdyUi3oTjUL0McQNQam2A">
+        <div data-page-node-id="Ye7H5S4iIrdthJbPrD5OCh">
+          <label class="label" data-page-node-id="NwPRsOBTJgRnKO4M3aPYxS">更新时间</label>
+          <input class="input ro" style="width:100%" type="text" value="2024-11-05 09:31" readonly data-page-node-id="in8S1OkFh42CqSIckHzEuZ">
+        </div>
+        <div data-page-node-id="XUIaQkTLByGLNaZfcGMh6X">
+          <label class="label" data-page-node-id="ZM15mdDaEvxBfb7IGtGw4G">更新人</label>
+          <input class="input ro" style="width:100%" type="text" value="赵磊" readonly data-page-node-id="wbINrBspJYulTsbbcJnamG">
+        </div>
+      </div>
+      <div class="field" data-page-node-id="Qgg6KiBRKtum8cU6ECnQV2">
+        <div data-page-node-id="6Mio15Hug8ZbZOZKWNNVCs">
+          <label class="label" data-page-node-id="ERNl6w4RH9RCCRstXLe1j8">推荐人</label>
+          <input class="input" style="width:100%" type="text" value="陈静" data-page-node-id="7yhPqrnuOGuMWO7uuWXEmd">
+        </div>
+      </div>
+      <div class="field field-2" data-page-node-id="fRXKrSoPj7t7B0KIeVZ3I3">
+        <div data-page-node-id="NIGAGpYVasYAQhiRRjJgIz">
+          <label class="label" data-page-node-id="21FFZ064uLpjM6PRcibXdF">登录时间</label>
+          <input class="input ro" style="width:100%" type="text" value="2026-09-22 09:14" readonly data-page-node-id="84BO0ESiuRYZXpX0HCqYot">
+        </div>
+        <div data-page-node-id="K8GFpWy4ODV1MsyOaeRA3A">
+          <label class="label" data-page-node-id="v5Xl0mz7ZO0Tc6J9LPsB0w">网络地址</label>
+          <input class="input ro" style="width:100%" type="text" value="115.204.88.31" readonly data-page-node-id="MeL0cGriY6VR7kfr39nnDr">
         </div>
       </div>
     </div>
