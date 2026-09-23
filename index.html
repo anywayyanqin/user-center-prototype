@@ -248,6 +248,8 @@ table.data tbody tr.on td.strong{color:var(--primary)}
 /* 高亮 */
 .proto-element{position:relative;border-radius:10px;transition:.2s}
 .proto-element:hover,.proto-element.hl{box-shadow:0 0 0 2px var(--primary),0 4px 14px rgba(22,93,255,.16);background-color:rgba(22,93,255,.03)}
+.view,.rp-section{display:block}
+.view[hidden],.rp-section[hidden]{display:none}
 .proto-desc{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:8px;padding:11px;cursor:pointer;transition:.2s}
 .proto-desc:hover,.proto-desc.hl{background:#FEF3C7;border-color:#F59E0B;box-shadow:0 2px 8px rgba(245,158,11,.16)}
 .desc-head{display:flex;gap:9px;align-items:flex-start}
@@ -404,10 +406,10 @@ table.data tbody td{vertical-align:middle}
       <!-- 侧边菜单 -->
       <nav class="sidebar" data-page-node-id="8lTx797zy8UbUfWQC7tRPe">
         <div class="menu-group" data-page-node-id="ViIg2uk5Bawv1qcbFmUUWj">客户管理</div>
-        <div class="menu-item on" data-page-node-id="Qtd2AV3HU1ZslQOpTjlpYo"><svg class="ico" data-page-node-id="ngitKHnlt9EONWOdXQMVOq"><use href="#i-gauge" data-page-node-id="aLINULjYEXjcmDW0AquECu"></use></svg>客户总览看板</div>
-        <div class="menu-item" data-page-node-id="MyHyzFBVqVN4ShuL1HfOCw"><svg class="ico" data-page-node-id="pzPWzYKb6kipRdj2NO0l7Y"><use href="#i-building" data-page-node-id="EvNSGBvB60KF5HO3tBRvxf"></use></svg>机构客户</div>
-        <div class="menu-item" data-page-node-id="SH7hRnBZ9z7Vn0V7wDiF55"><svg class="ico" data-page-node-id="ia8BGJUHSNsv1HSj8SJFci"><use href="#i-users" data-page-node-id="944p9NU8hrJNYiAybXAJK6"></use></svg>成员与个人客户</div>
-        <div class="menu-item" data-page-node-id="kfC8HnlF6pt54wwtHoNAtt"><svg class="ico" data-page-node-id="XDRbCltawFpUDQ3TIvCFcr"><use href="#i-follow" data-page-node-id="rDTpiF3FjEGEE3auoqqbna"></use></svg>跟进管理</div>
+        <div class="menu-item on" data-page-node-id="Qtd2AV3HU1ZslQOpTjlpYo" data-view="home"><svg class="ico" data-page-node-id="ngitKHnlt9EONWOdXQMVOq"><use href="#i-gauge" data-page-node-id="aLINULjYEXjcmDW0AquECu"></use></svg>客户总览看板</div>
+        <div class="menu-item" data-page-node-id="MyHyzFBVqVN4ShuL1HfOCw" data-view="customers" data-tab="inst"><svg class="ico" data-page-node-id="pzPWzYKb6kipRdj2NO0l7Y"><use href="#i-building" data-page-node-id="EvNSGBvB60KF5HO3tBRvxf"></use></svg>机构客户</div>
+        <div class="menu-item" data-page-node-id="SH7hRnBZ9z7Vn0V7wDiF55" data-view="customers" data-tab="member"><svg class="ico" data-page-node-id="ia8BGJUHSNsv1HSj8SJFci"><use href="#i-users" data-page-node-id="944p9NU8hrJNYiAybXAJK6"></use></svg>成员与个人客户</div>
+        <div class="menu-item" data-page-node-id="kfC8HnlF6pt54wwtHoNAtt" data-view="followups"><svg class="ico" data-page-node-id="XDRbCltawFpUDQ3TIvCFcr"><use href="#i-follow" data-page-node-id="rDTpiF3FjEGEE3auoqqbna"></use></svg>跟进管理</div>
         <div class="menu-group" data-page-node-id="c8YJqEIwG0bJtyqLGbwTmt">业务配置</div>
         <div class="menu-item" data-page-node-id="gqYgAB5ODOAMoSFYE3P4Pq"><svg class="ico" data-page-node-id="g4KbniBLAqHGEoyqVwLYeV"><use href="#i-lines" data-page-node-id="5hPL3KCk7trFhoBC2rSKBO"></use></svg>业务线管理</div>
         <div class="menu-item" data-page-node-id="fNWQiyd1mVohOWKDRq5MCG"><svg class="ico" data-page-node-id="DC5qKECBfT4RC0IBCjzTtq"><use href="#i-sitemap" data-page-node-id="zvOSG95YzuLYbK0BkjGaGG"></use></svg>业务单位</div>
@@ -417,6 +419,8 @@ table.data tbody td{vertical-align:middle}
 
       <!-- 主内容 -->
       <main class="main" style="flex:1" data-page-node-id="bsaO2QbK7oi55j1XIP9p99">
+
+      <div class="view" data-view="home">
 
         <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
           <div data-page-node-id="jra7RFxBgbcWp0isyRiAYY">
@@ -612,6 +616,19 @@ table.data tbody td{vertical-align:middle}
           </div>
         </div>
 
+        </div><!-- /view-home -->
+
+        <div class="view" data-view="customers" hidden>
+          <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
+            <div>
+              <div class="page-title">客户管理</div>
+              <div class="page-sub">机构视图与成员与个人视图共用筛选栏；机构 10 家、成员与个人客户 7 名（示例数据）</div>
+            </div>
+            <div class="head-actions">
+              <button class="btn btn-outline"><svg class="ico"><use href="#i-upload"></use></svg>批量导入</button>
+              <button class="btn btn-primary"><svg class="ico"><use href="#i-download"></use></svg>导出 Excel</button>
+            </div>
+          </div>
         <!-- ★ 连线 3：客户主表 -->
         <div class="proto-element card section-gap hl" data-proto-id="3" data-page-node-id="EXmUNCw9gT0qYw4yQTrjpJ">
           <div class="tabs">
@@ -824,6 +841,19 @@ table.data tbody td{vertical-align:middle}
           <span data-page-node-id="0O9ZjpwxFqpT4RMLbADd8Q"><b data-page-node-id="xdn6N9BlFkZ4ZHcqHnYieW">③ 客户主表</b>：机构 / 成员两个 Tab 共用筛选栏；机构表 40+ 字段共 32 家，成员表 99 条；支持批量导入与导出 Excel，行操作为修改 / 注销 / 重置密码。</span>
         </div>
 
+        </div><!-- /view-customers -->
+
+        <div class="view" data-view="followups" hidden>
+          <div class="page-head" data-page-node-id="P4dJg0KWGFnvIGWqOHZvYY">
+            <div>
+              <div class="page-title">跟进管理</div>
+              <div class="page-sub">按企业维度的跟进台账，状态流转 待跟进 → 跟进中 → 已落地 / 暂停</div>
+            </div>
+            <div class="head-actions">
+              <button class="btn btn-outline"><svg class="ico"><use href="#i-download"></use></svg>导出报表</button>
+              <button class="btn btn-primary" onclick="openModal('followModal')"><svg class="ico"><use href="#i-plus"></use></svg>新增跟进</button>
+            </div>
+          </div>
         <!-- ★ 连线 4：跟进台账 -->
         <div class="proto-element card" data-proto-id="4" style="margin-bottom:20px" data-page-node-id="JGFRy0EOtaLuhfMdmFAGSC">
           <div class="card-head" data-page-node-id="APXvwiVyca03SFhKAb0OmP">
@@ -867,6 +897,7 @@ table.data tbody td{vertical-align:middle}
           <span data-page-node-id="uiHvusHpJRpTJxABFeCseJ"><b data-page-node-id="DlggpLaF1bABWkL6ON4hRE">④ 跟进台账</b>：按企业维度记录跟进过程，状态流转 待跟进 → 跟进中 → 已落地 / 暂停，支持新增跟进与详情查看。</span>
         </div>
 
+        </div><!-- /view-followups -->
       </main>
     </div>
   </div>
@@ -887,7 +918,8 @@ table.data tbody td{vertical-align:middle}
       <div class="rp-head" data-page-node-id="wWy77VCP7fZprEGv05yYjL"><svg class="ico" style="font-size:15px" data-page-node-id="64HvC6UqTQWODuWFPC7NXE"><use href="#i-signs" data-page-node-id="hsCoLxQQq0F9DlKduany27"></use></svg>功能说明</div>
 
       <div class="rp-list" data-page-node-id="lbGC36Cn2h1GSczxvyVDCo">
-        <div class="proto-desc" data-proto-id="1" data-page-node-id="YMt7aLqD3O8ZrVyaJKkY3U">
+        <div class="rp-section" data-view="home">
+                <div class="proto-desc" data-proto-id="1" data-page-node-id="YMt7aLqD3O8ZrVyaJKkY3U">
           <div class="desc-head" data-page-node-id="LKSLOPV1DuDh4AoYLwy1r6">
             <span class="desc-num" data-page-node-id="CYvh5VMjFftnIJAB1MI6mE">1</span>
             <div data-page-node-id="IBcMrwgzHSjM6J0ElkEato">
@@ -907,9 +939,12 @@ table.data tbody td{vertical-align:middle}
           </div>
         </div>
 
+        </div><!-- /rp-section home -->
+
+                <div class="rp-section" data-view="customers">
         <div class="proto-desc" data-proto-id="3">
           <div class="desc-head">
-            <span class="desc-num">3</span>
+            <span class="desc-num">1</span>
             <div>
               <div class="desc-title">机构视图与筛选</div>
               <div class="desc-body">
@@ -926,7 +961,10 @@ table.data tbody td{vertical-align:middle}
           </div>
         </div>
 
-        <div class="proto-desc" data-proto-id="4" data-page-node-id="24QEULZaflhsEzZwyJYVyF">
+        </div><!-- /rp-section customers -->
+
+        <div class="rp-section" data-view="followups">
+                <div class="proto-desc" data-proto-id="4" data-page-node-id="24QEULZaflhsEzZwyJYVyF">
           <div class="desc-head" data-page-node-id="VeJ2pOrFyj8nUZUvjYa6l5">
             <span class="desc-num" data-page-node-id="0ZOGIQyKJLQdJxyv7aCPL0">4</span>
             <div data-page-node-id="evQLYVTDLt9TCajyiE8lDC">
@@ -935,6 +973,7 @@ table.data tbody td{vertical-align:middle}
             </div>
           </div>
         </div>
+        </div><!-- /rp-section followups -->
       </div>
 
       <div class="rp-foot" data-page-node-id="quCnwUHFke8KeJoPfRxeKA">
@@ -1350,6 +1389,21 @@ document.querySelectorAll('.overlay').forEach(function(o){
 document.addEventListener('keydown', function(e){
   if (e.key === 'Escape') document.querySelectorAll('.overlay').forEach(function(o){ o.classList.add('hide'); });
 });
+// 初始化视图状态（按侧边栏菜单「on」项决定；若未带则默认 home）
+(function(){
+  var onItem = document.querySelector('.menu-item.on[data-view]');
+  var v = onItem ? onItem.dataset.view : 'home';
+  document.querySelectorAll('.view').forEach(function(el){
+    el.hidden = (el.dataset.view !== v);
+  });
+  document.querySelectorAll('.rp-section').forEach(function(el){
+    el.hidden = (el.dataset.view !== v);
+  });
+  if (v !== 'customers') {
+    document.getElementById('tableInst').style.display = '';
+    document.getElementById('tableMember').style.display = 'none';
+  }
+})();
 
 function selectRow(row){
   var t = row.closest('table');
@@ -1365,6 +1419,31 @@ function switchTab(t){
   document.getElementById('tabMember').classList.toggle('on', !isInst);
   requestAnimationFrame(drawConnections);
 }
+
+/* =============== 视图切换（侧边栏菜单联动） =============== */
+function switchView(view, tab){
+  // 切换主表 view
+  document.querySelectorAll('.view').forEach(function(v){
+    v.hidden = (v.dataset.view !== view);
+  });
+  // 切换右侧说明
+  document.querySelectorAll('.rp-section').forEach(function(s){
+    s.hidden = (s.dataset.view !== view);
+  });
+  // 高亮菜单项（data-view 与 data-tab 都匹配才 on，避免「机构客户」「成员与个人客户」同时亮起）
+  document.querySelectorAll('.menu-item[data-view]').forEach(function(m){
+    var tabKey = m.dataset.tab || '';
+    m.classList.toggle('on', m.dataset.view === view && tabKey === (tab || ''));
+  });
+  // 客户管理子标签（机构 / 成员与个人）
+  if (tab) { try { switchTab(tab); } catch(e){} }
+  requestAnimationFrame(drawConnections);
+}
+document.querySelectorAll('.menu-item[data-view]').forEach(function(m){
+  m.addEventListener('click', function(){
+    switchView(m.dataset.view, m.dataset.tab || '');
+  });
+});
 
 var toastTimer;
 function toast(msg){
