@@ -1168,12 +1168,13 @@ table.data tbody td{vertical-align:middle}
         <div class="field field-2" data-page-node-id="tJiFimpPhSm9OEwMitsG3q">
           <div data-page-node-id="zIcv9avqmG3etIJ1idVmBm">
             <label class="label" data-page-node-id="COKRmn3cDZgOeeYreW2CGR">材料类型 <span class="req" data-page-node-id="MDdqaNvh5K8AXvtSVE2Hsd">*</span></label>
-            <select class="select" id="archType" style="width:100%" data-page-node-id="7DiOfq7lWL9XcU00cpcel6"><option data-page-node-id="tYHVBxiKXMYURzWz0D73cl">客户协议</option><option data-page-node-id="ykaYGCOoELuez1JfK4fZ3u">管理员表</option><option data-page-node-id="LYjKdRg7u3zJe8QOQOcJue">操作员表</option><option data-page-node-id="N7GLP5u5MFc5otRFv4GAAp">授权书</option><option data-page-node-id="qNNaEZiAXk69NN0SGddA78">其他材料</option></select>
+            <select class="select" id="archType" onchange="refreshArchVerList()" style="width:100%" data-page-node-id="7DiOfq7lWL9XcU00cpcel6"><option data-page-node-id="tYHVBxiKXMYURzWz0D73cl">客户协议</option><option data-page-node-id="ykaYGCOoELuez1JfK4fZ3u">管理员表</option><option data-page-node-id="LYjKdRg7u3zJe8QOQOcJue">操作员表</option><option data-page-node-id="N7GLP5u5MFc5otRFv4GAAp">授权书</option><option data-page-node-id="qNNaEZiAXk69NN0SGddA78">其他材料</option></select>
           </div>
           <div data-page-node-id="JKw9BqMY8AmUyQ32sP0bQl">
             <label class="label" data-page-node-id="ZP9gWb94MeQtEcgAkIq2wK">档案版本号 <span class="req" data-page-node-id="e03rpbR3qOytjQ0NdCCyk5">*</span></label>
-            <select class="select" id="archVer" style="width:100%" data-page-node-id="uOllidHH8z5Uthog352VMb"><option data-page-node-id="0FqbGQTFeswdY15pEUmVx9">V1.0</option><option data-page-node-id="YAXF5XmHnYekxnYzP7Ccsh">V1.1</option><option data-page-node-id="sSE7KOWauOEJa57sSgwjXc">V2.0</option><option selected="" data-page-node-id="aXeUnlCbyakEYYwH9TkVRq">V2.1</option><option data-page-node-id="urE90WnweheWFhXcyRx80m">V2.2</option><option data-page-node-id="6zG4mlrGkro50TRmLSN3lg">V3.0</option></select>
-            <div class="fhint" data-page-node-id="UACreMPzvZ4FAfG8tj00rk">上传后版本号同步至客户中心，并覆盖该材料类型的当前版本</div>
+            <input class="input" list="archVerList" id="archVer" style="width:100%" placeholder="搜索或输入版本号，如 V2.1" autocomplete="off" data-page-node-id="h0rNJmTVbQtw3M8dFAW7u5">
+            <datalist id="archVerList" data-page-node-id="GNcvABoH3Lrz9FaE14hkm6"></datalist>
+            <div class="fhint" data-page-node-id="UACreMPzvZ4FAfG8tj00rk">支持模糊搜索与键盘输入；新材料默认填充该类型下一个自增版本号（旧版本自动转为历史版本）</div>
           </div>
         </div>
         <div class="field" data-page-node-id="9mgRi6vuOTjwLISJzPE1Xs">
@@ -1883,9 +1884,55 @@ function openInstDetail(uid, name){
   openModal('instDetailModal');
 }
 
+
+/* ---- 档案版本号：自增累加 + 模糊搜索 ---- */
+function _verParse(v){
+  var m=/V?(\d+)\.(\d+)/i.exec(v||'');
+  return m ? {maj:+m[1], min:+m[2]} : null;
+}
+function _verFmt(maj,min){ return 'V'+maj+'.'+min; }
+function verNextFor(type, rows){
+  var exist=[];
+  var majors={};
+  for (var i=0;i<rows.length;i++){
+    if (rows[i].t !== type) continue;
+    exist.push(rows[i].v);
+    var p=_verParse(rows[i].v);
+    if (p) majors[p.maj] = Math.max(majors[p.maj]||0, p.min);
+  }
+  var baseline = ['V1.0','V1.1','V2.0','V2.1','V2.2','V3.0'];
+  var list = baseline.slice();
+  for (var i=0;i<exist.length;i++) if (list.indexOf(exist[i])<0) list.push(exist[i]);
+  var suggest;
+  if (!Object.keys(majors).length){
+    suggest = 'V1.0';
+  } else {
+    var maxMaj = Object.keys(majors).map(Number).reduce(function(a,b){return a>b?a:b;}, 0);
+    var nextMin = (majors[maxMaj]||0) + 1;
+    suggest = nextMin <= 9 ? _verFmt(maxMaj, nextMin) : _verFmt(maxMaj+1, 0);
+  }
+  if (list.indexOf(suggest) < 0) list.unshift(suggest);
+  var sorted = [suggest].concat(
+    exist.filter(function(v){return v!==suggest && _verParse(v);})
+        .sort(function(a,b){var pa=_verParse(a), pb=_verParse(b); return pb.maj-pa.maj || pb.min-pa.min;})
+  );
+  for (var i=0;i<list.length;i++) if (sorted.indexOf(list[i])<0) sorted.push(list[i]);
+  return {suggest: suggest, list: sorted};
+}
+function refreshArchVerList(){
+  var t = document.getElementById('archType');
+  var inp = document.getElementById('archVer');
+  var dl = document.getElementById('archVerList');
+  if (!t || !dl) return;
+  var r = verNextFor(t.value, archRows());
+  dl.innerHTML = r.list.map(function(v){ return '<option value="'+v+'">'; }).join('');
+  if (inp && document.activeElement !== inp) inp.value = r.suggest;
+}
+
 function openArchive(uid, name){
   ARCH_CUST = { uid: uid, name: name };
   renderArchive();
+  refreshArchVerList();
   openModal('archiveModal');
 }
 function openArchiveFromDetail(){ openArchive(ARCH_CUST.uid, ARCH_CUST.name); }
@@ -1902,6 +1949,7 @@ function doArchUpload(){
   rows.unshift({ t: t, v: v, src: '后台上传', by: '陈静', at: now, cur: 1 });
   f.value = '';
   renderArchive();
+  refreshArchVerList();
   toast('档案已上传：' + t + ' ' + v + '，版本号已同步至客户中心');
 }
 
