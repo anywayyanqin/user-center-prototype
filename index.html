@@ -374,6 +374,11 @@ table.data tbody td{vertical-align:middle}
 .filepick{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px dashed #DCDFE6;border-radius:8px;background:#FBFCFE}
 .filepick input[type=file]{flex:1;font-size:13px;color:#86909C}
 .imp-empty{padding:24px 12px;text-align:center;color:#86909C;font-size:13px}
+.modal-foot > .foot-actions{margin-left:auto;display:flex;gap:10px}
+.arch-draft{font-size:12px;color:#86909C;align-self:center;display:flex;align-items:center;gap:6px}
+.arch-draft .ad-time{color:#C9CDD4}
+.arch-draft .ad-link{color:var(--primary);cursor:pointer;padding:2px 4px;border-radius:4px}
+.arch-draft .ad-link:hover{background:rgba(22,93,255,.08)}
 </style></head>
 <body data-page-node-id="vwLgFlJKca6FEmzZauT350" style="">
 
@@ -1162,8 +1167,12 @@ table.data tbody td{vertical-align:middle}
       </div>
 
     </div>
-    <div class="modal-foot" data-page-node-id="rt71Fs4lHn9RAfD8Qlmmll">
-      <button class="btn btn-soft" onclick="closeModal('archiveModal')" data-page-node-id="bM1OBio0ZMBA872reTJeH8">关闭</button>
+    <div class="modal-foot" data-page-node-id="hXMQrdVP7D26v5TA95iIXh">
+      <div class="arch-draft" id="archDraftStatus" data-page-node-id="3eBGIbG8VRVisebAH5eNET">暂无草稿</div>
+      <div class="foot-actions" data-page-node-id="W3BiSxfgcVwMI3Kar8c8iK">
+        <button class="btn btn-soft" onclick="closeModal('archiveModal')" data-page-node-id="iySdj7PhiTvV4Kzdzng41w">关闭</button>
+        <button class="btn btn-primary" onclick="archOnSaveDraft()" data-page-node-id="RwjJWBKgfrQDsjaWCYdrpu"><svg class="ico" data-page-node-id="I9bbjC0ffl6mw7F0xOtxDh"><use href="#i-check" data-page-node-id="V8MehBWeYW0OG43ynr717c"></use></svg>保存草稿</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1989,6 +1998,55 @@ function verNextFor(type, rows){
   for (var i=0;i<list.length;i++) if (sorted.indexOf(list[i])<0) sorted.push(list[i]);
   return {suggest: suggest, list: sorted};
 }
+
+/* ================= 档案中心：草稿保存与恢复（localStorage） ================= */
+var ARCH_DRAFT = { uid: null };
+
+function archGetDraft(uid){
+  try{ return JSON.parse(localStorage.getItem('archDraft_' + uid) || 'null'); }catch(e){ return null; }
+}
+function archSetDraft(uid, t, v, f){
+  try{ localStorage.setItem('archDraft_' + uid, JSON.stringify({type:t, ver:v, file:f, savedAt: Date.now()})); }catch(e){}
+}
+function archClearDraft(uid){
+  try{ localStorage.removeItem('archDraft_' + uid); }catch(e){}
+}
+function archFmtTime(ts){
+  var d = new Date(ts);
+  return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+}
+function archRefreshDraftStatus(){
+  var el = document.getElementById('archDraftStatus');
+  if (!el) return;
+  var uid = ARCH_DRAFT.uid;
+  if (!uid){ el.innerHTML = '暂无草稿'; return; }
+  var d = archGetDraft(uid);
+  if (!d){ el.innerHTML = '暂无草稿'; return; }
+  var txt = '已保存草稿 <span class="ad-time">' + archFmtTime(d.savedAt) + '</span> · '
+          + '<b>' + (d.type || '—') + '</b> ' + (d.ver || '')
+          + (d.file ? (' · <span class="ad-time">' + d.file + '</span>') : '');
+  el.innerHTML = txt + ' <span class="ad-link" onclick="archOnClearDraft()">清空</span>';
+}
+function archOnSaveDraft(){
+  var uid = ARCH_DRAFT.uid;
+  if (!uid){ toast('请先选择客户再保存草稿'); return; }
+  var t = (document.getElementById('archType').value || '').trim();
+  var v = (document.getElementById('archVer').value || '').trim();
+  var f = document.getElementById('archFile').files[0];
+  var fname = f ? f.name : '';
+  if (!t && !v && !fname){ toast('草稿为空，无需保存'); return; }
+  archSetDraft(uid, t, v, fname);
+  archRefreshDraftStatus();
+  toast('草稿已保存：' + (t || '—') + ' ' + (v || '') + (fname ? (' · ' + fname) : '') + '（下次打开此客户自动恢复）');
+}
+function archOnClearDraft(){
+  var uid = ARCH_DRAFT.uid;
+  if (!uid) return;
+  archClearDraft(uid);
+  archRefreshDraftStatus();
+  toast('草稿已清空');
+}
+
 function refreshArchVerList(){
   var t = document.getElementById('archType');
   var inp = document.getElementById('archVer');
@@ -2001,8 +2059,18 @@ function refreshArchVerList(){
 
 function openArchive(uid, name){
   ARCH_CUST = { uid: uid, name: name };
+  ARCH_DRAFT.uid = uid;
   renderArchive();
   refreshArchVerList();
+  var d = archGetDraft(uid);
+  var tEl = document.getElementById('archType');
+  var vEl = document.getElementById('archVer');
+  if (d){
+    if (d.type && tEl) tEl.value = d.type;
+    if (d.ver && vEl) vEl.value = d.ver;
+    refreshArchVerList();
+  }
+  archRefreshDraftStatus();
   openModal('archiveModal');
 }
 function openArchiveFromDetail(){ openArchive(ARCH_CUST.uid, ARCH_CUST.name); }
@@ -2021,6 +2089,8 @@ function doArchUpload(){
   renderArchive();
   refreshArchVerList();
   toast('档案已上传：' + t + ' ' + v + '，版本号已同步至客户中心');
+  archClearDraft(ARCH_DRAFT.uid);
+  archRefreshDraftStatus();
 }
 
 /* ---- 档案 PDF 预览 ---- */
