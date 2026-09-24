@@ -371,6 +371,9 @@ table.data tbody td{vertical-align:middle}
 .cf-lines{display:flex;flex-direction:column;gap:2px;margin-top:7px;font-size:11.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .cf-back{font-size:13px;font-weight:600;color:var(--text-2);text-align:center;line-height:1.8}
 .card-cap{font-size:11.5px;color:var(--muted);text-align:center;margin-top:6px}
+.filepick{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px dashed #DCDFE6;border-radius:8px;background:#FBFCFE}
+.filepick input[type=file]{flex:1;font-size:13px;color:#86909C}
+.imp-empty{padding:24px 12px;text-align:center;color:#86909C;font-size:13px}
 </style></head>
 <body data-page-node-id="vwLgFlJKca6FEmzZauT350" style="">
 
@@ -1205,16 +1208,16 @@ table.data tbody td{vertical-align:middle}
     <div class="modal-head" data-page-node-id="KHHKeUxVwHK3JnKG1YFuar">
       <div data-page-node-id="MeHQDTGBJ59L20QlG7xmDP">
         <div class="modal-title" data-page-node-id="wP4b6JWoTxFRmM1PpkFsHH">批量导入客户</div>
-        <div class="modal-sub" data-page-node-id="qMJIZKC3PYETfnzK1qOKps">支持 Excel / CSV，单次最多 1,000 条；导入字段：姓名、手机号、邮箱、公司</div>
+        <div class="modal-sub" data-page-node-id="qMJIZKC3PYETfnzK1qOKps">支持本弹窗下载的 Excel / CSV 模板，单次最多 1,000 条；必填：姓名、手机号、公司</div>
       </div>
       <button class="icon-btn" onclick="closeModal('importModal')" data-page-node-id="Q8Rtg2WFMtTzUFrrM2O2yc"><svg class="ico" data-page-node-id="0mPl05akebmyEGvAuW8VMZ"><use href="#i-times" data-page-node-id="fmVWlthLOBveTMDSwhygIK"></use></svg></button>
     </div>
     <div class="modal-body" data-page-node-id="BoMM3HQqx1V7AhHLyvhk46">
 
       <div class="imp-steps" data-page-node-id="607Mcx3DbccRMpfWyNZhy7">
-        <span class="imp-step on" data-page-node-id="W7MJLedhgq75anIkAgRdIk">1 下载模板</span><span class="imp-arrow" data-page-node-id="dKgafngZAGcZjD2qKBT1NK">›</span>
-        <span class="imp-step on" data-page-node-id="wxCBInpyvUkFtljUfx4ZAE">2 上传文件</span><span class="imp-arrow" data-page-node-id="8PVR7R0UJJQEJGXHXFTbqd">›</span>
-        <span class="imp-step" data-page-node-id="vI3WhdGo7LRUQ1nPKIbfpW">3 校验并导入</span>
+        <span class="imp-step on" id="impStep1"\1>1 下载模板</span><span class="imp-arrow" data-page-node-id="dKgafngZAGcZjD2qKBT1NK">›</span>
+        <span class="imp-step" id="impStep2"\1>2 上传文件</span><span class="imp-arrow" data-page-node-id="8PVR7R0UJJQEJGXHXFTbqd">›</span>
+        <span class="imp-step" id="impStep3"\1>3 校验并导入</span>
       </div>
 
       <div class="panel" data-page-node-id="475Q3fAqoeqsAYPpJ9paGW">
@@ -1230,8 +1233,9 @@ table.data tbody td{vertical-align:middle}
           <span class="imp-col" data-page-node-id="uBWiLzjBA5KyUkafDQjl8R">职位</span>
         </div>
         <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap" data-page-node-id="YJd2U0AxuPChrtQ8e2WdhR">
-          <div class="arch-hint" style="margin-top:0" data-page-node-id="RF29t5i7LDqXuvyD32xDb9">按模板填写后上传；手机号重复将按「更新」处理，公司不存在时自动创建潜在企业。</div>
-          <button class="btn btn-outline btn-sm" onclick="toast('导入模板已开始下载：客户导入模板_2026.xlsx')" data-page-node-id="6sZmcAjQRcOf7WeM40TsIV"><svg class="ico" data-page-node-id="kweWrO4Zsqc1Yw7zBCgJ0e"><use href="#i-excel" data-page-node-id="45r4mrWlDI3AweWcaVpZ2N"></use></svg>下载模板</button>
+          <div class="arch-hint" style="margin-top:0" data-page-node-id="RF29t5i7LDqXuvyD32xDb9">模板第 1 行为表头，第 2–3 行为示例数据（正式导入前请删除）。手机号重复将按「更新」处理，公司不存在时自动创建潜在企业。</div>
+          <button class="btn btn-primary btn-sm" onclick="downloadTpl(&quot;xls&quot;)" data-page-node-id="CsrpzJkjb8A52PFE8NuoVo"><svg class="ico" data-page-node-id="ovs9ciyXbSN5O1DUwhXDgu"><use href="#i-excel" data-page-node-id="oqI8JeCYDGakx0CXSqD5Hr"></use></svg>下载 Excel 模板</button>
+          <button class="btn btn-outline btn-sm" onclick="downloadTpl(&quot;csv&quot;)" data-page-node-id="icEivL0wIQBkKIdcJ2psmz"><svg class="ico" data-page-node-id="o707DujaVhlGYYMjf9DyBV"><use href="#i-download" data-page-node-id="qQ99LJqetgioxZnYEUHKOQ"></use></svg>下载 CSV 模板</button>
         </div>
       </div>
 
@@ -1239,33 +1243,29 @@ table.data tbody td{vertical-align:middle}
         <div class="panel-title" data-page-node-id="NNqutGCwWI7IWqSoy5ogR2"><svg class="ico" style="font-size:14px" data-page-node-id="FNXZYxX3VFSkTA2sMIOK7B"><use href="#i-up" data-page-node-id="b98JRC4mmuC28BciFwLCnm"></use></svg>② 上传文件并解析</div>
         <div class="filepick" data-page-node-id="PBqDBOHOpoW62OAXrgdH6L">
           <svg class="ico" style="font-size:16px;color:var(--muted)" data-page-node-id="TMci1IuM3JmRMfM628oAan"><use href="#i-import" data-page-node-id="wGVqLTTnxQMPlUVP7tZy2O"></use></svg>
-          <input type="file" id="impFile" accept=".xlsx,.xls,.csv" data-page-node-id="neQ7EVeIbMZvgAQ3EXPJsU">
+          <input type="file" id="impFile" accept=".xls,.csv,.txt"\1>
           <button class="btn btn-primary btn-sm" onclick="doImportParse()" data-page-node-id="4GenJWxkoDKWUMPZQ4XCqG">解析文件</button>
         </div>
-        <div class="arch-hint" data-page-node-id="rhTOGNffNMFQYym36rncOl">支持 .xlsx / .xls / .csv，单个文件不超过 5MB。解析后可预览前 5 条并查看校验结果。</div>
+        <div class="arch-hint" data-page-node-id="rhTOGNffNMFQYym36rncOl">支持本弹窗下载的 .xls / .csv 模板，以及 .txt（Tab 分隔）；单个文件不超过 5MB。上传后点击「解析文件」，逐行真实校验。</div>
       </div>
 
       <div class="panel" data-page-node-id="WceTWQXFZ7xpkEq3TDAsAy">
         <div class="panel-title" data-page-node-id="wkdnDF2k6bV9iJPfBdARTK"><svg class="ico" style="font-size:14px" data-page-node-id="FduUGltaF3IspTivEfTePg"><use href="#i-lines" data-page-node-id="GduTCa3JqYyK70Ovx7zVaN"></use></svg>③ 数据预览
-          <span class="tag tag-gray" id="impTotal" data-page-node-id="uGddk2vPUWSIPJVbgqBxTA">共 5 条</span>
-          <span class="tag tag-green" data-page-node-id="aD9zfDedhwYzZG94oPZou0">4 条校验通过</span>
-          <span class="tag tag-orange" data-page-node-id="QJI1W8l9jFG5ENfbFA5h1A">1 条待修正</span>
+          <span class="tag tag-gray" id="impTotal"\1>共 0 条</span>
+          <span style="flex:1"></span>
+          <button class="btn btn-text btn-sm" id="impFailBtn" style="display:none" onclick="downloadFailList()" data-page-node-id="veGp2h216aqxfznd5s7XYx"><svg class="ico" data-page-node-id="IrHxT3TkVHZWhhDFqwEnge"><use href="#i-download" data-page-node-id="2jA89MWAgsxhn5OICzIbaY"></use></svg>下载失败清单</button>
+          <span class="tag tag-green" id="impOk"\1>0 条校验通过</span>
+          <span class="tag tag-orange" id="impBad"\1>0 条待修正</span>
         </div>
         <div style="background:#fff;border-radius:8px;overflow:hidden" data-page-node-id="8GUdzUaMjGLNT4SGmhxVO9">
           <table class="data" data-page-node-id="xcRf1RDGyukdRcjD4mJfU9">
             <thead data-page-node-id="tn6dPieejAxnEJZjKvaDPv"><tr data-page-node-id="NG0RA2LihD9TnxBjNhNprW">
               <th data-page-node-id="igKw39XmgcatLg6yQNtrLS">行号</th><th data-page-node-id="BIQeU9b9ocXd0DbBIuljId">姓名</th><th data-page-node-id="ak6gBSPYamK9AmZC7M4HXF">手机号</th><th data-page-node-id="9YMEXNf4MBXs8wu5htTFbH">邮箱</th><th data-page-node-id="ks6aXJQwnNHzhcDyvzvK7d">公司</th><th class="tc" data-page-node-id="0Oqx87KFfBeSQYozZ62pqi">客户类型</th><th class="tc" data-page-node-id="y3TwWOX44zK3SsXqmfKLfW">校验结果</th>
             </tr></thead>
-            <tbody data-page-node-id="WxHCK0shRawoQ9226TNkfa">
-              <tr data-page-node-id="hH7nakGHyobXJs1Le0MX4D"><td class="mono" data-page-node-id="LDpcKEglPJ9nvvSsRnLzQT">2</td><td class="strong" data-page-node-id="g2gxfMuG2rOdzWvx1T3NI9">周敏</td><td class="mono" data-page-node-id="jnZuufcYz4IhgQSCSHFSzl">13812340001</td><td class="mono" data-page-node-id="w4DuazReqxdek2KxKzNExo">zhoumin@ruixin.com</td><td data-page-node-id="MRONYj7GKIO8vP1MCZRHdF">瑞祥科技有限公司</td><td class="tc" data-page-node-id="j7iO2TKr2Aeas9gqsVJmAb">个人客户</td><td class="tc" data-page-node-id="fRyMDk3dH77X48Zwmdha3U"><span class="tag tag-green" data-page-node-id="MkHDIYhgTebjR40CvBPyQU">通过</span></td></tr>
-              <tr data-page-node-id="Z7MN0qu7uKHpWIRsgJnzDH"><td class="mono" data-page-node-id="OhCIPPz3A1Ap72s4KEQSkv">3</td><td class="strong" data-page-node-id="BVhPAVCsYX5wczMsPDkS4R">李伟</td><td class="mono" data-page-node-id="XYzUje2wihu7FXWkjvKuBb">13812340002</td><td class="mono" data-page-node-id="uLZolzflc2l5ileYtRt9VL">liwei@boyuan.com</td><td data-page-node-id="O7qVSBm1SjKRFoxprAoOqM">博远实业有限公司</td><td class="tc" data-page-node-id="fYvcM2v1rZpn5TYJqCcy5n">机构成员</td><td class="tc" data-page-node-id="1roEhNns6bSZ0ZP4lP07uT"><span class="tag tag-green" data-page-node-id="Y5aT9nFxRb3gZheiuT8EdY">通过</span></td></tr>
-              <tr data-page-node-id="XEkdovsFsOmUsGQ5vhCHF5"><td class="mono" data-page-node-id="ePSgHYorbyW3mUTFqp1Sqx">4</td><td class="strong" data-page-node-id="ji1jfIpbiAMvCeL5j8enwX">王芳</td><td class="mono" data-page-node-id="cqs8kIUlu9mzjnf2Br55r8">13812340003</td><td class="mono" data-page-node-id="bmnEeSO9iiVv67ThnXDHsY">wangfang@shengyuan.com</td><td data-page-node-id="WalbfZGrHvwNU6magGoaVz">盛源科技有限公司</td><td class="tc" data-page-node-id="S5LTBxkjPt9XaGbyhnPZRg">个人客户</td><td class="tc" data-page-node-id="273fMw2QavDskn4V7hAEwu"><span class="tag tag-green" data-page-node-id="Hc1X9YjHaJzB5Q5UdUC8QJ">通过</span></td></tr>
-              <tr data-page-node-id="xlmoLh61EVZIK1MBIC22kY"><td class="mono" data-page-node-id="zAd1ZBzKqzWSldO1EG7yKi">5</td><td class="strong" data-page-node-id="UaRHLryvD2A4Izzfhfquy0">赵磊</td><td class="mono" data-page-node-id="qTqX6r5LvizplK60UAX9Ri">13812340004</td><td class="mono" data-page-node-id="S3BDvwrcJtNY1C8sLIgp1m">zhaolei@zhongsheng.com</td><td data-page-node-id="Sqml8DcauOvr8Y19RXK4P4">中盛新材料有限公司</td><td class="tc" data-page-node-id="AqXj0x0b1dRjZaf3CsFMPU">机构成员</td><td class="tc" data-page-node-id="E4tjGRH2J02TnjqNsJA0FH"><span class="tag tag-green" data-page-node-id="Gk89VKjqvTamXVeL5eUjwg">通过</span></td></tr>
-              <tr data-page-node-id="yWigqv2eDiix97bFxM7pYf"><td class="mono" data-page-node-id="ZrUbjAzTmgfVHc2pHmmsGP">6</td><td class="strong" data-page-node-id="oQBiVpsvQp90EGabOUwIvW">陈静</td><td class="mono" data-page-node-id="PegiQqYRJwr6ORjhVMJh9B">13812340</td><td class="mono" data-page-node-id="4tC67wzgD0ivETpNs5N1hc">chenjing@tianhe.com</td><td data-page-node-id="tBRTNd1cCfdm9QWiQGF1eX">天合控股有限公司</td><td class="tc" data-page-node-id="XR0Aj31hrW1gJYZGOij8Z7">个人客户</td><td class="tc" data-page-node-id="N5HG3IBz4e68rPn3jw5kiX"><span class="tag tag-orange" data-page-node-id="lGHmnuOU1TpmzcXSfXgmrc">手机号格式有误</span></td></tr>
-            </tbody>
+            <tbody id="impBody"></tbody>
           </table>
         </div>
-        <div class="arch-hint" data-page-node-id="TySI0uJQk7mEhupvMLqSJG">校验不通过的行会被跳过并生成失败清单，可在导入完成后下载修正后重新导入。</div>
+        <div class="arch-hint" data-page-node-id="TySI0uJQk7mEhupvMLqSJG">校验不通过的行会被跳过，可点击右上角「下载失败清单」修正后重新导入。</div>
       </div>
 
     </div>
@@ -2128,23 +2128,328 @@ function pdfZoom(d){ PDF.scale = Math.min(140, Math.max(70, PDF.scale + d * 10))
 renderArchive();
 
 
-/* =============== 批量导入客户 =============== */
+/* ================= 批量导入：模板下载 + 真实解析 + 写入列表 ================= */
+var IMP_COLS = [
+  {k:'name',    t:'姓名',    req:1},
+  {k:'phone',   t:'手机号',  req:1},
+  {k:'email',   t:'邮箱',    req:0},
+  {k:'company', t:'公司',    req:1},
+  {k:'ctype',   t:'客户类型',req:0},
+  {k:'role',    t:'客户角色',req:0},
+  {k:'dept',    t:'部门',    req:0},
+  {k:'title',   t:'职位',    req:0}
+];
+var IMP_DEMO = [
+  ['周敏','13812340001','zhoumin@ruixin.com','瑞祥科技有限公司','个人客户','管理员','综合管理部','总经理'],
+  ['李伟','13812340002','liwei@boyuan.com','博远实业有限公司','机构成员','操作员','业务运营部','业务经理']
+];
+var IMP_RESULT = { rows: [], errs: [], ok: 0, bad: 0 };
+
+function impHeaders(){ return IMP_COLS.map(function(c){ return c.t; }); }
+function impEsc(v){
+  return String(v == null ? '' : v)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function impStep(n){
+  for (var i = 1; i <= 3; i++){
+    var el = document.getElementById('impStep' + i);
+    if (el) el.classList.toggle('on', i <= n);
+  }
+}
+
+/* ---------- 通用下载（纯前端 Blob） ---------- */
+function impDownload(name, text, mime){
+  try{
+    var blob = new Blob([text], { type: mime });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 300);
+    return true;
+  }catch(e){ return false; }
+}
+
+/* ---------- 模板生成 ---------- */
+function buildTplText(type){
+  var rows = [impHeaders()].concat(IMP_DEMO);
+  if (type === 'csv'){
+    return '\ufeff' + rows.map(function(r){
+      return r.map(function(v){
+        v = String(v == null ? '' : v);
+        return /[",\n]/.test(v) ? '"' + v.replace(/"/g,'""') + '"' : v;
+      }).join(',');
+    }).join('\r\n') + '\r\n';
+  }
+  var out = '<?xml version="1.0" encoding="UTF-8"?>\n'
+          + '<?mso-application progid="Excel.Sheet"?>\n'
+          + '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"\n'
+          + ' xmlns:o="urn:schemas-microsoft-com:office:office"\n'
+          + ' xmlns:x="urn:schemas-microsoft-com:office:excel"\n'
+          + ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">\n'
+          + '<Styles>\n'
+          + ' <Style ss:ID="h"><Font ss:Bold="1" ss:Color="#FFFFFF"/><Interior ss:Color="#165DFF" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center"/></Style>\n'
+          + ' <Style ss:ID="b"><Font ss:Color="#FF7D00" ss:Bold="1"/></Style>\n'
+          + '</Styles>\n'
+          + '<Worksheet ss:Name="\u5ba2\u6237\u5bfc\u5165"><Table>\n';
+  rows.forEach(function(r, ri){
+    out += ' <Row>\n';
+    r.forEach(function(v){
+      out += '  <Cell ss:StyleID="' + (ri === 0 ? 'h' : 'b') + '"><Data ss:Type="String">' + impEsc(v) + '</Data></Cell>\n';
+    });
+    out += ' </Row>\n';
+  });
+  out += '</Table></Worksheet>\n</Workbook>\n';
+  return out;
+}
+function downloadTpl(type){
+  var text = buildTplText(type);
+  var isCsv = (type === 'csv');
+  var name = isCsv ? '\u5ba2\u6237\u5bfc\u5165\u6a21\u677f_2026.csv' : '\u5ba2\u6237\u5bfc\u5165\u6a21\u677f_2026.xls';
+  var ok = impDownload(name, text, isCsv ? 'text/csv;charset=utf-8' : 'application/vnd.ms-excel;charset=utf-8');
+  if (!ok){ toast('\u5f53\u524d\u73af\u5883\u4e0d\u652f\u6301\u6587\u4ef6\u4e0b\u8f7d\uff0c\u8bf7\u5728\u6d4f\u89c8\u5668\u4e2d\u6253\u5f00\u540e\u91cd\u8bd5'); return; }
+  impStep(2);
+  toast('\u6a21\u677f\u5df2\u4e0b\u8f7d\uff1a' + name + '\uff08\u542b 8 \u4e2a\u5b57\u6bb5\u8868\u5934 + 2 \u6761\u793a\u4f8b\u6570\u636e\uff09');
+}
+function downloadFailList(){
+  if (!IMP_RESULT.rows.length){ toast('\u6682\u65e0\u5931\u8d25\u6e05\u5355'); return; }
+  var lines = [['\u884c\u53f7'].concat(impHeaders()).concat(['\u9519\u8bef\u539f\u56e0'])];
+  IMP_RESULT.rows.forEach(function(r, i){
+    var e = (IMP_RESULT.errs[i] || []);
+    if (e.length){
+      lines.push([String(i + 2)].concat(IMP_COLS.map(function(c){ return r[c.k] || ''; })).concat([e.join('\uff1b')]));
+    }
+  });
+  if (lines.length < 2){ toast('\u6821\u9a8c\u5168\u90e8\u901a\u8fc7\uff0c\u65e0\u5931\u8d25\u6e05\u5355'); return; }
+  var text = '\ufeff' + lines.map(function(r){
+    return r.map(function(v){
+      v = String(v == null ? '' : v);
+      return /[",\n]/.test(v) ? '"' + v.replace(/"/g,'""') + '"' : v;
+    }).join(',');
+  }).join('\r\n') + '\r\n';
+  if (impDownload('\u5ba2\u6237\u5bfc\u5165\u5931\u8d25\u6e05\u5355_2026.csv', text, 'text/csv;charset=utf-8')){
+    toast('\u5931\u8d25\u6e05\u5355\u5df2\u4e0b\u8f7d\uff1a\u5171 ' + (lines.length - 1) + ' \u6761\u5f85\u4fee\u6b63');
+  } else {
+    toast('\u5f53\u524d\u73af\u5883\u4e0d\u652f\u6301\u6587\u4ef6\u4e0b\u8f7d');
+  }
+}
+
+/* ---------- 逐行校验 ---------- */
+function impErrors(rows){
+  var seen = {};
+  return rows.map(function(r){
+    var e = [];
+    if (!r.name) e.push('\u59d3\u540d\u4e0d\u80fd\u4e3a\u7a7a');
+    else if (r.name.length > 20) e.push('\u59d3\u540d\u8d85\u957f\uff08\u6700\u591a 20 \u5b57\uff09');
+    if (!r.phone) e.push('\u624b\u673a\u53f7\u4e0d\u80fd\u4e3a\u7a7a');
+    else if (!/^1[3-9]\d{9}$/.test(r.phone)) e.push('\u624b\u673a\u53f7\u683c\u5f0f\u6709\u8bef');
+    else if (seen[r.phone]) e.push('\u624b\u673a\u53f7\u91cd\u590d');
+    else seen[r.phone] = 1;
+    if (r.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r.email)) e.push('\u90ae\u7bb1\u683c\u5f0f\u6709\u8bef');
+    if (!r.company) e.push('\u516c\u53f8\u4e0d\u80fd\u4e3a\u7a7a');
+    if (r.ctype && ['\u4e2a\u4eba\u5ba2\u6237','\u673a\u6784\u5ba2\u6237','\u673a\u6784\u6210\u5458'].indexOf(r.ctype) < 0) e.push('\u5ba2\u6237\u7c7b\u578b\u53d6\u503c\u6709\u8bef');
+    if (r.role && ['\u7ba1\u7406\u5458','\u64cd\u4f5c\u5458'].indexOf(r.role) < 0) e.push('\u5ba2\u6237\u89d2\u8272\u53d6\u503c\u6709\u8bef');
+    return e;
+  });
+}
+
+/* ---------- 解析：SpreadsheetML(.xls) / CSV / Tab ---------- */
+function impSplitCsv(line, sep){
+  var out = [], cur = '', q = false;
+  for (var i = 0; i < line.length; i++){
+    var ch = line.charAt(i);
+    if (q){
+      if (ch === '"'){ if (line.charAt(i + 1) === '"'){ cur += '"'; i++; } else q = false; }
+      else cur += ch;
+    } else {
+      if (ch === '"') q = true;
+      else if (ch === sep){ out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+  }
+  out.push(cur);
+  return out.map(function(v){ return String(v).replace(/^\ufeff/, '').trim(); });
+}
+function impParseText(text, fileName){
+  var rows = [];
+  var head = (text.split('\n')[0] || '');
+  var isXml = /\.xls$/i.test(fileName) || /^\s*<\?xml|<Workbook/i.test(text);
+  if (isXml){
+    try{
+      var doc = new DOMParser().parseFromString(text, 'application/xml');
+      if (!doc.getElementsByTagName('parsererror').length){
+        var rs = doc.getElementsByTagName('Row');
+        for (var i = 0; i < rs.length; i++){
+          var cells = rs[i].getElementsByTagName('Cell');
+          var arr = [];
+          for (var j = 0; j < cells.length; j++){
+            var d = cells[j].getElementsByTagName('Data');
+            arr.push(d.length ? (d[0].textContent || '') : (cells[j].textContent || ''));
+          }
+          rows.push(arr);
+        }
+      }
+    }catch(e){}
+  }
+  if (!rows.length){
+    var sep = (head.indexOf('\t') >= 0 && head.indexOf(',') < 0) ? '\t' : ',';
+    text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').forEach(function(line){
+      if (!line.replace(/\s/g, '')) return;
+      rows.push(impSplitCsv(line, sep));
+    });
+  }
+  return rows;
+}
+function impRowsFromMatrix(matrix){
+  var start = 0;
+  if (matrix.length){
+    var first = matrix[0].map(function(x){ return String(x).trim(); });
+    if (first.indexOf('\u59d3\u540d') >= 0 && first.indexOf('\u624b\u673a\u53f7') >= 0) start = 1;
+  }
+  var rows = [];
+  for (var i = start; i < matrix.length; i++){
+    var a = matrix[i];
+    if (!a || !a.join('').replace(/\s/g, '')) continue;
+    var o = {};
+    IMP_COLS.forEach(function(c, k){ o[c.k] = String(a[k] == null ? '' : a[k]).trim(); });
+    rows.push(o);
+  }
+  return rows;
+}
+
+/* ---------- 渲染预览 ---------- */
+function impRender(rows){
+  var body = document.getElementById('impBody');
+  if (!body) return;
+  var errs = impErrors(rows);
+  var ok = 0, bad = 0;
+  var html = rows.map(function(r, i){
+    var e = errs[i];
+    if (e.length) bad++; else ok++;
+    var tag = e.length
+      ? '<span class="tag tag-orange">' + impEsc(e[0]) + '</span>'
+      : '<span class="tag tag-green">\u901a\u8fc7</span>';
+    return '<tr><td class="mono">' + (i + 2) + '</td>'
+      + '<td class="strong">' + impEsc(r.name) + '</td>'
+      + '<td class="mono">' + impEsc(r.phone) + '</td>'
+      + '<td class="mono">' + impEsc(r.email) + '</td>'
+      + '<td>' + impEsc(r.company) + '</td>'
+      + '<td class="tc">' + impEsc(r.ctype || '\u2014') + '</td>'
+      + '<td class="tc">' + tag + '</td></tr>';
+  }).join('');
+  body.innerHTML = html
+    || '<tr><td colspan="7" class="imp-empty">\u8bf7\u5148\u4e0b\u8f7d\u6a21\u677f\u5e76\u586b\u5199\uff0c\u4e0a\u4f20\u540e\u70b9\u51fb\u300c\u89e3\u6790\u6587\u4ef6\u300d\uff0c\u6821\u9a8c\u7ed3\u679c\u5c06\u5728\u6b64\u5c55\u793a</td></tr>';
+  IMP_RESULT = { rows: rows, errs: errs, ok: ok, bad: bad };
+  var t = document.getElementById('impTotal'); if (t) t.textContent = '\u5171 ' + rows.length + ' \u6761';
+  var o = document.getElementById('impOk');    if (o) o.textContent = ok + ' \u6761\u6821\u9a8c\u901a\u8fc7';
+  var b = document.getElementById('impBad');   if (b) b.textContent = bad + ' \u6761\u5f85\u4fee\u6b63';
+  var f = document.getElementById('impFailBtn');
+  if (f) f.style.display = (bad > 0) ? '' : 'none';
+}
+function impReset(){
+  var fi = document.getElementById('impFile');
+  if (fi) fi.value = '';
+  IMP_RESULT = { rows: [], errs: [], ok: 0, bad: 0 };
+  impRender([]);
+  impStep(1);
+}
+
+/* ---------- 解析上传的文件 ---------- */
 function doImportParse(){
   var f = document.getElementById('impFile');
-  if (!f.files || !f.files.length){ toast('请先选择要导入的文件'); return; }
-  var n = f.files[0].name;
-  var el = document.getElementById('impTotal');
-  if (el) el.textContent = '共 5 条';
-  toast('已解析 ' + n + '：共 5 条，4 条校验通过、1 条待修正');
+  if (!f.files || !f.files.length){ toast('\u8bf7\u5148\u9009\u62e9\u8981\u5bfc\u5165\u7684\u6587\u4ef6'); return; }
+  var file = f.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e){
+    var text = String(e.target.result || '');
+    if (/\x00/.test(text)){
+      toast('.xlsx \u4e3a\u4e8c\u8fdb\u5236\u683c\u5f0f\uff0c\u8bf7\u6539\u7528\u672c\u5f39\u7a97\u4e0b\u8f7d\u7684 .xls / .csv \u6a21\u677f');
+      impReset();
+      return;
+    }
+    var rows = impRowsFromMatrix(impParseText(text, file.name));
+    if (!rows.length){ toast('\u672a\u8bc6\u522b\u5230\u6709\u6548\u6570\u636e\u884c\uff0c\u8bf7\u68c0\u67e5\u6587\u4ef6\u5185\u5bb9'); impReset(); return; }
+    impRender(rows);
+    impStep(3);
+    toast('\u5df2\u89e3\u6790 ' + file.name + '\uff1a\u5171 ' + rows.length + ' \u6761\uff0c'
+          + IMP_RESULT.ok + ' \u6761\u901a\u8fc7\u3001' + IMP_RESULT.bad + ' \u6761\u5f85\u4fee\u6b63');
+  };
+  reader.onerror = function(){ toast('\u6587\u4ef6\u8bfb\u53d6\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5'); };
+  reader.readAsText(file, 'UTF-8');
+}
+
+/* ---------- 写入「成员与个人客户」列表 ---------- */
+function impNextUid(){
+  var tb = document.querySelector('#tableMember tbody');
+  var max = 1000;
+  if (tb){
+    var ids = tb.querySelectorAll('td.id');
+    for (var i = 0; i < ids.length; i++){
+      var v = parseInt(String(ids[i].textContent || '').replace(/[^0-9]/g, ''), 10);
+      if (!isNaN(v) && v > max) max = v;
+    }
+  }
+  return 'U' + (max + 1);
+}
+function impMemberTr(r, uid){
+  var isMem = (r.ctype === '\u673a\u6784\u6210\u5458');
+  var role  = r.role || '\u672c\u4eba';
+  var ph    = r.phone;
+  return '<tr onclick="selectRow(this)" style="background:#F5F8FF">'
+    + '<td class="tc"><span class="tag ' + (isMem ? 'tag-blue' : 'tag-green') + '">' + (isMem ? '\u673a\u6784\u6210\u5458' : '\u4e2a\u4eba\u5ba2\u6237') + '</span></td>'
+    + '<td class="strong">' + impEsc(r.name) + '</td>'
+    + '<td class="id">' + uid + '</td>'
+    + '<td class="tc">UA1</td>'
+    + '<td class="tc"><span class="tag tag-green">\u6d3b\u8dc3</span></td>'
+    + '<td>' + impEsc(isMem ? '\u2014' : (r.company || '\u2014')) + '</td>'
+    + '<td style="color:var(--muted)">' + impEsc(isMem ? (r.company || '\u2014') : '\u2014') + '</td>'
+    + '<td class="tc">' + (isMem ? '\u673a\u6784' : '\u4e2a\u4eba') + '</td>'
+    + '<td class="tc"><span class="tag tag-blue">C4</span></td>'
+    + '<td class="tc"><span class="tag tag-blue">\u666e\u901a</span></td>'
+    + '<td class="tr strong">0</td>'
+    + '<td class="mono">' + impEsc(ph) + '</td>'
+    + '<td class="tc">' + impEsc(role) + '</td>'
+    + '<td>\u624b\u673a\u53f7/\u90ae\u7bb1\u767b\u5f55</td>'
+    + '<td class="tc">'
+      + '<button class="btn-text btn-sm" onclick="event.stopPropagation();openModal(\'editModal\')">\u4fee\u6539</button>'
+      + '<button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal(\'cancelModal\')">\u6ce8\u9500</button>'
+      + '<button class="btn-text muted btn-sm" onclick="event.stopPropagation();toast(\'\u91cd\u7f6e\u5bc6\u7801\u77ed\u4fe1\u5df2\u53d1\u9001\u81f3 ' + ph + '\')">\u91cd\u7f6e\u5bc6\u7801</button>'
+    + '</td></tr>';
+}
+function impAppendMember(rows){
+  var tb = document.querySelector('#tableMember tbody');
+  if (!tb) return 0;
+  var uid = impNextUid(), n = 0, pending = 0;
+  rows.forEach(function(r, i){
+    if ((IMP_RESULT.errs[i] || []).length) return;          // 校验不通过 -> 跳过
+    if (r.ctype === '\u673a\u6784\u5ba2\u6237'){ pending++; return; }  // 机构客户 -> 转建档待办
+    var html = impMemberTr(r, uid);
+    tb.insertAdjacentHTML('beforeend', html);
+    uid = 'U' + (parseInt(uid.slice(1), 10) + 1);
+    n++;
+  });
+  return { added: n, pending: pending };
 }
 function doImport(){
   var f = document.getElementById('impFile');
-  if (!f.files || !f.files.length){ toast('请先选择要导入的文件并解析'); return; }
-  toast('导入完成：成功 4 条，失败 1 条（可下载失败清单修正后重试）');
-  f.value = '';
+  if (!IMP_RESULT.rows.length || !(f.files && f.files.length)){
+    toast('\u8bf7\u5148\u4e0a\u4e20\u5e76\u89e3\u6790\u6587\u4ef6\uff08\u70b9\u51fb\u300c\u89e3\u6790\u6587\u4ef6\u300d\uff09');
+    return;
+  }
+  if (IMP_RESULT.ok === 0){ toast('\u6821\u9a8c\u901a\u8fc7 0 \u6761\uff0c\u8bf7\u4fee\u6b63\u540e\u91cd\u65b0\u4e0a\u4f20'); return; }
+  var res = impAppendMember(IMP_RESULT.rows);
+  var add = res.added, pend = res.pending, bad = IMP_RESULT.bad;
+  var msg = '\u5bfc\u5165\u5b8c\u6210\uff1a\u6210\u529f\u5bfc\u5165 ' + add + ' \u6761\uff0c\u5df2\u5199\u5165\u300c\u6210\u5458\u4e0e\u4e2a\u4eba\u5ba2\u6237\u300d\u5217\u8868';
+  if (bad) msg += '\uff0c\u8df3\u8fc7 ' + bad + ' \u6761';
+  if (pend) msg += '\uff0c\u673a\u6784\u5ba2\u6237 ' + pend + ' \u6761\u5df2\u8f6c\u5efa\u6863\u5f85\u529e';
+  toast(msg);
+  impReset();
   closeModal('importModal');
+  if (typeof switchTab === 'function') switchTab('member');
 }
+
 try{ syncCardPanel(); }catch(e){}
+try{ impReset(); }catch(e){}
 
 var mobileShowDesc = false;
 function toggleMobileView(){
