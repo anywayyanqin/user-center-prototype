@@ -1411,6 +1411,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
               <li>表格行点击选中高亮</li>
               <li>点击机构名称 →「机构全景及成员」弹窗</li>
               <li>行操作：修改 / 档案 / 注销 / 重置密码（二次确认）</li>
+              <li>「修改客户」弹窗「联系人信息」：管理员负责人姓名 / 手机号 / 邮箱为只读字段（灰底不可编辑）；不含「管理员部门」字段</li>
               <li>档案中心：点「档案」打开该客户的档案列表，可查看 PDF 与下载</li>
               <li>批量导入：下载模板 → 上传 → 校验预览 → 写入成员表</li>
               <li>导出 Excel</li>
@@ -1461,7 +1462,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
               <li>表格行点击选中高亮</li>
               <li>行操作：档案（仅 客户角色=个人 可点，否则灰色只读）/ 修改 / 注销 / 重置密码（后三者二次确认）</li>
               <li>与机构视图共用筛选栏、批量导入与导出 Excel</li>
-              <li>「档案」入口按 客户角色 判定：= 个人 时可用，≠ 个人 时灰色只读</li>
+              <li>「修改客户」弹窗「联系人信息」：管理员负责人姓名 / 手机号 / 邮箱为只读字段（灰底不可编辑）；不含「管理员部门」字段</li>
             </ul>
           </div>
         </div><!-- /rp-section customers/member -->
@@ -1944,21 +1945,20 @@ table.exp-tbl tbody tr:hover{background:#fff}
       <div class="field field-2" data-page-node-id="zgiI9GkB1pu87P7flSLSjc">
         <div data-page-node-id="3qmh5ViYmmyFjRfXmX4jaB">
           <label class="label" data-page-node-id="v6J1XpGGOvSWye6dK6uPRr">管理员负责人姓名</label>
-          <input class="input" style="width:100%" type="text" value="吴芳" data-page-node-id="aHHow4Qytsxy6cwRaL89mz">
+          <input class="input ro" style="width:100%" type="text" value="吴芳" readonly="" data-page-node-id="aHHow4Qytsxy6cwRaL89mz">
+          <div class="fhint">只读字段</div>
         </div>
         <div data-page-node-id="BpP7A9qnja7lGepR2OCyFx">
           <label class="label" data-page-node-id="KxGUsKdjv6c6y29rhEN2k8">管理员负责人手机号</label>
-          <input class="input" style="width:100%" type="text" value="15316125848" data-page-node-id="rxPrkGSvgw5G69GkJshmxv">
+          <input class="input ro" style="width:100%" type="text" value="15316125848" readonly="" data-page-node-id="rxPrkGSvgw5G69GkJshmxv">
+          <div class="fhint">只读字段</div>
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="Oi8dG67cQJjyU9pdtgzSFB">
+      <div class="field" data-page-node-id="Oi8dG67cQJjyU9pdtgzSFB">
         <div data-page-node-id="LJyPV7psppBcWQwT8g9XPn">
           <label class="label" data-page-node-id="v5VEkM5GS7ck7cP7XeInw7">管理员负责人邮箱</label>
-          <input class="input" style="width:100%" type="text" value="wufang@tianhe.com" data-page-node-id="86aowJjKu0eSC2uK4JmD20">
-        </div>
-        <div data-page-node-id="RFttXMw8MY9CNufGuaVam8">
-          <label class="label" data-page-node-id="V76FJRo72SZhLNRw3Wj7Hz">管理员部门</label>
-          <input class="input" style="width:100%" type="text" value="综合管理部" data-page-node-id="B4zD3OjhbEFwzIsRdNSJZr">
+          <input class="input ro" style="width:100%" type="text" value="wufang@tianhe.com" readonly="" data-page-node-id="86aowJjKu0eSC2uK4JmD20">
+          <div class="fhint">只读字段</div>
         </div>
       </div>
       
