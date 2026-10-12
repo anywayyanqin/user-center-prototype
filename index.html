@@ -1851,7 +1851,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
       </div>
 
       <div class="mgroup" data-page-node-id="WbVCyMj0V9gFiPlJBPVTIN">基本信息</div>
-      <div class="field field-2" data-page-node-id="tCto3zVXe59UTaCC8ZdYBc">
+      <div class="field field-2" id="editInstRow1" data-page-node-id="tCto3zVXe59UTaCC8ZdYBc">
         <div data-page-node-id="Yh2SOc0YBBLRZVP0OA02f1">
           <label class="label" data-page-node-id="TAMN73q6oJPY62h2HoIvCW">用户id</label>
           <input class="input ro" style="width:100%" type="text" value="10002000" readonly="" data-page-node-id="B9fJ01xbzqbzBHJSuy111R">
@@ -1862,7 +1862,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
           <input class="input" style="width:100%" type="text" value="吴芳" data-page-node-id="4vTi3D9cRnNEuObRdT3Aw1">
         </div>
       </div>
-      <div class="field field-2" data-page-node-id="VYSFqGe9We8y5ROF9FD6BU">
+      <div class="field field-2" id="editInstRow2" data-page-node-id="VYSFqGe9We8y5ROF9FD6BU">
         <div data-page-node-id="NioxNfV6CvNpmmWNYPelyF">
           <label class="label" data-page-node-id="LQrLpUICSIxCD37Uxkkjex">用户级别</label>
           <select class="select" style="width:100%" data-page-node-id="XEwLtlUuXgeITo2GaRuSID"><option data-page-node-id="1yCXweFf4u8GpSae2MPero">U0</option><option data-page-node-id="cC9Ca9xXv0LbeLF7ucdQfA" selected="">UA1</option><option data-page-node-id="FPGmuNvx0O9wkT1JKyFG4J">UA2</option></select>
@@ -1962,7 +1962,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
         </div>
       </div>
       
-      <div class="field" data-page-node-id="Zljs8MwzZI0tOuyMoqBrsz">
+      <div class="field" id="editCardFlagRow" data-page-node-id="Zljs8MwzZI0tOuyMoqBrsz">
         <div data-page-node-id="N6bznFpSUhtT7GCNPX7Dao">
           <label class="label" data-page-node-id="PYxDLPiIn0VW2wKtlVOwC3">名片</label>
           <input class="input ro" id="cardFlag" style="width:100%" type="text" value="有" readonly="" data-page-node-id="Y5UEpyKHj3V1qXbFPKuWzd">
@@ -1996,7 +1996,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
           <label class="label" data-page-node-id="pztLEkdllqokDh6BJ15pIT">是否修改初始服务密码</label>
           <select class="select" style="width: 100%; box-sizing: border-box; font-family: inherit; font-size: 12.5px; color: rgb(134, 144, 156); border: 1px solid rgb(229, 232, 239); border-radius: 8px; padding: 6px 6px 6px 10px; background: rgb(247, 248, 250); transition: 0.15s; cursor: default; opacity: 1;" data-page-node-id="Fd1P9p155efSAMz6tP6C5W"><option data-page-node-id="pnNLUnB0XtHLoi5TqcMFig" selected="">是</option><option data-page-node-id="mruyJ6LjARzOW9AnUH9v5b">否</option></select>
         </div>
-        <div data-page-node-id="xRRCH0hMZWidtjPKkjmrIy">
+        <div id="editLoginPhoneCell" data-page-node-id="xRRCH0hMZWidtjPKkjmrIy">
           <label class="label" data-page-node-id="6E1SQY9ys4BB5Lj5OeW4FL">登录/联系手机号</label>
           <input class="input" style="width:100%" type="text" value="15316125848" data-page-node-id="faymZC7xSj8xyKYoRhGW92">
         </div>
@@ -2303,7 +2303,32 @@ function bindHover(){
 }
 
 /* =============== 交互 =============== */
-function openModal(id){ document.getElementById(id).classList.remove('hide'); }
+var EDIT_CTX = 'inst'; /* 修改客户弹窗的来源视图：'inst'=机构视图，'member'=成员与个人视图 */
+function openModal(id){
+  if (id === 'editModal') {
+    /* 通过当前可见的表格判定来源视图：仅机构视图需要隐藏部分字段 */
+    EDIT_CTX = (document.getElementById('tableInst').style.display !== 'none') ? 'inst' : 'member';
+    applyEditModalContext();
+  }
+  document.getElementById(id).classList.remove('hide');
+}
+function setEditHidden(id, hide){
+  var el = document.getElementById(id);
+  if (el) el.style.display = hide ? 'none' : '';
+}
+/* 仅机构视图的修改客户弹窗隐藏：名片图片面板、用户id+用户姓名、用户级别+用户状态、名片字段、登录/联系手机号 */
+function applyEditModalContext(){
+  var inst = (EDIT_CTX === 'inst');
+  setEditHidden('editInstRow1', inst);
+  setEditHidden('editInstRow2', inst);
+  setEditHidden('editCardFlagRow', inst);
+  setEditHidden('editLoginPhoneCell', inst);
+  if (inst) {
+    setEditHidden('cardPanel', true);
+  } else {
+    try { syncCardPanel(); } catch(e){}
+  }
+}
 function closeModal(id){ document.getElementById(id).classList.add('hide'); }
 
 var MANAGER_DEPTS = {
