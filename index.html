@@ -93,6 +93,10 @@ input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
 .btn-text.muted:hover{background:#F2F3F5}
 .btn-text.danger{color:var(--danger)}
 .btn-text.danger:hover{background:#FFECE8}
+/* 行内操作的「灰色只读」禁用态：用于成员与个人视图的「档案」（客户角色≠个人） */
+.btn-text:disabled,.btn-text[disabled]{color:var(--muted);font-weight:400;cursor:not-allowed;background:transparent}
+.btn-text:disabled:hover,.btn-text[disabled]:hover{background:transparent}
+.btn:disabled,.btn[disabled]{cursor:not-allowed}
 .btn-sm{padding:4px 9px;font-size:12px}
 
 /* ============================ 卡片 / 栅格 ============================ */
@@ -1384,9 +1388,9 @@ table.exp-tbl tbody tr:hover{background:#fff}
               <span class="desc-num">5</span>
               <div>
                 <div class="desc-title">档案中心（仅机构视图生效）</div>
-                <div class="desc-sub">机构视图独有 · 成员与个人视图不展示</div>
+                <div class="desc-sub">档案中心能力为机构视图独有 · 成员视图仅有行内「档案」入口</div>
                 <div class="desc-body">
-                  机构视图具备档案中心能力，成员与个人视图不展示档案入口与档案列表。
+                  机构视图具备完整档案中心能力（档案列表、版本号、上传维护）；成员与个人视图不提供档案列表，仅有行内「档案」入口，且按 客户角色 判定可用性 —— 仅 客户角色 = 个人 可点击，其余取值（管理员 / 操作员 …）为灰色只读。
                 <ul>
                   <li><b>5.1 档案同步</b>：国小君流程中上传的 客户协议 / 管理员表 / 操作员表 / 授权书 / 申请表 / 其他材料 自动同步至机构档案中心，无需人工二次录入</li>
                   <li><b>5.2 档案版本号</b>：机构视图的「档案版本号」为下拉选择，选项仅来自「档案管理中心」已维护的版本；同一材料类型仅保留一个当前版本，旧版本自动转为历史版本</li>
@@ -1423,11 +1427,11 @@ table.exp-tbl tbody tr:hover{background:#fff}
               <div class="desc-sub">一行 = 一个自然人 · 39 个字段</div>
                 <div class="desc-body">成员与个人视图共 39 列，涵盖基本信息、合规、业务线与归属、联系人、账号与安全、审计信息等详情全量字段，与机构视图共用同一套筛选栏与导入导出能力。
                 <ul>
-                  <li><b>15 列</b>：客户类型、用户姓名、用户id、用户级别、用户状态、潜在企业、客户企业全称、企业模式、适当性、战略等级、权益规模、登录/联系手机号、客户角色、登录方式、操作</li>
+                  <li><b>表头分 6 组</b>：基本信息（11）· 合规与适当性（4）· 业务线与归属（6）· 联系人信息（5）· 账号与安全（6）· 审计信息（7），共 39 个字段，末列为操作</li>
                   <li><b>客户类型用标签区分</b>：机构成员（蓝）· 个人客户（绿）</li>
                   <li><b>机构成员可就地展开</b>：点击行首「机构成员」标签，在该行下方直接展开该公司信息与成员名单，再次点击收起；同一时刻仅展开一行，避免长表格被撑散</li>
-                  <li><b>行操作</b>：修改 / 注销 / 重置密码（均带二次确认）</li>
-                  <li><b>不展示档案入口</b>：档案中心仅对机构视图生效，该视图没有档案按钮与档案列表</li>
+                  <li><b>行操作</b>：档案 / 修改 / 注销 / 重置密码（后三者均带二次确认）</li>
+                  <li><b>「档案」仅 客户角色 = 个人 时可用</b>：客户角色为「个人」的行可点击「档案」查看该客户档案；客户角色为 管理员 / 操作员 等其它取值时，「档案」呈现为灰色只读状态（置灰、不可点击、不弹窗），机构成员的档案由所属机构统一维护</li>
                 </ul>
                 </div>
               </div>
@@ -1442,7 +1446,7 @@ table.exp-tbl tbody tr:hover{background:#fff}
                 <div class="desc-body"><ul>
                   <li><b>行粒度不同</b>：机构视图一行 = 一家机构（32 字段，含管理员负责人、部门、审计与登录信息）；成员与个人视图一行 = 一个自然人（39 字段）</li>
                   <li><b>数据来源不同</b>：机构成员通过机构视图的「机构成员」标签展开查看，不在成员表中单独成行；成员表只列个人客户与已单独建档的自然人</li>
-                  <li><b>能力差异</b>：档案中心、档案版本号、机构全景弹窗仅机构视图具备；筛选、批量导入、导出为两个视图共用</li>
+                  <li><b>能力差异</b>：档案版本号、机构全景弹窗仅机构视图具备；「档案」入口两个视图都有，但成员视图按 客户角色 判定可用性（仅=个人 可点）；筛选、批量导入、导出为两个视图共用</li>
                   <li><b>导入落点</b>：批量导入写入的是「成员与个人客户」列表，机构客户走单独的建档流程</li>
                 </ul>
                 </div>
@@ -1455,9 +1459,9 @@ table.exp-tbl tbody tr:hover{background:#fff}
             <ul>
               <li>点击「机构成员」标签就地展开该公司信息与成员（同时仅展开一行）</li>
               <li>表格行点击选中高亮</li>
-              <li>行操作：修改 / 注销 / 重置密码（二次确认）</li>
+              <li>行操作：档案（仅 客户角色=个人 可点，否则灰色只读）/ 修改 / 注销 / 重置密码（后三者二次确认）</li>
               <li>与机构视图共用筛选栏、批量导入与导出 Excel</li>
-              <li>该视图不展示档案入口与档案列表</li>
+              <li>「档案」入口按 客户角色 判定：= 个人 时可用，≠ 个人 时灰色只读</li>
             </ul>
           </div>
         </div><!-- /rp-section customers/member -->
@@ -3335,6 +3339,53 @@ function memberCell(tr, key){
   var tds = tr.querySelectorAll('td');
   return tds[idx] ? expTxt(tds[idx]) : '';
 }
+
+/* ============ 成员与个人视图：「档案」按钮的可用性规则 ============
+   仅 客户角色 === '个人' 时可点击查看档案；其余（管理员 / 操作员 / 本人 …）
+   一律为灰色只读（disabled + title 说明），不可点击、不弹窗。          */
+var MEMBER_ARCH_TIP = '仅客户角色为「个人」时可查看档案';
+function memberArchBtnOf(tr){
+  if (!tr) return null;
+  var btns = tr.querySelectorAll('td.act .btn-text, td:last-child .btn-text');
+  for (var i = 0; i < btns.length; i++){
+    if ((btns[i].textContent || '').replace(/\s+/g, '').trim() === '档案') return btns[i];
+  }
+  return null;
+}
+function memberArchOnclick(uid, name){
+  var q = function(v){ return String(v == null ? '' : v).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); };
+  return "event.stopPropagation();openArchive('" + q(uid) + "','" + q(name) + "')";
+}
+/* 按「客户角色」逐行同步；返回可用（=个人）的行数 */
+function syncMemberArchiveBtns(){
+  var tb = document.querySelector('#tableMember tbody');
+  if (!tb) return 0;
+  var rows = tb.querySelectorAll('tr');
+  var enabled = 0;
+  Array.prototype.forEach.call(rows, function(tr){
+    var btn = memberArchBtnOf(tr);
+    if (!btn) return;
+    var role = memberCell(tr, '客户角色');
+    var name = memberCell(tr, '用户姓名');
+    var uid  = memberCell(tr, '用户id');
+    if (role === '个人'){
+      btn.disabled = false;
+      btn.removeAttribute('disabled');
+      btn.removeAttribute('title');
+      btn.classList.remove('muted');
+      if (!btn.getAttribute('onclick')) btn.setAttribute('onclick', memberArchOnclick(uid, name));
+      enabled++;
+    } else {
+      btn.disabled = true;
+      btn.setAttribute('disabled', '');
+      btn.setAttribute('title', MEMBER_ARCH_TIP);
+      btn.removeAttribute('onclick');
+      btn.classList.add('muted');
+    }
+  });
+  return enabled;
+}
+
 function expMemberData(tr){
   return {
     ctype: memberCell(tr, '客户类型'),
@@ -3948,6 +3999,7 @@ function impMemberTr(r, uid){
     + '<td class="mono">\u2014</td>'
     + '<td>\u2014</td>'
     + '<td class="tc act">'
+      + '<button class="btn-text btn-sm" disabled title="' + MEMBER_ARCH_TIP + '">\u6863\u6848</button>'
       + '<button class="btn-text btn-sm" onclick="event.stopPropagation();openModal(\'editModal\')">\u4fee\u6539</button>'
       + '<button class="btn-text danger btn-sm" onclick="event.stopPropagation();openModal(\'cancelModal\')">\u6ce8\u9500</button>'
       + '<button class="btn-text muted btn-sm" onclick="event.stopPropagation();openResetPwd(this)">\u91cd\u7f6e\u5bc6\u7801</button>'
@@ -3975,6 +4027,7 @@ function doImport(){
   }
   if (IMP_RESULT.ok === 0){ toast('\u6821\u9a8c\u901a\u8fc7 0 \u6761\uff0c\u8bf7\u4fee\u6b63\u540e\u91cd\u65b0\u4e0a\u4f20'); return; }
   var res = impAppendMember(IMP_RESULT.rows);
+  try{ syncMemberArchiveBtns(); }catch(e){}   // 新导入的行按「客户角色」重算「档案」可用性
   var add = res.added, pend = res.pending, bad = IMP_RESULT.bad;
   var msg = '\u5bfc\u5165\u5b8c\u6210\uff1a\u6210\u529f\u5bfc\u5165 ' + add + ' \u6761\uff0c\u5df2\u5199\u5165\u300c\u6210\u5458\u4e0e\u4e2a\u4eba\u5ba2\u6237\u300d\u5217\u8868';
   if (bad) msg += '\uff0c\u8df3\u8fc7 ' + bad + ' \u6761';
@@ -3987,6 +4040,7 @@ function doImport(){
 
 try{ syncCardPanel(); }catch(e){}
 try{ impReset(); }catch(e){}
+try{ syncMemberArchiveBtns(); }catch(e){}   // 成员与个人视图：「档案」仅客户角色=个人时可用
 
 var mobileShowDesc = false;
 function toggleMobileView(){
